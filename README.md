@@ -14,7 +14,7 @@ his goal is to have companies ask him to join their team. To achieve this goal h
 
 <br>
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/111101485?v=4" class="rounded-image" style=" width: 150px; height: 150px;">
+  <img src="https://images.weserv.nl/?url=avatars.githubusercontent.com/u/111101485?v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d" style=" width: 150px; height: 150px;">
 
   <h1>Social Media</h1>
   <a href="https://www.facebook.com/muhammadhamd11/"><img src="./Facebook.svg" width="50px" margin="200px"></a>
