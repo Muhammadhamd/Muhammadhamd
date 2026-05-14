@@ -133,6 +133,7 @@ export default function Home() {
           "publisher": { "@id": "https://mhamd.selfbrand.app/#person" }
         },
         "about": { "@id": "https://mhamd.selfbrand.app/#person" },
+        "mainEntity": { "@id": "https://mhamd.selfbrand.app/#person" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
           "url": "https://mhamd.selfbrand.app/hamd.png"
