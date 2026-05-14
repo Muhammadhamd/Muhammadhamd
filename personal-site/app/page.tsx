@@ -333,17 +333,35 @@ export default function Home() {
                   className="w-full h-full object-contain p-1"
                 />
               </div>
-              <a
-                href="https://watbot.store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[15px] font-bold text-[#111111] hover:text-blue-600 transition-colors no-underline"
-              >
-                WatBot <ExternalLink size={14} />
-              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://watbot.store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[15px] font-bold text-[#111111] hover:text-blue-600 transition-colors no-underline"
+                >
+                  WatBot
+                </a>
+                <a
+                  href="https://watbot.store"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#111111] transition-colors ml-1"
+                >
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  href="https://linkedin.com/company/watbot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#111111] transition-colors"
+                >
+                  <FaLinkedinIn size={14} />
+                </a>
+              </div>
             </div>
             <p className="text-[14.5px] leading-[1.7] text-gray-600">
-              AI automation and conversational workflow system built for messaging and operational automation. 🌐🔗
+              AI automation and conversational workflow system built for messaging and operational automation.
             </p>
           </div>
           <div className="group block">
@@ -357,17 +375,35 @@ export default function Home() {
                   className="w-full h-full object-contain p-1"
                 />
               </div>
-              <a
-                href="https://selfbrand.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[15px] font-bold text-[#111111] hover:text-blue-600 transition-colors no-underline"
-              >
-                selfbrandAI <ExternalLink size={14} />
-              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://selfbrand.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-[15px] font-bold text-[#111111] hover:text-blue-600 transition-colors no-underline"
+                >
+                  selfbrandAI
+                </a>
+                <a
+                  href="https://selfbrand.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#111111] transition-colors ml-1"
+                >
+                  <ExternalLink size={14} />
+                </a>
+                <a
+                  href="https://linkedin.com/company/selfbrandai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-[#111111] transition-colors"
+                >
+                  <FaLinkedinIn size={14} />
+                </a>
+              </div>
             </div>
             <p className="text-[14.5px] leading-[1.7] text-gray-600">
-              AI-powered system for personal branding, content generation, and workflow automation. 🌐🔗
+              AI-powered system for personal branding, content generation, and workflow automation.
             </p>
           </div>
         </div>
