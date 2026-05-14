@@ -28,7 +28,7 @@ export default function Home() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://muhammadhamd.com/#person",
+        "@id": "https://mhamd.selfbrand.app/#person",
         "name": "Muhammad Hamd",
         "alternateName": [
           "Hamd",
@@ -36,10 +36,10 @@ export default function Home() {
           "Muhammad Hamd Ali",
           "muhammadhamd"
         ],
-        "url": "https://muhammadhamd.com",
+        "url": "https://mhamd.selfbrand.app",
         "image": {
           "@type": "ImageObject",
-          "url": "https://muhammadhamd.com/hamd.png",
+          "url": "https://mhamd.selfbrand.app/hamd.png",
           "width": 400,
           "height": 400
         },
@@ -120,22 +120,22 @@ export default function Home() {
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://muhammadhamd.com/#webpage",
-        "url": "https://muhammadhamd.com",
+        "@id": "https://mhamd.selfbrand.app/#webpage",
+        "url": "https://mhamd.selfbrand.app",
         "name": "Muhammad Hamd | AI Systems Builder & Entrepreneur",
         "description": "Personal website of Muhammad Hamd (Hamd Ali), AI systems builder and technology entrepreneur from Karachi, Pakistan.",
         "inLanguage": "en-US",
         "isPartOf": {
           "@type": "WebSite",
-          "@id": "https://muhammadhamd.com/#website",
-          "url": "https://muhammadhamd.com",
+          "@id": "https://mhamd.selfbrand.app/#website",
+          "url": "https://mhamd.selfbrand.app",
           "name": "Muhammad Hamd",
-          "publisher": { "@id": "https://muhammadhamd.com/#person" }
+          "publisher": { "@id": "https://mhamd.selfbrand.app/#person" }
         },
-        "about": { "@id": "https://muhammadhamd.com/#person" },
+        "about": { "@id": "https://mhamd.selfbrand.app/#person" },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://muhammadhamd.com/hamd.png"
+          "url": "https://mhamd.selfbrand.app/hamd.png"
         }
       },
       {
@@ -145,8 +145,8 @@ export default function Home() {
         "url": "https://watbot.store",
         "applicationCategory": "BusinessApplication",
         "description": "AI-powered WhatsApp automation platform for customer support and conversational workflows, built by Muhammad Hamd.",
-        "author": { "@id": "https://muhammadhamd.com/#person" },
-        "creator": { "@id": "https://muhammadhamd.com/#person" },
+        "author": { "@id": "https://mhamd.selfbrand.app/#person" },
+        "creator": { "@id": "https://mhamd.selfbrand.app/#person" },
         "operatingSystem": "Web"
       },
       {
@@ -156,8 +156,8 @@ export default function Home() {
         "url": "https://selfbrand.app",
         "applicationCategory": "BusinessApplication",
         "description": "AI-powered personal branding SaaS for founders and professionals, built by Muhammad Hamd.",
-        "author": { "@id": "https://muhammadhamd.com/#person" },
-        "creator": { "@id": "https://muhammadhamd.com/#person" },
+        "author": { "@id": "https://mhamd.selfbrand.app/#person" },
+        "creator": { "@id": "https://mhamd.selfbrand.app/#person" },
         "operatingSystem": "Web"
       },
       {

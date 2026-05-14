@@ -8,7 +8,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://muhammadhamd.com"),
+  metadataBase: new URL("https://mhamd.selfbrand.app"),
   title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
   description:
     "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI. Building autonomous AI systems for automation and conversational workflows.",
@@ -30,23 +30,23 @@ export const metadata: Metadata = {
     "Technology Entrepreneur Pakistan",
     "AI Founder Pakistan"
   ],
-  authors: [{ name: "Muhammad Hamd", url: "https://muhammadhamd.com" }],
+  authors: [{ name: "Muhammad Hamd", url: "https://mhamd.selfbrand.app" }],
   creator: "Muhammad Hamd",
   publisher: "Muhammad Hamd",
   alternates: {
-    canonical: "https://muhammadhamd.com",
+    canonical: "https://mhamd.selfbrand.app",
   },
   openGraph: {
     title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
     description:
       "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI.",
-    url: "https://muhammadhamd.com",
+    url: "https://mhamd.selfbrand.app",
     siteName: "Muhammad Hamd",
     locale: "en_US",
     type: "profile",
     images: [
       {
-        url: "https://muhammadhamd.com/hamd.png",
+        url: "https://mhamd.selfbrand.app/hamd.png",
         width: 800,
         height: 800,
         alt: "Muhammad Hamd — AI Systems Builder",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
     description:
       "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI.",
-    images: ["https://muhammadhamd.com/hamd.png"],
+    images: ["https://mhamd.selfbrand.app/hamd.png"],
   },
   robots: {
     index: true,

@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://muhammadhamd.com';
+  const baseUrl = 'https://mhamd.selfbrand.app';
 
   const workPages = [
     'mindkeepr',
