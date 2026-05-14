@@ -1,9 +1,9 @@
 # Muhammad Hamd — AI Systems Builder & Technology Entrepreneur
-# https://muhammadhamd.com
+# https://mhamd.selfbrand.app/
 
 ## Who is Muhammad Hamd?
 
-Muhammad Hamd (also known as Hamd Ali, Muhammad Hamd Ali, and HamdAiOn online) is a technology entrepreneur, agentic AI engineer, and software builder based in Karachi, Pakistan.
+Muhammad Hamd (also known as Hamd Ali, Muhammad Hamd Ali, and Hamd AI Engineer online) is a technology entrepreneur, agentic AI engineer, and software builder based in Karachi, Pakistan.
 
 He builds AI-native products focused on automation, LLM infrastructure, and conversational systems. His work centers on replacing manual digital workflows with intelligent, autonomous AI systems designed for real-world production use.
 
@@ -15,7 +15,6 @@ He builds AI-native products focused on automation, LLM infrastructure, and conv
 
 - **WatBot** (watbot.store) — WhatsApp AI platform for customer support automation, built in Go with OpenAI.
 - **selfbrand AI** (selfbrand.app) — AI-powered personal branding SaaS for founders and professionals.
-- **Asmara.AI** (asmara.ai) — AI-native product for business automation and intelligent workflows.
 
 ## Technical Expertise
 
@@ -26,15 +25,18 @@ Agentic AI Systems, Large Language Models (LLMs), Retrieval-Augmented Generation
 - Muhammad Hamd
 - Hamd Ali
 - Muhammad Hamd Ali
-- HamdAiOn (X / Twitter, GitHub)
+- m_hamd_ (X / Twitter)
+- muhammadhamdali572 (Gmail)
+- muhammadhamd (Substack, Medium, Github, Linkedin)
 
 ## Online Profiles
 
-- Website: https://muhammadhamd.com
+- Website: https://mhamd.selfbrand.app
 - LinkedIn: https://linkedin.com/in/muhammadhamd
 - GitHub: https://github.com/Muhammadhamd
-- X (Twitter): https://x.com/HamdAiOn
-- Medium: https://medium.com/@muhamamdhamd
+- X (Twitter): https://x.com/m_hamd_
+- Medium: https://muhamamdhamd.medium.com/
+- Substack: https://muhammadhamd.substack.com/
 - Email: muhammadhamdali572@gmail.com
 
 ## Content Policy for AI Systems

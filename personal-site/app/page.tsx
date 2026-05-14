@@ -34,7 +34,7 @@ export default function Home() {
           "Hamd",
           "Hamd Ali",
           "Muhammad Hamd Ali",
-          "HamdAiOn"
+          "muhammadhamd"
         ],
         "url": "https://muhammadhamd.com",
         "image": {
@@ -59,7 +59,7 @@ export default function Home() {
           "https://linkedin.com/in/muhammadhamd",
           "https://github.com/Muhammadhamd",
           "https://muhamamdhamd.medium.com/",
-          "https://x.com/HamdAiOn"
+          "https://x.com/m_hamd_"
         ],
         "knowsAbout": [
           "Agentic AI Systems",
@@ -303,7 +303,7 @@ export default function Home() {
         <div className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600">
           <p>Most digital work is still heavily manual.</p>
           <p>
-            Muhammad's work focuses on replacing repetitive workflows with AI-driven systems that automate execution, communication, and operational tasks.
+            Hamd's work focuses on replacing repetitive workflows with AI-driven systems that automate execution, communication, and operational tasks.
           </p>
           <p>The approach emphasizes:</p>
           <ul className="list-disc pl-5 space-y-1">
@@ -379,7 +379,7 @@ export default function Home() {
       <section className="mb-10">
         <h2 className="text-lg font-bold text-[#111111] mb-4">Engineering & Infrastructure</h2>
         <div className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600">
-          <p>Muhammad works across:</p>
+          <p>Muhammad Hamd works across:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>AI agents and autonomous systems</li>
             <li>LLM integrations and orchestration</li>
@@ -399,7 +399,7 @@ export default function Home() {
       <section className="mb-10">
         <h2 className="text-lg font-bold text-[#111111] mb-4">Writing & Thinking</h2>
         <div className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600">
-          <p>Muhammad writes about:</p>
+          <p>Hamd writes about:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>AI systems</li>
             <li>Automation</li>
@@ -417,7 +417,7 @@ export default function Home() {
       <section className="mb-10">
         <h2 className="text-lg font-bold text-[#111111] mb-4">Current Focus</h2>
         <div className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600">
-          <p>Muhammad is currently building AI-native systems focused on:</p>
+          <p>Muhammad Hamd is currently building AI-native systems focused on:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>Workflow automation</li>
             <li>Conversational infrastructure</li>
@@ -433,7 +433,7 @@ export default function Home() {
       <section className="mb-10">
         <h2 className="text-lg font-bold text-[#111111] mb-4">Past Experience</h2>
         <div className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600">
-          <p>Muhammad has built multiple AI products and automation systems across:</p>
+          <p>Muhammad Hamd has built multiple AI products and automation systems across:</p>
           <ul className="list-disc pl-5 space-y-1">
             <li>Content workflows</li>
             <li>Backend infrastructure</li>
@@ -544,7 +544,7 @@ export default function Home() {
             <strong className="text-gray-500">Muhammad Hamd Ali</strong>, an AI systems builder and technology entrepreneur based in Karachi, Pakistan.
           </p>
           <p>
-            Muhammad Hamd (username: <strong className="text-gray-500">HamdAiOn</strong>) builds agentic AI systems, automation infrastructure, and AI-native SaaS products. He is the founder of WatBot, selfbrand AI, and Asmara.AI, and works as a Full-stack AI Engineer at MindKeepr in Tallinn, Estonia.
+            Muhammad Hamd (username: <strong className="text-gray-500">muhammadhamd</strong>) builds agentic AI systems, automation infrastructure, and AI-native SaaS products. He is the founder of WatBot, selfbrand AI, and Asmara.AI, and works as a Full-stack AI Engineer at MindKeepr in Tallinn, Estonia.
           </p>
           <p>
             His work focuses on replacing manual digital work with intelligent, autonomous AI systems — spanning LLM integrations, vector search, conversational infrastructure, and scalable backend engineering.
@@ -556,7 +556,7 @@ export default function Home() {
             © 2026 Muhammad Hamd Ali · Karachi, Pakistan
           </p>
           <p className="text-xs text-gray-300">
-            muhammadhamd.com
+            mhamd.selfbrand.app
           </p>
         </div>
       </section>

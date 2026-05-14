@@ -55,8 +55,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@HamdAiOn",
-    creator: "@HamdAiOn",
+    site: "@m_hamd_",
+    creator: "@m_hamd_",
     title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
     description:
       "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI.",
