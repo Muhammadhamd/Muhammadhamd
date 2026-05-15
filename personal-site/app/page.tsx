@@ -7,7 +7,7 @@ import { works } from "@/lib/data";
 const socialIcons = [
   {
     label: "Medium",
-    href: "https://muhamamdhamd.medium.com/",
+    href: "https://muhammadhamd.medium.com/",
     icon: FaMedium,
   },
   {
@@ -58,7 +58,7 @@ export default function Home() {
         "sameAs": [
           "https://linkedin.com/in/muhammadhamd",
           "https://github.com/Muhammadhamd",
-          "https://muhamamdhamd.medium.com/",
+          "https://muhammadhamd.medium.com/",
           "https://x.com/m_hamd_"
         ],
         "knowsAbout": [
