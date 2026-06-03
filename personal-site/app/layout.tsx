@@ -1,17 +1,32 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import AIWidget from "@/components/AIWidget";
+import { ogImageUrl } from "@/lib/seo";
 
-const geist = Geist({
-  variable: "--font-geist-sans",
+const HOME_OG = ogImageUrl(
+  "Agentic AI Engineer & Automation Systems Builder",
+  "Muhammad Hamd"
+);
+
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mhamd.selfbrand.app"),
-  title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
+  title:
+    "Muhammad Hamd | Agentic AI Engineer & Automation Systems Builder",
   description:
-    "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI. Building autonomous AI systems for automation and conversational workflows.",
+    "Muhammad Hamd is an agentic AI engineer and systems builder from Karachi, Pakistan. Building production-ready LLM systems, AI agents, and workflow automation. Available for hire globally.",
   keywords: [
     "Muhammad Hamd",
     "Hamd Ali",
@@ -37,19 +52,20 @@ export const metadata: Metadata = {
     canonical: "https://mhamd.selfbrand.app",
   },
   openGraph: {
-    title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
+    title:
+      "Muhammad Hamd | Agentic AI Engineer & Automation Systems Builder",
     description:
-      "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI.",
+      "Agentic AI engineer and systems builder from Karachi, Pakistan. Production-ready LLM systems, AI agents, and workflow automation. Available for hire globally.",
     url: "https://mhamd.selfbrand.app",
     siteName: "Muhammad Hamd",
     locale: "en_US",
     type: "profile",
     images: [
       {
-        url: "https://mhamd.selfbrand.app/hamd.png",
-        width: 800,
-        height: 800,
-        alt: "Muhammad Hamd — AI Systems Builder",
+        url: HOME_OG,
+        width: 1200,
+        height: 630,
+        alt: "Muhammad Hamd, Agentic AI Engineer & Automation Systems Builder",
       },
     ],
   },
@@ -57,10 +73,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@m_hamd_",
     creator: "@m_hamd_",
-    title: "Muhammad Hamd | AI Systems Builder & Entrepreneur",
+    title: "Muhammad Hamd | Agentic AI Engineer & Automation Systems Builder",
     description:
-      "Muhammad Hamd (Hamd Ali) is a technology entrepreneur and agentic AI engineer from Karachi, Pakistan. Founder of WatBot and selfbrand AI.",
-    images: ["https://mhamd.selfbrand.app/hamd.png"],
+      "Agentic AI engineer and systems builder from Karachi, Pakistan. Production-ready LLM systems, AI agents, and workflow automation. Available for hire globally.",
+    images: [HOME_OG],
   },
   robots: {
     index: true,
@@ -85,9 +101,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geist.variable} h-full`}>
-      <body className="min-h-full bg-white text-[#111111] font-sans antialiased">
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable} h-full`}
+    >
+      <body className="relative min-h-screen bg-white text-[#111111] font-sans antialiased">
         {children}
+        <AIWidget />
       </body>
     </html>
   );

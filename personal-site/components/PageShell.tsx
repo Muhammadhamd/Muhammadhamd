@@ -1,0 +1,129 @@
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { FaGithub, FaLinkedinIn, FaMedium } from "react-icons/fa6";
+
+/** Reusable JSON-LD <script> for server components. */
+export function JsonLd({ data }: { data: unknown }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+const navLinks = [
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/blog" },
+  { label: "Hire Me", href: "/hire-me" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+];
+
+const socials = [
+  { label: "Medium", href: "https://muhammadhamd.medium.com/", Icon: FaMedium },
+  { label: "LinkedIn", href: "https://linkedin.com/in/muhammadhamd", Icon: FaLinkedinIn },
+  { label: "GitHub", href: "https://github.com/Muhammadhamd", Icon: FaGithub },
+];
+
+/**
+ * Shared chrome (header + footer) for content pages (hire-me, about, contact,
+ * services, uses). Matches the site's neo-brutalist design: Space Grotesk
+ * display type, brand blue #195de6, thick borders, hard offset shadows.
+ */
+export default function PageShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-screen bg-white text-[#111111] font-sans selection:bg-blue-100 selection:text-black overflow-x-hidden">
+      {/* Header */}
+      <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b-2 border-zinc-900/5 px-6 py-4">
+        <div className="max-w-[1000px] mx-auto flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 font-display text-base font-extrabold text-zinc-950 no-underline hover:text-[#195de6] transition-colors"
+          >
+            <ArrowLeft size={16} className="text-[#195de6]" />
+            <span>Muhammad Hamd</span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-6">
+            {navLinks.map((l) => (
+              <Link
+                key={l.label}
+                href={l.href}
+                className="text-[14px] font-semibold text-zinc-600 no-underline hover:text-[#195de6] transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+          <Link
+            href="/hire-me"
+            className="hidden sm:inline-flex items-center gap-2 bg-[#195de6] text-white font-extrabold text-[13px] px-4 py-2.5 rounded-full border-2 border-zinc-950 shadow-[3px_3px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] active:translate-y-0 active:shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] transition-all no-underline"
+          >
+            Hire Me
+          </Link>
+        </div>
+      </header>
+
+      {/* Page body */}
+      <main className="max-w-[860px] mx-auto px-6 py-12 sm:py-16">{children}</main>
+
+      {/* Footer */}
+      <footer className="border-t-2 border-zinc-900/5 mt-8">
+        <div className="max-w-[1000px] mx-auto px-6 py-10">
+          <div className="grid gap-6 lg:grid-cols-3 text-[13px] leading-relaxed text-zinc-500">
+            <p>
+              <strong className="text-zinc-700">Muhammad Hamd</strong> (also known
+              as Hamd Ali) is an agentic AI engineer and systems builder based in
+              Karachi, Pakistan, available globally.
+            </p>
+            <p>
+              Founder of WatBot, selfbrand AI, and Asmara.AI. Full-stack AI
+              Engineer at MindKeepr (Tallinn, Estonia). Building production-ready
+              LLM systems and workflow automation.
+            </p>
+            <div className="flex flex-col gap-3">
+              <div className="flex items-center gap-3">
+                {socials.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-700 no-underline shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:text-[#195de6] transition-all"
+                  >
+                    <Icon size={14} />
+                  </a>
+                ))}
+              </div>
+              <p className="text-[12px] text-zinc-400">
+                © {new Date().getFullYear()} Muhammad Hamd Ali · Karachi, Pakistan
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-4 gap-y-1 border-t-2 border-zinc-900/5 pt-5 text-[12px] font-semibold text-zinc-400">
+            <span className="text-zinc-500">Hire an AI engineer:</span>
+            <Link href="/ai-engineer-pakistan" className="no-underline hover:text-[#195de6]">
+              Pakistan
+            </Link>
+            <Link href="/ai-engineer-karachi" className="no-underline hover:text-[#195de6]">
+              Karachi
+            </Link>
+            <Link href="/services" className="no-underline hover:text-[#195de6]">
+              Services
+            </Link>
+            <Link href="/blog" className="no-underline hover:text-[#195de6]">
+              Blog
+            </Link>
+            <Link href="/uses" className="no-underline hover:text-[#195de6]">
+              Uses
+            </Link>
+            <Link href="/hire-me" className="no-underline hover:text-[#195de6]">
+              Hire Me
+            </Link>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

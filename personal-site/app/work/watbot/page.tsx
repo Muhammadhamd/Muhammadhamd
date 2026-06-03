@@ -1,12 +1,8 @@
-import type { Metadata } from "next";
 import WorkPageLayout from "@/components/WorkPageLayout";
 import { works } from "@/lib/data";
+import { workMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "WatBot — Muhammad Hamd",
-  description:
-    "Founder & Software Engineer at WatBot — WhatsApp AI customer support platform built in Go with OpenAI.",
-};
+export const metadata = workMetadata("watbot");
 
 export default function WatBotPage() {
   const work = works.find((w) => w.slug === "watbot")!;
