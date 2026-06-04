@@ -26,7 +26,7 @@ export default function ContactForm() {
   };
 
   const field =
-    "w-full bg-white border-2 border-zinc-950 rounded-xl px-4 py-3 text-[14px] text-zinc-900 font-medium placeholder-zinc-400 focus:outline-none focus:border-[#195de6] shadow-[2px_2px_0px_0px_rgba(24,24,27,1)]";
+    "w-full bg-white border-2 border-zinc-950 rounded-xl px-4 py-3 text-[14px] text-zinc-900 font-medium placeholder-zinc-400 focus:outline-none focus:border-[#7c3bed] shadow-[2px_2px_0px_0px_rgba(24,24,27,1)]";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-3">
@@ -55,7 +55,7 @@ export default function ContactForm() {
       />
       <button
         type="submit"
-        className="inline-flex items-center gap-2 bg-[#195de6] text-white font-extrabold text-[15px] px-6 py-3.5 rounded-full border-2 border-zinc-950 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)] active:translate-y-0 transition-all cursor-pointer"
+        className="inline-flex items-center gap-2 bg-[#7c3bed] text-white font-extrabold text-[15px] px-6 py-3.5 rounded-full border-2 border-zinc-950 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)] active:translate-y-0 transition-all cursor-pointer"
       >
         <Send size={16} /> Send message
       </button>

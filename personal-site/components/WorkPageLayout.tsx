@@ -22,25 +22,25 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-blue-100 selection:text-black overflow-x-hidden relative pb-20">
+    <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-violet-100 selection:text-black overflow-x-hidden relative pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       {/* Decorative scattered geometric shapes matching homepage */}
-      <div className="absolute top-24 left-[8%] w-3 h-3 rounded-full bg-[#195de6] pointer-events-none" />
-      <div className="absolute top-44 right-[8%] w-3.5 h-3.5 bg-sky-400 rotate-12 pointer-events-none" />
-      <div className="absolute bottom-40 left-[10%] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-amber-400 pointer-events-none" />
+      <div className="absolute top-24 left-[8%] w-3 h-3 rounded-full bg-[#7c3bed] pointer-events-none" />
+      <div className="absolute top-44 right-[8%] w-3.5 h-3.5 bg-[#7c3bed] rotate-12 pointer-events-none" />
+      <div className="absolute bottom-40 left-[10%] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[10px] border-b-[#7c3bed] pointer-events-none" />
 
       {/* Header Container */}
       <header className="sticky top-0 z-40 bg-white/85 backdrop-blur-md border-b-2 border-zinc-900/5 px-6 py-4 mb-8">
         <div className="max-w-[800px] mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 font-display text-base font-bold text-zinc-950 no-underline hover:text-[#195de6] transition-colors"
+            className="inline-flex items-center gap-2 font-display text-base font-bold text-zinc-950 no-underline hover:text-[#7c3bed] transition-colors"
           >
-            <ArrowLeft size={16} className="text-[#195de6]" />
+            <ArrowLeft size={16} className="text-[#7c3bed]" />
             <span>Muhammad Hamd</span>
           </Link>
           <div className="flex items-center gap-2">
@@ -92,7 +92,7 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
               href={work.site}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#195de6] hover:text-[#154fc4] border-2 border-zinc-950 bg-blue-50/50 hover:bg-blue-50 rounded-full px-4 py-2 shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] transition-all no-underline"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7c3bed] hover:text-[#6d28d9] border-2 border-zinc-950 bg-violet-50/50 hover:bg-violet-50 rounded-full px-4 py-2 shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] transition-all no-underline"
             >
               <span>{work.site.replace("https://", "")}</span>
               <ExternalLink size={12} className="shrink-0" />
@@ -101,16 +101,16 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
 
           <div className="relative inline-block mt-2">
             <p className="text-zinc-600 text-sm md:text-base font-semibold italic">{work.tagline}</p>
-            <DoodleSquiggle className="w-32 text-amber-300 absolute bottom-[-6px] left-0" />
+            <DoodleSquiggle className="w-32 text-[#7c3bed] absolute bottom-[-6px] left-0" />
           </div>
 
           {/* Structured Trusted Meta Grid */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-left border-t-2 border-zinc-100 pt-6">
             {[
-              { label: "Role Title", value: work.role, color: "text-[#195de6]" },
-              { label: "Engagement", value: work.type, color: "text-sky-500" },
-              { label: "Timeframe", value: work.period, color: "text-amber-500" },
-              { label: "Location Map", value: work.location, color: "text-indigo-500" },
+              { label: "Role Title", value: work.role, color: "text-[#7c3bed]" },
+              { label: "Engagement", value: work.type, color: "text-[#7c3bed]" },
+              { label: "Timeframe", value: work.period, color: "text-[#7c3bed]" },
+              { label: "Location Map", value: work.location, color: "text-[#7c3bed]" },
             ].map(({ label, value, color }) => (
               <div key={label} className="bg-zinc-50/50 p-3.5 rounded-2xl border border-zinc-200/60">
                 <p className="text-[9px] uppercase tracking-widest text-zinc-400 font-extrabold flex items-center gap-1">
@@ -126,7 +126,7 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
         {/* Narrative Description Section resembling a clean paper-form layout */}
         <section className="bg-white border-2 border-zinc-950 rounded-3xl p-6 md:p-8 shadow-[5px_5px_0px_0px_rgba(24,24,27,1)] mb-8">
           <h3 className="font-display font-extrabold text-[15px] text-zinc-400 uppercase tracking-widest mb-6 flex items-center gap-1.5 border-b border-zinc-100 pb-2">
-            <Compass className="w-4.5 h-4.5 text-[#195de6]" />
+            <Compass className="w-4.5 h-4.5 text-[#7c3bed]" />
             Project Context & Implementation Narrative
           </h3>
           
@@ -142,7 +142,7 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
         {/* Technology Stack Grid */}
         <section className="bg-white border-2 border-zinc-950 rounded-3xl p-6 shadow-[5px_5px_0px_0px_rgba(24,24,27,1)] mb-12">
           <h3 className="font-display font-extrabold text-[12px] text-zinc-400 uppercase tracking-widest mb-4 flex items-center gap-1.5 border-b border-zinc-100 pb-2">
-            <Layers className="w-4 h-4 text-sky-500" />
+            <Layers className="w-4 h-4 text-[#7c3bed]" />
             Infrastructure & Languages Utilized
           </h3>
           <div className="flex flex-wrap gap-2 pt-2">
@@ -159,7 +159,7 @@ export default function WorkPageLayout({ work }: { work: WorkItem }) {
 
         {/* Return to Dashboard Footer */}
         <div className="border-t-2 border-zinc-900/5 pt-10 text-center relative">
-          <DoodleSparkle className="absolute top-1/2 left-4 text-violet-400 animate-pulse pointer-events-none" />
+          <DoodleSparkle className="absolute top-1/2 left-4 text-[#7c3bed] animate-pulse pointer-events-none" />
           
           <Link
             href="/"

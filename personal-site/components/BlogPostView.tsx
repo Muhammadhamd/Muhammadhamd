@@ -3,6 +3,8 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 import PageShell, { JsonLd } from "@/components/PageShell";
 import AuthorCard from "@/components/AuthorCard";
 import { FaqList, DarkCTA } from "@/components/ui";
+import AskAI from "@/components/AskAI";
+import { autoLink } from "@/lib/autolink";
 import { author, type Post } from "@/lib/blog";
 import { faqPageLd, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
 
@@ -17,6 +19,7 @@ function formatDate(iso: string) {
 }
 
 function Prose({ post }: { post: Post }) {
+  const used = new Set<string>();
   return (
     <div className="mt-8">
       {post.body.map((block, i) => {
@@ -39,7 +42,7 @@ function Prose({ post }: { post: Post }) {
           case "p":
             return (
               <p key={i} className="mt-4 text-[16px] leading-[1.75] text-zinc-700">
-                {block.text}
+                {autoLink(block.text, used)}
               </p>
             );
           case "ul":
@@ -47,7 +50,7 @@ function Prose({ post }: { post: Post }) {
               <ul key={i} className="mt-4 space-y-2.5">
                 {block.items.map((it, j) => (
                   <li key={j} className="flex items-start gap-3 text-[15.5px] leading-relaxed text-zinc-700">
-                    <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#195de6]" />
+                    <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#7c3bed]" />
                     <span>{it}</span>
                   </li>
                 ))}
@@ -58,7 +61,7 @@ function Prose({ post }: { post: Post }) {
               <ol key={i} className="mt-4 space-y-2.5">
                 {block.items.map((it, j) => (
                   <li key={j} className="flex items-start gap-3 text-[15.5px] leading-relaxed text-zinc-700">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#195de6] text-[11px] font-black text-white">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#7c3bed] text-[11px] font-black text-white">
                       {j + 1}
                     </span>
                     <span>{it}</span>
@@ -70,7 +73,7 @@ function Prose({ post }: { post: Post }) {
             return (
               <blockquote
                 key={i}
-                className="mt-6 border-l-4 border-[#195de6] bg-[#f7f9ff] px-5 py-4 text-[16px] font-medium italic leading-relaxed text-zinc-700"
+                className="mt-6 border-l-4 border-[#7c3bed] bg-[#f7f9ff] px-5 py-4 text-[16px] font-medium italic leading-relaxed text-zinc-700"
               >
                 {block.text}
               </blockquote>
@@ -79,7 +82,7 @@ function Prose({ post }: { post: Post }) {
             return (
               <pre
                 key={i}
-                className="mt-6 overflow-x-auto rounded-2xl border-2 border-zinc-950 bg-zinc-950 p-4 text-[13px] leading-relaxed text-zinc-100 shadow-[3px_3px_0px_0px_rgba(25,93,230,1)]"
+                className="mt-6 overflow-x-auto rounded-2xl border-2 border-zinc-950 bg-zinc-950 p-4 text-[13px] leading-relaxed text-zinc-100 shadow-[3px_3px_0px_0px_rgba(124,59,237,1)]"
               >
                 <code className="whitespace-pre font-mono">{block.code}</code>
               </pre>
@@ -126,7 +129,7 @@ export default function BlogPostView({ post }: { post: Post }) {
       <article>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-[13px] font-bold text-zinc-500 no-underline hover:text-[#195de6] transition-colors"
+          className="inline-flex items-center gap-1.5 text-[13px] font-bold text-zinc-500 no-underline hover:text-[#7c3bed] transition-colors"
         >
           <ArrowLeft size={14} /> All posts
         </Link>
@@ -140,6 +143,10 @@ export default function BlogPostView({ post }: { post: Post }) {
           <p className="text-[13px] font-semibold text-zinc-400">
             {formatDate(post.date)} · {post.readMinutes} min read
           </p>
+        </div>
+
+        <div className="mt-6">
+          <AskAI path={`/blog/${post.slug}`} label={post.title} />
         </div>
 
         <Prose post={post} />
@@ -168,7 +175,7 @@ export default function BlogPostView({ post }: { post: Post }) {
                 <Link
                   key={r.href}
                   href={r.href}
-                  className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#195de6] no-underline hover:gap-3 transition-all"
+                  className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#7c3bed] no-underline hover:gap-3 transition-all"
                 >
                   <ArrowRight size={16} /> {r.label}
                 </Link>

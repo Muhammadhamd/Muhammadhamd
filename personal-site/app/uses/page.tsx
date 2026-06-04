@@ -40,7 +40,7 @@ export default function UsesPage() {
         <DottedPattern className="w-[130px] h-[130px] -right-2 -top-6 opacity-60" />
         <DoodlePlayfulStar className="pointer-events-none absolute right-10 top-1 hidden h-6 w-6 lg:block" />
         <h1 className="relative inline-block font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
-          What I <span className="text-[#195de6]">Use</span>
+          What I <span className="text-[#7c3bed]">Use</span>
         </h1>
         <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-zinc-600">
           This is the actual stack I reach for when I build agentic AI systems, LLM

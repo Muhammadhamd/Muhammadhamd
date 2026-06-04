@@ -37,14 +37,14 @@ export default function AboutPage() {
         <DottedPattern className="w-[130px] h-[130px] -right-2 -top-6 opacity-60" />
         <h1 className="relative inline-block font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           From manual code to{" "}
-          <span className="text-[#195de6]">autonomous systems</span>
-          <DoodleSquiggle className="pointer-events-none absolute -bottom-3 left-0 h-2.5 w-48 text-[#195de6]/40" />
+          <span className="text-[#7c3bed]">autonomous systems</span>
+          <DoodleSquiggle className="pointer-events-none absolute -bottom-3 left-0 h-2.5 w-48 text-[#7c3bed]/40" />
         </h1>
 
         <div className="mt-9 flex flex-col gap-5 sm:flex-row sm:items-start">
           <div className="relative shrink-0">
             <DoodlePlayfulStar className="pointer-events-none absolute -right-3 -top-3 hidden h-6 w-6 sm:block" />
-            <div className="overflow-hidden rounded-2xl border-2 border-zinc-950 shadow-[5px_5px_0px_0px_rgba(25,93,230,0.95)] w-[140px]">
+            <div className="overflow-hidden rounded-2xl border-2 border-zinc-950 shadow-[5px_5px_0px_0px_rgba(124,59,237,0.95)] w-[140px]">
               <Image
                 src="/hamd.png"
                 alt="Muhammad Hamd, Agentic AI Engineer"

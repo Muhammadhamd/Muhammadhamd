@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import AIAssistant from "@/components/AIAssistant";
 import { ProfileData } from "@/lib/types";
-import { Sparkles, X } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 // Real professional data for Muhammad Hamd to power the AI twin with max precision
 const PERSONAL_PROFILE: ProfileData = {
@@ -90,27 +90,17 @@ export default function AIWidget() {
       className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 max-w-[90vw]"
     >
       {isAiOpen ? (
-        <div className="w-[360px] md:w-[410px] max-w-[90vw] h-[580px] rounded-3xl bg-white border-4 border-zinc-950 shadow-[8px_8px_0px_0px_rgba(25,93,230,1)] flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300 relative">
-          {/* Embedded Close Button with Neo-brutalist circle styling */}
-          <button
-            onClick={() => setIsAiOpen(false)}
-            className="absolute top-4 right-14 z-50 p-1.5 w-8 h-8 rounded-full border-2 border-zinc-950 bg-rose-100 text-zinc-950 hover:bg-rose-200 hover:scale-105 active:scale-95 shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] transition-all flex items-center justify-center cursor-pointer"
-            title="Close chat"
-          >
-            <X className="w-4.5 h-4.5 stroke-[2.5]" />
-          </button>
-          <div className="flex-1 overflow-hidden">
-            <AIAssistant profile={PERSONAL_PROFILE} />
-          </div>
+        <div className="flex h-[560px] w-[370px] max-w-[90vw] flex-col overflow-hidden rounded-2xl border-2 border-zinc-950 bg-white shadow-[4px_4px_0px_0px_rgba(124,59,237,1)] animate-in fade-in slide-in-from-bottom-3 duration-200 md:w-[400px]">
+          <AIAssistant profile={PERSONAL_PROFILE} onClose={() => setIsAiOpen(false)} />
         </div>
       ) : (
         <button
           onClick={() => setIsAiOpen(true)}
-          className="flex items-center gap-2.5 bg-white hover:bg-zinc-50 text-zinc-950 font-extrabold text-[13.5px] px-6 py-4 rounded-full border-2 border-zinc-950 shadow-[4px_4px_0px_0px_rgba(25,93,230,1)] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_rgba(25,93,230,1)] active:translate-x-[0px] active:translate-y-[0px] transition-all cursor-pointer"
           id="floating-ai-trigger"
+          className="flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-white px-5 py-3 text-[13.5px] font-bold text-zinc-950 shadow-[3px_3px_0px_0px_rgba(124,59,237,1)] transition-colors hover:bg-violet-50 cursor-pointer"
         >
-          <Sparkles className="w-4.5 h-4.5 text-[#195de6] animate-pulse" />
-          <span>Chat with Hamd&apos;s AI Clone</span>
+          <Sparkles className="h-4 w-4 text-[#7c3bed]" />
+          <span>Chat with my AI twin</span>
         </button>
       )}
     </div>

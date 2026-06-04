@@ -50,7 +50,7 @@ export default function BlogIndexPage() {
         <DoodleSparkle className="pointer-events-none absolute -left-2 top-1 hidden h-6 w-6 lg:block" />
         <h1 className="font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           AI Engineering &amp; Automation,{" "}
-          <span className="text-[#195de6]">from the build side</span>
+          <span className="text-[#7c3bed]">from the build side</span>
         </h1>
         <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-zinc-600">
           Practical guides on agentic AI, LLM integration, RAG, and automation. Every article
@@ -73,18 +73,18 @@ export default function BlogIndexPage() {
             style={{ backgroundColor: TINTS[i % TINTS.length] }}
           >
             <div className="flex items-center justify-between gap-4">
-              <span className="font-display text-[11px] font-black uppercase tracking-[0.16em] text-[#195de6]">
+              <span className="font-display text-[11px] font-black uppercase tracking-[0.16em] text-[#7c3bed]">
                 {p.cluster}
               </span>
               <span className="text-[12px] font-semibold text-zinc-400">
                 {fmt(p.date)} · {p.readMinutes} min
               </span>
             </div>
-            <h2 className="mt-2 font-display text-[21px] font-extrabold leading-snug text-zinc-950 transition-colors group-hover:text-[#195de6]">
+            <h2 className="mt-2 font-display text-[21px] font-extrabold leading-snug text-zinc-950 transition-colors group-hover:text-[#7c3bed]">
               {p.title}
             </h2>
             <p className="mt-2 text-[14.5px] leading-relaxed text-zinc-600">{p.excerpt}</p>
-            <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-bold text-[#195de6]">
+            <span className="mt-3 inline-flex items-center gap-1 text-[13px] font-bold text-[#7c3bed]">
               Read article <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </span>
           </Link>

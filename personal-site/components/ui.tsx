@@ -36,10 +36,10 @@ export function SectionHeader({
         {title}
       </h2>
       {doodle === "squiggle" && (
-        <DoodleSquiggle className={`h-2.5 ${align === "center" ? "w-44 mx-auto" : "w-40"} text-[#195de6]/40 mt-2`} />
+        <DoodleSquiggle className={`h-2.5 ${align === "center" ? "w-44 mx-auto" : "w-40"} text-[#7c3bed]/40 mt-2`} />
       )}
       {doodle === "double" && (
-        <DoodleDoubleUnderline className={`h-2.5 ${align === "center" ? "w-52 mx-auto" : "w-48"} text-amber-400 mt-2`} />
+        <DoodleDoubleUnderline className={`h-2.5 ${align === "center" ? "w-52 mx-auto" : "w-48"} text-[#7c3bed] mt-2`} />
       )}
     </div>
   );
@@ -57,7 +57,7 @@ export function CheckList({
     <ul className={`mt-6 grid gap-x-8 gap-y-3 ${columns === 2 ? "sm:grid-cols-2" : ""}`}>
       {items.map((it) => (
         <li key={it} className="flex items-start gap-3 text-[15.5px] leading-relaxed text-zinc-700">
-          <span className="mt-0.5 shrink-0 font-extrabold text-[#195de6]">✓</span>
+          <span className="mt-0.5 shrink-0 font-extrabold text-[#7c3bed]">✓</span>
           <span>{it}</span>
         </li>
       ))}
@@ -71,7 +71,7 @@ export function StarList({ items }: { items: string[] }) {
     <ul className="mt-3 space-y-1.5 text-[14px] font-medium text-zinc-600">
       {items.map((it) => (
         <li key={it} className="flex items-start gap-2">
-          <span className="text-amber-500">✦</span>
+          <span className="text-[#7c3bed]">✦</span>
           <span>{it}</span>
         </li>
       ))}
@@ -82,7 +82,7 @@ export function StarList({ items }: { items: string[] }) {
 /* ── Light pill (subtle, not heavy bordered) ── */
 export function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <span className="rounded-full border border-zinc-200/70 bg-zinc-50 px-3 py-1.5 text-[13px] font-bold text-zinc-600 transition-colors hover:border-[#195de6]/40 hover:text-zinc-900">
+    <span className="rounded-full border border-zinc-200/70 bg-zinc-50 px-3 py-1.5 text-[13px] font-bold text-zinc-600 transition-colors hover:border-[#7c3bed]/40 hover:text-zinc-900">
       {children}
     </span>
   );
@@ -101,10 +101,10 @@ export function PillRow({ items }: { items: string[] }) {
 /* ── Tinted feature card with a colored accent (bento style) ── */
 const TINTS = ["#fafbfd", "#fdfafb", "#fcfcfa", "#f7f9ff"];
 const ACCENTS = [
-  { bg: "bg-amber-100", text: "text-amber-600" },
-  { bg: "bg-sky-100", text: "text-sky-600" },
-  { bg: "bg-blue-50", text: "text-[#195de6]" },
-  { bg: "bg-violet-100", text: "text-violet-600" },
+  { bg: "bg-violet-50", text: "text-[#7c3bed]" },
+  { bg: "bg-violet-100", text: "text-[#7c3bed]" },
+  { bg: "bg-violet-50", text: "text-[#7c3bed]" },
+  { bg: "bg-violet-100", text: "text-[#7c3bed]" },
 ];
 
 export function FeatureCard({
@@ -145,7 +145,7 @@ export function FaqList({ faqs }: { faqs: { q: string; a: string }[] }) {
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-display text-[15px] font-bold text-zinc-950">
             {f.q}
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-[#195de6] transition-transform group-open:rotate-45">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-50 text-[#7c3bed] transition-transform group-open:rotate-45">
               +
             </span>
           </summary>
@@ -170,7 +170,7 @@ export function DarkCTA({
   secondary?: { label: string; href: string };
 }) {
   return (
-    <div className="relative overflow-hidden rounded-3xl border-4 border-zinc-950 bg-[#18181b] p-8 md:p-12 text-white shadow-[8px_8px_0px_0px_rgba(25,93,230,0.95)]">
+    <div className="relative overflow-hidden rounded-3xl border-4 border-zinc-950 bg-[#18181b] p-8 md:p-12 text-white shadow-[8px_8px_0px_0px_rgba(124,59,237,0.95)]">
       <DottedPattern className="w-[150px] h-[150px] right-2 top-2 opacity-10" />
       <div className="relative grid items-center gap-8 md:grid-cols-12">
         <div className="md:col-span-8 text-center md:text-left">
@@ -182,7 +182,7 @@ export function DarkCTA({
             href={primary.href}
             target={primary.href.startsWith("http") ? "_blank" : undefined}
             rel={primary.href.startsWith("http") ? "noopener noreferrer" : undefined}
-            className="inline-flex w-full items-center justify-center rounded-full border-2 border-white/20 bg-[#195de6] px-6 py-3.5 font-display text-[13px] font-bold text-white no-underline transition-all hover:bg-[#124cb8]"
+            className="inline-flex w-full items-center justify-center rounded-full border-2 border-white/20 bg-[#7c3bed] px-6 py-3.5 font-display text-[13px] font-bold text-white no-underline transition-all hover:bg-[#6d28d9]"
           >
             {primary.label}
           </a>
@@ -206,12 +206,12 @@ export function DarkCTA({
 export function Scatter() {
   return (
     <>
-      <DoodleLoop className="pointer-events-none absolute right-[4%] top-10 hidden h-12 w-12 rotate-12 text-blue-200 lg:block" />
-      <DoodleArrowCurly className="pointer-events-none absolute left-[3%] top-1/3 hidden h-12 w-12 -rotate-12 text-sky-400 lg:block" />
+      <DoodleLoop className="pointer-events-none absolute right-[4%] top-10 hidden h-12 w-12 rotate-12 text-violet-200 lg:block" />
+      <DoodleArrowCurly className="pointer-events-none absolute left-[3%] top-1/3 hidden h-12 w-12 -rotate-12 text-[#7c3bed] lg:block" />
       <DoodlePlayfulStar className="pointer-events-none absolute right-[8%] bottom-24 hidden h-6 w-6 lg:block" />
       <DoodleSparkle className="pointer-events-none absolute left-[8%] bottom-1/4 hidden h-6 w-6 lg:block" />
-      <span className="pointer-events-none absolute left-[6%] top-24 hidden h-3 w-3 rounded-full bg-[#195de6] lg:block" />
-      <span className="pointer-events-none absolute right-[6%] top-1/2 hidden h-3 w-3 rotate-45 bg-amber-400 lg:block" />
+      <span className="pointer-events-none absolute left-[6%] top-24 hidden h-3 w-3 rounded-full bg-[#7c3bed] lg:block" />
+      <span className="pointer-events-none absolute right-[6%] top-1/2 hidden h-3 w-3 rotate-45 bg-zinc-950 lg:block" />
     </>
   );
 }

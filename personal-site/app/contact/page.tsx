@@ -44,7 +44,7 @@ export default function ContactPage() {
         <DoodleSparkle className="pointer-events-none absolute -left-2 top-1 hidden h-6 w-6 lg:block" />
         <h1 className="font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           Let&apos;s talk about your{" "}
-          <span className="text-[#195de6]">AI system</span>
+          <span className="text-[#7c3bed]">AI system</span>
         </h1>
         <p className="mt-5 max-w-[58ch] text-[16px] leading-relaxed text-zinc-600">
           Tell me what you&apos;re trying to build or automate. I read every message and reply
@@ -56,7 +56,7 @@ export default function ContactPage() {
 
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         {/* Form */}
-        <div className="rounded-3xl border-2 border-zinc-950 bg-[#fafafc] p-6 shadow-[5px_5px_0px_0px_rgba(25,93,230,0.95)] sm:p-7">
+        <div className="rounded-3xl border-2 border-zinc-950 bg-[#fafafc] p-6 shadow-[5px_5px_0px_0px_rgba(124,59,237,0.95)] sm:p-7">
           <h2 className="mb-4 font-display text-[18px] font-extrabold text-zinc-950">Send a message</h2>
           <ContactForm />
         </div>
@@ -71,7 +71,7 @@ export default function ContactPage() {
               rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="group flex items-center gap-3 rounded-2xl border-2 border-zinc-100 bg-white p-4 no-underline transition-all hover:border-zinc-950 hover:shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
             >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#195de6]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-[#7c3bed]">
                 <Icon size={17} />
               </span>
               <div>
@@ -83,10 +83,10 @@ export default function ContactPage() {
 
           <div className="rounded-2xl border-2 border-zinc-100 bg-[#f7f9ff] p-4">
             <div className="flex items-center gap-2 text-[13px] font-bold text-zinc-700">
-              <MapPin size={15} className="text-[#195de6]" /> Karachi, Pakistan
+              <MapPin size={15} className="text-[#7c3bed]" /> Karachi, Pakistan
             </div>
             <div className="mt-2 flex items-center gap-2 text-[13px] font-bold text-zinc-700">
-              <Clock size={15} className="text-[#195de6]" /> UTC+5, overlapping EU mornings and US evenings
+              <Clock size={15} className="text-[#7c3bed]" /> UTC+5, overlapping EU mornings and US evenings
             </div>
           </div>
         </div>

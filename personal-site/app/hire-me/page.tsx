@@ -95,9 +95,9 @@ export default function HireMePage() {
 
         <h1 className="relative inline-block font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           Hire an Agentic AI Engineer Who Ships{" "}
-          <span className="relative inline-block text-[#195de6]">
+          <span className="relative inline-block text-[#7c3bed]">
             Production Systems
-            <DoodleLoop className="pointer-events-none absolute -right-12 -top-5 hidden h-10 w-10 text-blue-200 lg:block" />
+            <DoodleLoop className="pointer-events-none absolute -right-12 -top-5 hidden h-10 w-10 text-violet-200 lg:block" />
           </span>
         </h1>
         <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-zinc-600">
@@ -111,13 +111,13 @@ export default function HireMePage() {
         <div className="mt-7 flex flex-wrap gap-3">
           <a
             href="mailto:muhammadhamdali572@gmail.com"
-            className="group inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-[#195de6] px-6 py-3.5 text-[15px] font-extrabold text-white no-underline shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]"
+            className="group inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-[#7c3bed] px-6 py-3.5 text-[15px] font-extrabold text-white no-underline shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]"
           >
             <Mail size={17} /> Start a project
           </a>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-white px-6 py-3.5 text-[15px] font-extrabold text-zinc-950 no-underline transition-all hover:-translate-y-0.5 hover:text-[#195de6]"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-white px-6 py-3.5 text-[15px] font-extrabold text-zinc-950 no-underline transition-all hover:-translate-y-0.5 hover:text-[#7c3bed]"
           >
             Book a call <ArrowRight size={16} />
           </Link>
@@ -139,12 +139,12 @@ export default function HireMePage() {
       {/* My process */}
       <section className="relative mt-20">
         <SectionHeader kicker="How it goes" title="My process" doodle="double" />
-        <DoodleArrowCurly className="pointer-events-none absolute left-[34%] top-2 hidden h-11 w-11 -rotate-12 text-sky-400 lg:block" />
-        <DoodleLoop className="pointer-events-none absolute left-[66%] top-4 hidden h-11 w-11 rotate-45 text-blue-200 lg:block" />
+        <DoodleArrowCurly className="pointer-events-none absolute left-[34%] top-2 hidden h-11 w-11 -rotate-12 text-[#7c3bed] lg:block" />
+        <DoodleLoop className="pointer-events-none absolute left-[66%] top-4 hidden h-11 w-11 rotate-45 text-violet-200 lg:block" />
         <div className="mt-8 grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
           {process.map((p, i) => (
             <div key={p.title}>
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 font-display text-[17px] font-black text-[#195de6]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-violet-50 font-display text-[17px] font-black text-[#7c3bed]">
                 {i + 1}
               </div>
               <h3 className="mt-3 font-display text-[16px] font-extrabold text-zinc-950">{p.title}</h3>
@@ -173,11 +173,11 @@ export default function HireMePage() {
                   )}
                 </div>
                 <div>
-                  <p className="font-display text-[15px] font-bold text-zinc-950 transition-colors group-hover:text-[#195de6]">{w.company}</p>
+                  <p className="font-display text-[15px] font-bold text-zinc-950 transition-colors group-hover:text-[#7c3bed]">{w.company}</p>
                   <p className="text-[12.5px] text-zinc-500">{w.role}</p>
                 </div>
               </div>
-              <ArrowRight size={16} className="shrink-0 text-zinc-300 transition-colors group-hover:text-[#195de6]" />
+              <ArrowRight size={16} className="shrink-0 text-zinc-300 transition-colors group-hover:text-[#7c3bed]" />
             </Link>
           ))}
         </div>

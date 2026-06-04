@@ -39,7 +39,7 @@ export default function ServicesIndexPage() {
         <DoodleSparkle className="pointer-events-none absolute -left-2 top-1 hidden h-6 w-6 lg:block" />
         <h1 className="font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           AI Engineering &amp; Automation{" "}
-          <span className="relative inline-block text-[#195de6]">Services</span>
+          <span className="relative inline-block text-[#7c3bed]">Services</span>
         </h1>
         <p className="mt-5 max-w-[60ch] text-[16px] leading-relaxed text-zinc-600">
           I&apos;m <strong className="text-zinc-900">Muhammad Hamd</strong>, an agentic AI
@@ -60,10 +60,10 @@ export default function ServicesIndexPage() {
               style={{ backgroundColor: tints[i % tints.length] }}
             >
               <div className="flex items-start justify-between gap-3">
-                <h2 className="font-display text-[19px] font-extrabold text-zinc-950 transition-colors group-hover:text-[#195de6]">
+                <h2 className="font-display text-[19px] font-extrabold text-zinc-950 transition-colors group-hover:text-[#7c3bed]">
                   {s.name}
                 </h2>
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-500 transition-colors group-hover:bg-[#195de6] group-hover:text-white">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-500 transition-colors group-hover:bg-[#7c3bed] group-hover:text-white">
                   <ArrowUpRight size={16} />
                 </span>
               </div>

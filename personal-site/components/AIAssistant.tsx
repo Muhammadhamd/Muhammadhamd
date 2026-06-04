@@ -1,245 +1,192 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { Send, Bot, User, Sparkles, RefreshCw, AlertCircle, MessageSquare } from "lucide-react";
+import { Send, Sparkles, RotateCcw, X } from "lucide-react";
 import { ChatMessage, ProfileData } from "@/lib/types";
 
 interface AIAssistantProps {
   profile: ProfileData;
+  onClose?: () => void;
 }
 
-export default function AIAssistant({ profile }: AIAssistantProps) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      id: "welcome",
-      role: "assistant",
-      content: `Hi! I am ${profile.name}'s AI assistant. Ask me anything about my background, core expertise, previous projects, or work history!`,
-      timestamp: new Date()
-    }
-  ]);
+export default function AIAssistant({ profile, onClose }: AIAssistantProps) {
+  const welcome: ChatMessage = {
+    id: "welcome",
+    role: "assistant",
+    content: `Hey, I'm ${profile.name}'s AI twin. Ask me about my work, services, or anything on the site.`,
+    timestamp: new Date(),
+  };
+  const [messages, setMessages] = useState<ChatMessage[]>([welcome]);
   const [inputText, setInputText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errorStatus, setErrorStatus] = useState<string | null>(null);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const endRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to the bottom when new message arrives
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isLoading]);
 
-  const handleSendMessage = async (textToSend: string) => {
-    if (!textToSend.trim() || isLoading) return;
-
-    setErrorStatus(null);
-    const userMsgId = `user-${Date.now()}`;
+  const send = async (text: string) => {
+    if (!text.trim() || isLoading) return;
     const userMessage: ChatMessage = {
-      id: userMsgId,
+      id: `user-${Date.now()}`,
       role: "user",
-      content: textToSend,
-      timestamp: new Date()
+      content: text,
+      timestamp: new Date(),
     };
-
     setMessages((prev) => [...prev, userMessage]);
     setInputText("");
     setIsLoading(true);
 
     try {
-      // Keep only last 8 messages for context to optimize token limits and speed
-      const chatHistoryForBackend = messages
-        .filter((msg) => msg.id !== "welcome")
+      const history = messages
+        .filter((m) => m.id !== "welcome")
         .slice(-8)
-        .map((msg) => ({
-          role: msg.role,
-          content: msg.content
-        }));
+        .map((m) => ({ role: m.role, content: m.content }));
 
       const res = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: textToSend,
-          history: chatHistoryForBackend,
-          systemPrompt: profile.customSystemPrompt
-        })
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: text, history }),
       });
-
       const data = await res.json();
+      const content = res.ok
+        ? data.text || "I couldn't put that into words. Try rephrasing?"
+        : data.error || "Something went wrong. Please try again.";
 
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to fetch response from API");
-      }
-
-      const assistantMessage: ChatMessage = {
-        id: `ai-${Date.now()}`,
-        role: "assistant",
-        content: data.text || "I was unable to formulate a response. Please try reframing.",
-        timestamp: new Date()
-      };
-
-      setMessages((prev) => [...prev, assistantMessage]);
-    } catch (err: any) {
-      console.error("Chat error:", err);
-      // Give a helpful message to guide them on setup
-      setErrorStatus(err.message || "Something went wrong.");
-      
+      setMessages((prev) => [
+        ...prev,
+        { id: `ai-${Date.now()}`, role: "assistant", content, timestamp: new Date() },
+      ]);
+    } catch {
       setMessages((prev) => [
         ...prev,
         {
           id: `err-${Date.now()}`,
           role: "assistant",
-          content: `⚠️ System Note: I ran into an issue connecting with Gemini. If you are running this app for the first time, please make sure to add your **GEMINI_API_KEY** in the Secrets panel in Google AI Studio, then restart or reload.`,
-          timestamp: new Date()
-        }
+          content: "I'm having trouble connecting right now. Please try again in a moment.",
+          timestamp: new Date(),
+        },
       ]);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleSendMessage(inputText);
-  };
-
-  const handleResetChat = () => {
-    setMessages([
-      {
-        id: "welcome",
-        role: "assistant",
-        content: `Hi! Let's start over. I am ${profile.name}'s AI assistant. What would you like to know about me?`,
-        timestamp: new Date()
-      }
-    ]);
-    setErrorStatus(null);
-  };
+  const reset = () => setMessages([{ ...welcome, timestamp: new Date() }]);
 
   return (
-    <div id="ai-assistant-sec" className="bg-[#fafafc] overflow-hidden flex flex-col h-full relative font-sans">
-      {/* Bot Chat Header / Drag handle area with Neo-brutalist thick border */}
-      <div className="bg-zinc-100 px-5 py-4 border-b-4 border-zinc-950 flex items-center justify-between select-none">
-        <div className="flex items-center gap-3">
-          <div className="relative">
-            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center border-2 border-[#195de6]">
-              <Sparkles className="w-5 h-5 text-[#195de6]" />
-            </div>
-            <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 border-2 border-zinc-950 rounded-full"></span>
+    <div id="ai-assistant-sec" className="flex h-full flex-col bg-white font-sans">
+      {/* Header */}
+      <div className="flex items-center justify-between border-b-2 border-zinc-950 bg-white px-4 py-3">
+        <div className="flex items-center gap-2.5">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-full border-2 border-zinc-950 bg-violet-100">
+            <Sparkles className="h-4 w-4 text-[#7c3bed]" />
+            <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border border-zinc-950 bg-emerald-500" />
           </div>
-          <div className="text-left">
-            <h4 className="font-display font-display font-extrabold text-zinc-900 text-sm tracking-wide flex items-center gap-1.5 leading-none">
-              <span>{profile.name}</span>
-              <span className="text-[9px] bg-[#195de6] text-white font-black px-2 py-0.5 rounded-full uppercase tracking-wider">CLONE</span>
-            </h4>
-            <p className="text-[10px] text-zinc-500 font-bold mt-1">Powered by Gemini 3.5 Flash</p>
+          <div className="leading-tight">
+            <p className="font-display text-[13.5px] font-bold text-zinc-950">
+              {profile.name}&apos;s AI twin
+            </p>
+            <p className="text-[11px] text-zinc-500">Replies in his voice</p>
           </div>
         </div>
-
-        <button
-          onClick={handleResetChat}
-          title="Reset conversation"
-          className="p-2 border-2 border-zinc-950 bg-white hover:bg-zinc-50 text-zinc-900 hover:scale-105 active:scale-95 shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] rounded-xl transition-all cursor-pointer flex items-center justify-center"
-          id="btn-reset-chat"
-        >
-          <RefreshCw className="w-3.5 h-3.5 stroke-[2.5]" />
-        </button>
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={reset}
+            title="Reset conversation"
+            id="btn-reset-chat"
+            className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-600 transition-colors hover:text-[#7c3bed] cursor-pointer"
+          >
+            <RotateCcw className="h-3.5 w-3.5" />
+          </button>
+          {onClose && (
+            <button
+              onClick={onClose}
+              title="Close chat"
+              className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-600 transition-colors hover:text-rose-600 cursor-pointer"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Messages Scroll Area */}
-      <div className="flex-1 p-5 overflow-y-auto space-y-5 bg-[#fafafc]">
+      {/* Messages */}
+      <div className="flex-1 space-y-4 overflow-y-auto bg-[#fbfaff] p-4">
         {messages.map((msg) => {
           const isAi = msg.role === "assistant";
           return (
             <div
               key={msg.id}
-              className={`flex gap-3 max-w-[85%] ${isAi ? "mr-auto" : "ml-auto flex-row-reverse"}`}
               id={`chat-msg-${msg.id}`}
+              className={`flex ${isAi ? "justify-start" : "justify-end"}`}
             >
-              {/* Profile Badge inside Chat */}
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-black border-2 border-zinc-950 shadow-[1.5px_1.5px_0px_0px_rgba(24,24,27,1)] ${
+                className={`max-w-[85%] whitespace-pre-wrap border-2 border-zinc-950 px-3.5 py-2.5 text-[13.5px] leading-relaxed ${
                   isAi
-                    ? "bg-amber-150 text-zinc-900"
-                    : "bg-blue-100 text-zinc-900"
+                    ? "rounded-2xl rounded-tl-sm bg-white text-zinc-800"
+                    : "rounded-2xl rounded-tr-sm bg-[#7c3bed] font-medium text-white"
                 }`}
               >
-                {isAi ? <Bot className="w-4 h-4 stroke-[2.5]" /> : <User className="w-4 h-4 stroke-[2.5]" />}
-              </div>
-
-              {/* Message Bubble */}
-              <div
-                className={`p-3.5 rounded-2xl text-sm leading-relaxed border-2 border-zinc-950 shadow-[3px_3px_0px_0px_rgba(24,24,27,1)] ${
-                  isAi
-                    ? "bg-white text-zinc-800 rounded-tl-none font-medium"
-                    : "bg-[#195de6] text-white rounded-tr-none font-semibold"
-                }`}
-              >
-                <div className="whitespace-pre-wrap font-sans">{msg.content}</div>
-                <div className={`mt-2 text-[9px] font-bold text-right ${isAi ? "text-zinc-400" : "text-blue-200"}`}>
-                  {new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                </div>
+                {msg.content}
               </div>
             </div>
           );
         })}
 
-        {/* Loading Indicator */}
         {isLoading && (
-          <div className="flex gap-3 max-w-[85%] mr-auto" id="chat-msg-loading">
-            <div className="w-8 h-8 rounded-full bg-amber-100 border-2 border-zinc-950 flex items-center justify-center">
-              <Bot className="w-4 h-4 animate-bounce shrink-0 text-zinc-950" />
-            </div>
-            <div className="p-4 bg-white text-zinc-600 border-2 border-zinc-950 rounded-2xl rounded-tl-none text-sm flex items-center gap-2.5 shadow-[3px_3px_0px_0px_rgba(24,24,27,1)] font-semibold">
-              <span className="dot-pulse-loading flex gap-1">
-                <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce"></span>
-                <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce [animation-delay:0.2s]"></span>
-                <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce [animation-delay:0.4s]"></span>
-              </span>
-              <span>Twin AI is typing...</span>
+          <div className="flex justify-start" id="chat-msg-loading">
+            <div className="flex items-center gap-1.5 rounded-2xl rounded-tl-sm border-2 border-zinc-950 bg-white px-4 py-3">
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#7c3bed]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#7c3bed] [animation-delay:0.15s]" />
+              <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-[#7c3bed] [animation-delay:0.3s]" />
             </div>
           </div>
         )}
-        <div ref={messagesEndRef} />
+        <div ref={endRef} />
       </div>
 
-      {/* Suggested Chat Pills context-styled */}
+      {/* Suggestions */}
       {messages.length === 1 && (
-        <div className="px-5 py-3 border-t-2 border-zinc-950 bg-[#f3f4f6]/65">
-          <p className="text-[9px] text-zinc-400 mb-2 font-black tracking-widest uppercase">SUGGESTED DISCUSSIONS</p>
-          <div className="flex flex-wrap gap-2">
-            {profile.chatSuggestions.map((suggestion: string, idx: number) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleSendMessage(suggestion)}
-                className="text-[11px] bg-white hover:bg-amber-50 border-2 border-zinc-950 text-zinc-800 hover:text-zinc-900 font-extrabold px-3 py-1.5 rounded-full transition-all shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] hover:translate-y-[-1px] hover:shadow-[3px_3px_0px_0px_rgba(24,24,27,1)] text-left cursor-pointer"
-                id={`btn-suggest-${idx}`}
-              >
-                {suggestion}
-              </button>
-            ))}
-          </div>
+        <div className="flex flex-wrap gap-2 bg-[#fbfaff] px-4 pb-2 pt-1">
+          {profile.chatSuggestions.map((s, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => send(s)}
+              id={`btn-suggest-${i}`}
+              className="rounded-full border-2 border-zinc-950 bg-white px-3 py-1.5 text-[11.5px] font-semibold text-zinc-700 transition-colors hover:bg-violet-50 hover:text-[#7c3bed] cursor-pointer"
+            >
+              {s}
+            </button>
+          ))}
         </div>
       )}
 
-      {/* Chat Input Form with Neo-brutalist theme */}
-      <form onSubmit={handleFormSubmit} className="p-4 border-t-4 border-zinc-950 bg-zinc-100 flex gap-2">
+      {/* Input */}
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          send(inputText);
+        }}
+        className="flex items-center gap-2 border-t-2 border-zinc-950 bg-white p-3"
+      >
         <input
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder={`Ask ${profile.name}'s clone...`}
+          placeholder="Ask me anything…"
           disabled={isLoading}
-          className="flex-1 bg-white border-2 border-zinc-950 rounded-xl px-4 py-3 text-sm text-zinc-900 font-bold placeholder-zinc-400 focus:outline-none focus:border-[#195de6] focus:ring-0 shadow-inner"
           id="input-chat-text"
+          className="flex-1 rounded-full border-2 border-zinc-950 bg-white px-4 py-2.5 text-[13.5px] text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#7c3bed]/30 transition"
         />
         <button
           type="submit"
           disabled={!inputText.trim() || isLoading}
-          className="bg-[#195de6] hover:bg-[#124cb8] disabled:bg-zinc-200 disabled:text-zinc-400 border-2 border-zinc-950 text-white font-black p-3 rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(24,24,27,1)] hover:shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 active:translate-y-0 disabled:translate-y-0 disabled:shadow-none transition-all cursor-pointer"
           id="btn-send-message"
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-zinc-950 bg-[#7c3bed] text-white transition-colors hover:bg-[#6d28d9] disabled:cursor-not-allowed disabled:border-zinc-300 disabled:bg-zinc-200 disabled:text-zinc-400 cursor-pointer"
         >
-          <Send className="w-4 h-4 stroke-[2.5]" />
+          <Send className="h-4 w-4" />
         </button>
       </form>
     </div>

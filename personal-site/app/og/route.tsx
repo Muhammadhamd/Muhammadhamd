@@ -11,7 +11,7 @@ const photoData = `data:image/png;base64,${readFileSync(
 ).toString("base64")}`;
 
 const INK = "#18181b";
-const BLUE = "#195de6";
+const BLUE = "#7c3bed";
 
 export function GET(request: Request) {
   const { searchParams } = new URL(request.url);

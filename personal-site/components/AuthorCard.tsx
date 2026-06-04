@@ -56,7 +56,7 @@ export default function AuthorCard({
           <h3 className="mt-1 font-display text-[18px] font-extrabold text-zinc-950">
             {author.name}
           </h3>
-          <p className="text-[13px] font-bold text-[#195de6]">{author.title}</p>
+          <p className="text-[13px] font-bold text-[#7c3bed]">{author.title}</p>
           <p className="mt-3 text-[14px] leading-relaxed text-zinc-600">
             {author.longBio}
           </p>
@@ -74,7 +74,7 @@ export default function AuthorCard({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-700 no-underline shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:text-[#195de6] transition-all"
+                className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-zinc-950 bg-white text-zinc-700 no-underline shadow-[2px_2px_0px_0px_rgba(24,24,27,1)] hover:-translate-y-0.5 hover:text-[#7c3bed] transition-all"
               >
                 <Icon size={14} />
               </a>

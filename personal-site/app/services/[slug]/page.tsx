@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Mail } from "lucide-react";
 import PageShell, { JsonLd } from "@/components/PageShell";
+import AskAI from "@/components/AskAI";
 import {
   SectionHeader,
   CheckList,
@@ -77,12 +78,12 @@ export default async function ServicePage({
       {/* Hero */}
       <section className="relative">
         <DottedPattern className="w-[130px] h-[130px] -right-2 -top-6 opacity-60" />
-        <span className="pointer-events-none absolute -left-3 top-2 hidden h-3 w-3 rounded-full bg-[#195de6] sm:block" />
-        <span className="pointer-events-none absolute right-10 top-0 hidden h-3.5 w-3.5 rotate-45 bg-amber-400 sm:block" />
+        <span className="pointer-events-none absolute -left-3 top-2 hidden h-3 w-3 rounded-full bg-[#7c3bed] sm:block" />
+        <span className="pointer-events-none absolute right-10 top-0 hidden h-3.5 w-3.5 rotate-45 bg-[#7c3bed] sm:block" />
 
         <h1 className="relative inline-block font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
           {svc.h1}
-          <DoodleLoop className="pointer-events-none absolute -right-12 -top-6 hidden h-10 w-10 text-blue-200 lg:block" />
+          <DoodleLoop className="pointer-events-none absolute -right-12 -top-6 hidden h-10 w-10 text-violet-200 lg:block" />
         </h1>
         <p className="mt-5 max-w-[62ch] text-[16px] leading-relaxed text-zinc-600">
           {svc.intro}
@@ -90,17 +91,21 @@ export default async function ServicePage({
         <div className="mt-7 flex flex-wrap gap-3">
           <a
             href="mailto:muhammadhamdali572@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-[#195de6] px-6 py-3.5 text-[15px] font-extrabold text-white no-underline shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-[#7c3bed] px-6 py-3.5 text-[15px] font-extrabold text-white no-underline shadow-[4px_4px_0px_0px_rgba(24,24,27,1)] transition-all hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_rgba(24,24,27,1)]"
           >
             <Mail size={17} /> Start a project
           </a>
           <Link
             href="/hire-me"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-white px-6 py-3.5 text-[15px] font-extrabold text-zinc-950 no-underline transition-all hover:-translate-y-0.5 hover:text-[#195de6]"
+            className="inline-flex items-center gap-2 rounded-full border-2 border-zinc-950 bg-white px-6 py-3.5 text-[15px] font-extrabold text-zinc-950 no-underline transition-all hover:-translate-y-0.5 hover:text-[#7c3bed]"
           >
             How I work <ArrowRight size={16} />
           </Link>
         </div>
+      </section>
+
+      <section className="mt-10">
+        <AskAI path={`/services/${svc.slug}`} label={svc.name} />
       </section>
 
       {/* What this solves */}
@@ -112,7 +117,7 @@ export default async function ServicePage({
       {/* What I build */}
       <section className="relative mt-20">
         <SectionHeader kicker="The work" title="What I build" />
-        <DoodleArrowCurly className="pointer-events-none absolute right-[6%] top-2 hidden h-12 w-12 -rotate-12 text-sky-400 lg:block" />
+        <DoodleArrowCurly className="pointer-events-none absolute right-[6%] top-2 hidden h-12 w-12 -rotate-12 text-[#7c3bed] lg:block" />
         <div className="mt-7 grid gap-5 sm:grid-cols-2">
           {svc.builds.map((b, i) => (
             <FeatureCard key={b.title} index={i} title={b.title}>
@@ -138,7 +143,7 @@ export default async function ServicePage({
             <Link
               key={r.href}
               href={r.href}
-              className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#195de6] no-underline transition-all hover:gap-3"
+              className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#7c3bed] no-underline transition-all hover:gap-3"
             >
               <ArrowRight size={16} /> {r.label}
             </Link>
