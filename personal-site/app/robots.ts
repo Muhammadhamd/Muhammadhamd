@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://mhamd.selfbrand.app/sitemap.xml',
-    host: 'https://mhamd.selfbrand.app',
+    sitemap: 'https://hamdali.com/sitemap.xml',
+    host: 'https://hamdali.com',
   };
 }

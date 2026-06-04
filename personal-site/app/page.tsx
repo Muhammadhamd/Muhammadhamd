@@ -10,13 +10,13 @@ export default function Page() {
     "@graph": [
       {
         "@type": "Person",
-        "@id": "https://mhamd.selfbrand.app/#person",
+        "@id": "https://hamdali.com/#person",
         name: "Muhammad Hamd",
         alternateName: ["Hamd", "Hamd Ali", "Muhammad Hamd Ali", "muhammadhamd"],
-        url: "https://mhamd.selfbrand.app",
+        url: "https://hamdali.com",
         image: {
           "@type": "ImageObject",
-          url: "https://mhamd.selfbrand.app/hamd.png",
+          url: "https://hamdali.com/hamd.png",
           width: 400,
           height: 400,
         },
@@ -81,24 +81,24 @@ export default function Page() {
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://mhamd.selfbrand.app/#webpage",
-        url: "https://mhamd.selfbrand.app",
+        "@id": "https://hamdali.com/#webpage",
+        url: "https://hamdali.com",
         name: "Muhammad Hamd: Agentic AI Engineer & Automation Systems Builder",
         description:
           "Personal website of Muhammad Hamd (Hamd Ali), agentic AI engineer and systems builder from Karachi, Pakistan.",
         inLanguage: "en-US",
         isPartOf: {
           "@type": "WebSite",
-          "@id": "https://mhamd.selfbrand.app/#website",
-          url: "https://mhamd.selfbrand.app",
+          "@id": "https://hamdali.com/#website",
+          url: "https://hamdali.com",
           name: "Muhammad Hamd",
-          publisher: { "@id": "https://mhamd.selfbrand.app/#person" },
+          publisher: { "@id": "https://hamdali.com/#person" },
         },
-        about: { "@id": "https://mhamd.selfbrand.app/#person" },
-        mainEntity: { "@id": "https://mhamd.selfbrand.app/#person" },
+        about: { "@id": "https://hamdali.com/#person" },
+        mainEntity: { "@id": "https://hamdali.com/#person" },
         primaryImageOfPage: {
           "@type": "ImageObject",
-          url: "https://mhamd.selfbrand.app/hamd.png",
+          url: "https://hamdali.com/hamd.png",
         },
       },
       {
@@ -109,8 +109,8 @@ export default function Page() {
         applicationCategory: "BusinessApplication",
         description:
           "AI-powered WhatsApp automation platform for customer support and conversational workflows, built by Muhammad Hamd.",
-        author: { "@id": "https://mhamd.selfbrand.app/#person" },
-        creator: { "@id": "https://mhamd.selfbrand.app/#person" },
+        author: { "@id": "https://hamdali.com/#person" },
+        creator: { "@id": "https://hamdali.com/#person" },
         operatingSystem: "Web",
       },
       {
@@ -121,8 +121,8 @@ export default function Page() {
         applicationCategory: "BusinessApplication",
         description:
           "AI-powered personal branding SaaS for founders and professionals, built by Muhammad Hamd.",
-        author: { "@id": "https://mhamd.selfbrand.app/#person" },
-        creator: { "@id": "https://mhamd.selfbrand.app/#person" },
+        author: { "@id": "https://hamdali.com/#person" },
+        creator: { "@id": "https://hamdali.com/#person" },
         operatingSystem: "Web",
       },
       {

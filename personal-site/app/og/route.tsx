@@ -92,7 +92,7 @@ export function GET(request: Request) {
               />
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <div style={{ fontSize: "30px", fontWeight: 800, color: "#111111" }}>Muhammad Hamd</div>
-                <div style={{ fontSize: "22px", color: "#6b7280" }}>mhamd.selfbrand.app</div>
+                <div style={{ fontSize: "22px", color: "#6b7280" }}>hamdali.com</div>
               </div>
             </div>
             <div

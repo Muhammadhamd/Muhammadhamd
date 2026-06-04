@@ -4,7 +4,7 @@ import { locations } from '@/lib/locations';
 import { posts } from '@/lib/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://mhamd.selfbrand.app';
+  const baseUrl = 'https://hamdali.com';
   const now = new Date();
 
   const workPages = [

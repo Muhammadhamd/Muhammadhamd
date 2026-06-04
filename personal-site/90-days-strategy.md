@@ -3,7 +3,7 @@ Confidential · For Muhammad Hamd
 3-Month SEO & Visibility _Strategy Plan_
 ========================================
 
-📍 mhamd.selfbrand.app 📅 June 2026 ⏳ 12-Week Lock-In Plan 🎯 AI Engineer Visibility · Pakistan + Global
+📍 hamdali.com 📅 June 2026 ⏳ 12-Week Lock-In Plan 🎯 AI Engineer Visibility · Pakistan + Global
 
 [01 Site Audit](#audit) [02 Industry & Audience](#industry) [03 Keyword Strategy](#keywords) [04 Site Architecture](#architecture) [05 On-Page SEO](#onpage) [06 Technical Fixes](#technical) [07 Content Strategy](#content) [08 AI Model Visibility](#ai-visibility) [09 Off-Page & Authority](#offpage) [10 12-Week Timeline](#timeline) [11 KPIs & Measurement](#kpis)
 
@@ -12,7 +12,7 @@ Confidential · For Muhammad Hamd
 Site Audit: What We Found
 -------------------------
 
-A complete crawl and analysis of **mhamd.selfbrand.app** reveals a site with a clear identity but critical structural gaps that are preventing search visibility and hire intent capture.
+A complete crawl and analysis of **hamdali.com** reveals a site with a clear identity but critical structural gaps that are preventing search visibility and hire intent capture.
 
 Critical finding
 
@@ -82,7 +82,7 @@ No FAQ content anywhere
 
 ### Domain Authority Consideration
 
-Your site lives on a subdomain (`mhamd.selfbrand.app`) rather than a custom domain. While this isn't a blocker for personal branding, a custom domain like `muhammadhamd.com` or `hamdali.dev` would give you stronger domain authority signals over time. This is a 6-month consideration — not a prerequisite for this 3-month plan.
+Your site lives on a subdomain (`hamdali.com`) rather than a custom domain. While this isn't a blocker for personal branding, a custom domain like `muhammadhamd.com` or `hamdali.dev` would give you stronger domain authority signals over time. This is a 6-month consideration — not a prerequisite for this 3-month plan.
 
 02
 
@@ -630,7 +630,7 @@ What I Build · AI Automation Services · Products I've Built · How to Work Wit
 
 Canonical
 
-https://mhamd.selfbrand.app/ (already correct on homepage)
+https://hamdali.com/ (already correct on homepage)
 
 Schema
 
@@ -709,7 +709,7 @@ The canonical tag bug alone may be suppressing your existing work pages from ran
 
 ### Priority 1 — Immediate Fixes (Week 1)
 
-*   P1**Fix canonical tags:** Every page must have its own canonical URL. /work/mindkeepr canonical = https://mhamd.selfbrand.app/work/mindkeepr (not the homepage)
+*   P1**Fix canonical tags:** Every page must have its own canonical URL. /work/mindkeepr canonical = https://hamdali.com/work/mindkeepr (not the homepage)
 *   P1**Fix og:url:** Same issue — each page's og:url must be its own URL, not the homepage
 *   P1**Unique title tags:** Every work page needs a unique, descriptive title. E.g. "MindKeepr — Full-stack AI Engineer | Muhammad Hamd"
 *   P1**Unique meta descriptions:** Every work page needs its own meta description with relevant keywords
@@ -725,7 +725,7 @@ Add JSON-LD structured data to your homepage. This is how both Google and AI mod
   "@type": "Person",  
   "name": "Muhammad Hamd",  
   "alternateName": \["Hamd Ali", "Muhammad Hamd Ali"\],  
-  "url": "https://mhamd.selfbrand.app",  
+  "url": "https://hamdali.com",  
   "jobTitle": "Agentic AI Engineer & Automation Systems Builder",  
   "description": "Muhammad Hamd is an agentic AI engineer from Karachi, Pakistan, building production-ready LLM systems, AI agents, and workflow automation infrastructure.",  
   "address": {  
@@ -1242,4 +1242,4 @@ The 3-month reality check
 
 SEO compounds over time. By week 12, you will have the architecture, content, and technical foundation in place. Most of your keyword rankings will improve significantly in months 4–6 as Google builds trust in your new content. The plan you implement in these 12 weeks is the infrastructure that earns you passive inbound visibility for the next 2–3 years.
 
-Muhammad Hamd — SEO & Content Strategy Plan · June 2026 mhamd.selfbrand.app · Karachi, Pakistan · Global Visibility
+Muhammad Hamd — SEO & Content Strategy Plan · June 2026 hamdali.com · Karachi, Pakistan · Global Visibility

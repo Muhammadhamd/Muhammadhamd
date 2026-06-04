@@ -867,7 +867,7 @@ export default function HomeClient() {
             <div>
               <p className="text-[11px] uppercase tracking-widest text-[#a8a29e] font-extrabold mb-2">Location status</p>
               <p className="font-semibold text-zinc-500">🇵🇰 Karachi, Pakistan</p>
-              <p className="text-zinc-400 mt-1">mhamd.selfbrand.app</p>
+              <p className="text-zinc-400 mt-1">hamdali.com</p>
             </div>
             
             <div className="mt-6 pt-4 border-t border-zinc-100 text-[10px] text-zinc-300">

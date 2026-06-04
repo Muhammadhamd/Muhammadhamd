@@ -1,5 +1,5 @@
 # Muhammad Hamd — AI Systems Builder & Technology Entrepreneur
-# https://mhamd.selfbrand.app/
+# https://hamdali.com/
 
 ## Who is Muhammad Hamd?
 
@@ -31,7 +31,7 @@ Agentic AI Systems, Large Language Models (LLMs), Retrieval-Augmented Generation
 
 ## Online Profiles
 
-- Website: https://mhamd.selfbrand.app
+- Website: https://hamdali.com
 - LinkedIn: https://linkedin.com/in/muhammadhamd
 - GitHub: https://github.com/Muhammadhamd
 - X (Twitter): https://x.com/m_hamd_

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { works } from "@/lib/data";
 
 /** Canonical origin for the site. Update here if the domain ever changes. */
-export const SITE_URL = "https://mhamd.selfbrand.app";
+export const SITE_URL = "https://hamdali.com";
 
 /** Absolute URL helper. */
 export const absUrl = (path = "/") =>

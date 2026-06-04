@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mhamd.selfbrand.app"),
+  metadataBase: new URL("https://hamdali.com"),
   title:
     "Muhammad Hamd | Agentic AI Engineer & Automation Systems Builder",
   description:
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
     "Technology Entrepreneur Pakistan",
     "AI Founder Pakistan"
   ],
-  authors: [{ name: "Muhammad Hamd", url: "https://mhamd.selfbrand.app" }],
+  authors: [{ name: "Muhammad Hamd", url: "https://hamdali.com" }],
   creator: "Muhammad Hamd",
   publisher: "Muhammad Hamd",
   alternates: {
-    canonical: "https://mhamd.selfbrand.app",
+    canonical: "https://hamdali.com",
   },
   openGraph: {
     title:
       "Muhammad Hamd | Agentic AI Engineer & Automation Systems Builder",
     description:
       "Agentic AI engineer and systems builder from Karachi, Pakistan. Production-ready LLM systems, AI agents, and workflow automation. Available for hire globally.",
-    url: "https://mhamd.selfbrand.app",
+    url: "https://hamdali.com",
     siteName: "Muhammad Hamd",
     locale: "en_US",
     type: "profile",
