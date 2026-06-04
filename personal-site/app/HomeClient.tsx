@@ -56,12 +56,42 @@ const socialIcons = [
 export default function HomeClient() {
   const [activeStep, setActiveStep] = useState(0);
 
-  const scrollToStep = (stepIndex: number) => {
-    setActiveStep(stepIndex);
-  };
+  // Pinned scrollytelling: the inner panel stays pinned while the section
+  // scrolls, and the step (0 -> 1 -> 2) advances based on how far the section
+  // has scrolled past the top of the viewport. Plain scroll listener so it is
+  // reliable regardless of layout/hydration timing.
+  const aboutRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = aboutRef.current;
+    if (!el) return;
+    let ticking = false;
+    const compute = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      const total = el.offsetHeight - vh; // distance the panel stays pinned
+      if (total <= 0) return;
+      const scrolled = Math.min(Math.max(-el.getBoundingClientRect().top, 0), total);
+      const p = scrolled / total; // 0 at pin start, 1 at pin end
+      const next = p >= 0.55 ? 2 : p >= 0.22 ? 1 : 0;
+      setActiveStep((prev) => (prev === next ? prev : next));
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(compute);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    compute();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   return (
-    <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-blue-100 selection:text-black overflow-x-hidden relative pb-16">
+    <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-blue-100 selection:text-black overflow-x-clip relative pb-16">
 
       {/* Decorative scattered geometric shapes matching reference images */}
       <div className="absolute top-28 left-[10%] w-3 h-3 rounded-full bg-[#195de6] pointer-events-none animate-pulse" />
@@ -124,7 +154,7 @@ export default function HomeClient() {
               <div className="absolute inset-2 rounded-full border-2 border-dashed border-zinc-300 group-hover:rotate-45 transition-transform duration-1000" />
               <div className="absolute inset-4 rounded-full bg-amber-50" />
               <Image
-                src="/hamd.png"
+                src="/hamdillus-square.png"
                 alt="Muhammad Hamd"
                 width={144}
                 height={144}
@@ -368,43 +398,16 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* ── Section: Interactive Selector Experience (About, Specialties & Philosophy) ── */}
-      <section id="about" className="relative max-w-[1100px] mx-auto py-16 md:py-24 scroll-mt-24 select-none">
-        <div className="relative w-full flex items-center justify-center overflow-visible py-4 z-10">
-          <DottedPattern className="w-[180px] h-[180px] top-6 left-6" />
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10 px-6">
-            
-            {/* Left panel: Simulated Interactive and Clean scrolling steps pairing with Framer Motion */}
-            <div className="lg:col-span-7 flex flex-col justify-center min-h-[400px]">
-              
-              {/* Elegant, clean text-only navigation tabs without boxes or borders */}
-              <div className="flex flex-wrap items-center gap-6 mb-8 border-b border-zinc-100 pb-4">
-                {[
-                  { index: 0, label: "About Hamd" },
-                  { index: 1, label: "What I Work On" },
-                  { index: 2, label: "AI & Automation Philosophy" }
-                ].map((tab) => (
-                  <button
-                    key={tab.index}
-                    onClick={() => scrollToStep(tab.index)}
-                    className={`text-xs sm:text-sm font-extrabold tracking-wide pb-2 transition-all relative cursor-pointer ${
-                      activeStep === tab.index
-                        ? "text-[#195de6]"
-                        : "text-zinc-400 hover:text-zinc-600"
-                    }`}
-                  >
-                    {tab.label}
-                    {activeStep === tab.index && (
-                      <motion.div
-                        layoutId="activeTabUnderline"
-                        className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#195de6] rounded-full"
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                      />
-                    )}
-                  </button>
-                ))}
-              </div>
+      {/* ── Section: About (pinned scrollytelling, steps advance on scroll) ── */}
+      <section ref={aboutRef} id="about" className="relative h-[200vh] scroll-mt-24 select-none">
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+          <div className="relative mx-auto w-full max-w-[1100px] px-6">
+            <DottedPattern className="w-[180px] h-[180px] top-6 left-6" />
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full relative z-10">
+
+            {/* Left panel: step content that advances with scroll progress */}
+            <div className="lg:col-span-7 flex flex-col justify-center min-h-[420px]">
 
               <AnimatePresence mode="wait">
                 {activeStep === 0 && (
@@ -536,22 +539,23 @@ export default function HomeClient() {
               </AnimatePresence>
             </div>
 
-            {/* Right panel: Sticky Illustration Display with dynamic speech bubbles of HamdIllus */}
-            <div className="lg:col-span-5 flex flex-col items-center justify-center pt-8 lg:pt-0">
+            {/* Right panel: illustration + speech bubble (desktop only) */}
+            <div className="hidden lg:flex lg:col-span-5 flex-col items-center justify-center">
+
+              {/* Speech bubble above the illustration, in normal flow so it never overlaps the section above or gets clipped */}
+              <SpeechBubble
+                text={
+                  activeStep === 0
+                    ? "Hi! I'm Hamd, an AI systems builder. Let's make things scale! ⚡"
+                    : activeStep === 1
+                    ? "I build complete scraping networks and LLM agent chains! 🛠️"
+                    : "No temporary hacks. Only clean, tested, and reliable systems! 🚀"
+                }
+                className="mb-6 self-end mr-4 transform hover:scale-105 transition-all duration-300 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
+                orientation="right"
+              />
+
               <div className="relative">
-                
-                {/* Dynamic Speech Bubble targeting current step */}
-                <SpeechBubble
-                  text={
-                    activeStep === 0
-                      ? "Hi! I'm Hamd, an AI systems builder. Let's make things scale! ⚡"
-                      : activeStep === 1
-                      ? "I build complete scraping networks and LLM agent chains! 🛠️"
-                      : "No temporary hacks. Only clean, tested, and reliable systems! 🚀"
-                  }
-                  className="absolute top-[-75px] right-[10px] transform hover:scale-105 transition-all duration-300 z-10 scale-100 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
-                  orientation="right"
-                />
 
                 {/* Character Illustration display from custom file */}
                 <div className="relative w-80 h-[380px] md:w-80 md:h-[420px] rounded-3xl border-4 border-zinc-950 bg-white shadow-[8px_8px_0px_0px_rgba(25,93,230,1)] flex items-center justify-center overflow-hidden group">
@@ -579,7 +583,8 @@ export default function HomeClient() {
                 </div>
               </div>
             </div>
-            
+
+            </div>
           </div>
         </div>
       </section>
