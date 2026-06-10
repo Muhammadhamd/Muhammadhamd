@@ -7,6 +7,12 @@ import { works } from "@/lib/data";
 /** A discoverable page for the chat agent. */
 export type PageEntry = { url: string; title: string; summary: string };
 
+/** A search hit returned to the agent: a page plus why it matched. */
+export type SearchHit = PageEntry & { score: number };
+
+/** A service recommendation: which service fits a described problem, and why. */
+export type ServiceMatch = { url: string; name: string; tagline: string; why: string };
+
 /**
  * Flat index of every real page on the site, generated from data (not
  * hardcoded). The chat agent calls this to discover what exists, then reads a
@@ -80,4 +86,80 @@ export function getPageContent(path: string): string | null {
   }
 
   return STATIC_CONTENT[clean] ?? null;
+}
+
+// ── Agent helpers: search, recommend, and a real bio ───────────────────────
+
+const STOP = new Set([
+  "the", "a", "an", "and", "or", "but", "of", "to", "in", "on", "for", "with",
+  "my", "me", "i", "you", "your", "is", "are", "do", "does", "can", "how",
+  "what", "who", "about", "tell", "it", "that", "this", "we", "us", "his",
+]);
+
+const tokenize = (s: string): string[] =>
+  s.toLowerCase().match(/[a-z0-9]+/g)?.filter((w) => w.length > 2 && !STOP.has(w)) ?? [];
+
+/**
+ * Keyword search across every page on the site (title + summary). Returns the
+ * top matches with a score, so the agent can find relevant pages by meaning of
+ * a question rather than guessing a URL. Falls back to nothing on empty input.
+ */
+export function searchSite(query: string, limit = 4): SearchHit[] {
+  const terms = tokenize(query);
+  if (terms.length === 0) return [];
+  const pages = listSitePages();
+  const hits = pages
+    .map((p) => {
+      const haystack = `${p.title} ${p.summary} ${p.url}`.toLowerCase();
+      let score = 0;
+      for (const t of terms) {
+        if (haystack.includes(t)) score += 1;
+        if (p.title.toLowerCase().includes(t)) score += 1; // title matches weigh more
+      }
+      return { ...p, score };
+    })
+    .filter((h) => h.score > 0)
+    .sort((a, b) => b.score - a.score);
+  return hits.slice(0, limit);
+}
+
+/**
+ * Map a described problem ("my team answers the same WhatsApp questions all
+ * day") to the single best service page, with a short reason. Scores each
+ * service against its name, tagline, intro, and the problems it solves.
+ */
+export function recommendService(problem: string): ServiceMatch | null {
+  const terms = tokenize(problem);
+  if (terms.length === 0) return null;
+  let best: { s: (typeof services)[number]; score: number } | null = null;
+  for (const s of services) {
+    const haystack = `${s.name} ${s.tagline} ${s.intro} ${s.solves.join(" ")}`.toLowerCase();
+    let score = 0;
+    for (const t of terms) if (haystack.includes(t)) score += 1;
+    if (!best || score > best.score) best = { s, score };
+  }
+  if (!best || best.score === 0) return null;
+  return {
+    url: `/services/${best.s.slug}`,
+    name: best.s.name,
+    tagline: best.s.tagline,
+    why: best.s.solves[0],
+  };
+}
+
+/**
+ * A compact, first-person bio compiled from the real work history in data.ts,
+ * so the agent's system prompt carries genuine depth (roles, dates, stacks)
+ * instead of thin summaries. Data-driven: stays in sync as data.ts changes.
+ */
+export function getProfileBrief(): string {
+  const roles = works
+    .map((w) => `- ${w.company} (${w.role}, ${w.period}): ${w.tagline}. Stack: ${w.stack.join(", ")}.`)
+    .join("\n");
+  return `I'm Muhammad Hamd (also Hamd Ali), an agentic AI engineer and systems builder in Karachi, Pakistan. I build production AI systems, autonomous agents, RAG pipelines, and workflow automation, end to end.
+
+My work and projects:
+${roles}
+
+How I think: AI should remove manual work, not add complexity. I care about reliability, guardrails, monitoring, and cost control, which is what separates a demo from a system a business can depend on.`;
 }

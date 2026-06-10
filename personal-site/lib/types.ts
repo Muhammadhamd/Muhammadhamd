@@ -1,23 +1,9 @@
-export interface ChatMessage {
-  id: string;
-  role: "user" | "assistant";
-  content: string;
-  timestamp: Date;
-}
-
+/**
+ * Minimal profile passed to the chat widget. The agent's real depth (work
+ * history, stacks, philosophy) lives server-side in lib/site-content.ts
+ * (getProfileBrief), compiled from lib/data.ts — not duplicated here.
+ */
 export interface ProfileData {
   name: string;
-  title: string;
-  subtitle: string;
-  location: string;
-  avatarUrl: string;
-  aboutText: string;
-  githubUrl: string;
-  linkedinUrl: string;
-  email: string;
-  customSystemPrompt: string;
   chatSuggestions: string[];
-  skills: any[];
-  projects: any[];
-  experiences: any[];
 }

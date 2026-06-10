@@ -2,6 +2,7 @@ import { Mail, Calendar, MapPin, Clock } from "lucide-react";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
 import PageShell, { JsonLd } from "@/components/PageShell";
 import ContactForm from "@/components/ContactForm";
+import CalendlyInline from "@/components/CalendlyInline";
 import { DottedPattern, DoodleSparkle } from "@/components/Doodles";
 import { pageMetadata, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
 
@@ -15,7 +16,10 @@ export const metadata = pageMetadata({
 });
 
 const EMAIL = "muhammadhamdali572@gmail.com";
-const CALENDAR_URL = "https://calendly.com/muhammadhamd";
+// Single source of truth: the same CALENDLY_URL the chat's schedule_meeting
+// tool uses. Falls back to the public handle if the env var is unset, so the
+// "Book a call" link is never dead.
+const CALENDAR_URL = process.env.CALENDLY_URL || "https://calendly.com/muhammadhamd";
 
 const contactLd = {
   "@context": "https://schema.org",
@@ -91,6 +95,16 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
+
+      {/* Inline scheduler — only rendered when a real CALENDLY_URL is set */}
+      {process.env.CALENDLY_URL ? (
+        <section className="mt-12">
+          <h2 className="mb-4 font-display text-[20px] font-extrabold text-zinc-950">
+            Or grab a time directly
+          </h2>
+          <CalendlyInline url={process.env.CALENDLY_URL} />
+        </section>
+      ) : null}
     </PageShell>
   );
 }
