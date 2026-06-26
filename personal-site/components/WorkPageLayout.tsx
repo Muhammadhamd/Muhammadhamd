@@ -1,94 +1,72 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import type { WorkItem } from "@/lib/data";
 
 export default function WorkPageLayout({ work }: { work: WorkItem }) {
   return (
-    <main className="max-w-[640px] mx-auto px-5 py-14">
-      {/* Back */}
-      <Link
-        href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-900 no-underline transition-colors mb-12"
-      >
-        <ArrowLeft size={13} />
+    <main className="max-w-[720px] mx-auto px-5 py-14 md:py-20">
+      <Link href="/"
+        className="inline-flex items-center gap-1.5 text-sm text-[#A8A29E] hover:text-[#FF5E5B] no-underline transition-colors mb-14">
+        <ArrowLeft size={14} />
         Muhammad Hamd
       </Link>
 
-      {/* Header */}
-      <header className="mb-10">
-        <div className="flex items-center justify-between gap-4 flex-wrap mb-2">
-          <div className="flex items-center gap-3">
+      <header className="mb-12">
+        <div className="flex items-center justify-between gap-4 flex-wrap mb-3">
+          <div className="flex items-center gap-4">
             {work.logo && (
-              <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center border border-gray-100 bg-white shrink-0 shadow-sm">
-                <Image
-                  src={work.logo}
-                  alt={`${work.company} logo`}
-                  width={48}
-                  height={48}
-                  className="w-full h-full object-contain p-1"
-                />
+              <div className="w-14 h-14 rounded-2xl overflow-hidden flex items-center justify-center border border-[#EBE5DF] bg-white shrink-0 shadow-sm">
+                <Image src={work.logo} alt={`${work.company} logo`} width={48} height={48} className="w-9 h-9 object-contain" />
               </div>
             )}
-            <h1 className="text-2xl font-bold tracking-tight text-[#111111]">{work.company}</h1>
+            <h1 className="text-[28px] md:text-[32px] font-bold tracking-tight text-[#171716]">{work.company}</h1>
           </div>
-          <a
-            href={work.site}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-800 no-underline transition-colors pt-1.5"
-          >
+          <a href={work.site} target="_blank" rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#A8A29E] hover:text-[#FF5E5B] no-underline transition-colors bg-white border border-[#EBE5DF] px-3 py-1.5 rounded-full hover:border-[#FF5E5B]/30">
             {work.site.replace("https://", "")}
-            <ExternalLink size={10} />
+            <ExternalLink size={11} />
           </a>
         </div>
-        <p className="text-gray-400 text-sm">{work.tagline}</p>
+        <p className="text-[#6B6560] text-base">{work.tagline}</p>
 
-        {/* Meta grid */}
-        <div className="mt-6 grid grid-cols-2 gap-4 text-sm border border-gray-100 rounded-xl p-4 bg-gray-50">
+        <div className="mt-7 grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
           {[
             { label: "Role", value: work.role },
             { label: "Type", value: work.type },
             { label: "Period", value: work.period },
             { label: "Location", value: work.location },
           ].map(({ label, value }) => (
-            <div key={label}>
-              <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-0.5">{label}</p>
-              <p className="text-[13px] font-medium text-[#111111] leading-snug">{value}</p>
+            <div key={label} className="bg-white rounded-2xl border border-[#EBE5DF] p-3">
+              <p className="text-[10px] uppercase tracking-widest text-[#A8A29E] mb-1">{label}</p>
+              <p className="text-[13px] font-semibold text-[#171716] leading-snug">{value}</p>
             </div>
           ))}
         </div>
       </header>
 
-      {/* Description */}
-      <section className="space-y-4 text-[14.5px] leading-[1.75] text-gray-600 mb-10">
+
+      <section className="space-y-5 text-[15px] leading-[1.8] text-[#6B6560] mb-12">
         {work.description.map((para, i) => (
           <p key={i}>{para}</p>
         ))}
       </section>
 
-      {/* Stack */}
-      <section className="mb-12">
-        <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-3">Stack</p>
+      <section className="mb-14 bg-white rounded-3xl border border-[#EBE5DF] shadow-sm p-6 md:p-8">
+        <p className="text-[10px] uppercase tracking-[0.2em] text-[#A8A29E] mb-4">Tech Stack</p>
         <div className="flex flex-wrap gap-2">
           {work.stack.map((tech) => (
-            <span
-              key={tech}
-              className="text-xs px-3 py-1.5 border border-gray-200 rounded-full text-gray-500 bg-white"
-            >
+            <span key={tech} className="text-xs px-4 py-2 rounded-full bg-[#F5F1EC] text-[#6B6560] font-medium border border-[#EBE5DF] hover:border-[#FF5E5B]/30 hover:text-[#FF5E5B] hover:bg-[#FFF1F0] transition-colors">
               {tech}
             </span>
           ))}
         </div>
       </section>
 
-      {/* Footer */}
-      <div className="border-t border-gray-100 pt-8">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-900 no-underline transition-colors"
-        >
-          <ArrowLeft size={13} />
+      <div className="border-t border-[#EBE5DF] pt-8">
+        <Link href="/"
+          className="inline-flex items-center gap-1.5 text-sm text-[#A8A29E] hover:text-[#FF5E5B] no-underline transition-colors">
+          <ArrowLeft size={14} />
           Back to all work
         </Link>
       </div>

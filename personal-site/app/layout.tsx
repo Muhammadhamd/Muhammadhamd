@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         url: "https://mhamd.selfbrand.app/hamd.png",
         width: 800,
         height: 800,
-        alt: "Muhammad Hamd — AI Systems Builder",
+        alt: "Muhammad Hamd â€” AI Systems Builder",
       },
     ],
   },
@@ -86,7 +86,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} h-full`}>
-      <body className="min-h-full bg-white text-[#111111] font-sans antialiased">
+      <body className="min-h-full bg-[#FBFAF7] text-[#171716] font-sans antialiased">
         {children}
       </body>
     </html>
