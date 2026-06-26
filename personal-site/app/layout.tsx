@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
 
@@ -86,9 +86,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} h-full`}>
-      <body className="min-h-full bg-white text-[#111111] font-sans antialiased">
+      <body className="min-h-full font-sans antialiased">
         {children}
       </body>
     </html>
   );
 }
+
+

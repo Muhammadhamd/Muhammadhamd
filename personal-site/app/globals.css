@@ -1,32 +1,130 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
+/* ── Design System ────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --muted: #6b7280;
-  --border: #e5e7eb;
+  --primary: #195de6;
+  --primary-light: #4a7cf7;
+  --primary-dark: #0f1b2d;
+  --green: #10b981;
+  --dark-card: #0f1b2d;
+  --text-primary: #111827;
+  --text-muted: #6b7280;
+  --border-light: #e5e7eb;
   --font-geist-sans: "Geist Sans", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #195de6;
+  --color-primary-light: #4a7cf7;
+  --color-primary-dark: #0f1b2d;
+  --color-green: #10b981;
+  --color-dark-card: #0f1b2d;
+  --color-soft-black: #111827;
+  --color-muted: #6b7280;
+  --color-border-light: #e5e7eb;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* ── Base ─────────────────────────────────────── */
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: #ffffff;
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  text-underline-offset: 3px;
+a { text-underline-offset: 3px; }
+
+/* ── Doodle Underline ─────────────────────────── */
+.doodle-underline {
+  position: relative;
+  display: inline-block;
+}
+.doodle-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -4px;
+  right: -4px;
+  height: 10px;
+  background: url("data:image/svg+xml,%3Csvg width='242' height='12' viewBox='0 0 242 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 9.5C37.5 3.5 73.5 2.5 109 5.5C144.5 8.5 180.5 2 215 5C230 6.5 237 8 240 9' stroke='%23195DE6' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
+  pointer-events: none;
+}
+
+/* ── Pill Button Base ─────────────────────────── */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(25, 93, 230, 0.3);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--text-primary);
+}
+.btn-outline:hover {
+  background: var(--text-primary);
+  color: white;
+}
+
+/* ── Card Styles ──────────────────────────────── */
+.card-dark {
+  background: var(--dark-card);
+  border-radius: 20px;
+  padding: 28px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.card-light {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  color: var(--text-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-light);
+}
+
+/* ── Section Spacing ──────────────────────────── */
+.section-pad {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .section-pad {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+/* ── Scroll Showcase Animations ───────────────── */
+.scroll-panel {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.scroll-panel.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
