@@ -2,6 +2,7 @@ import { posts } from "@/lib/blog";
 import type { Block } from "@/lib/blog";
 import { services } from "@/lib/services";
 import { locations } from "@/lib/locations";
+import { industries } from "@/lib/industries";
 import { works } from "@/lib/data";
 
 /** A discoverable page for the chat agent. */
@@ -30,9 +31,10 @@ export function listSitePages(): PageEntry[] {
   ];
   const servicePages = services.map((s) => ({ url: `/services/${s.slug}`, title: s.name, summary: s.metaDescription }));
   const locationPages = locations.map((l) => ({ url: `/${l.slug}`, title: l.h1, summary: l.metaDescription }));
+  const industryPages = industries.map((i) => ({ url: `/ai-for/${i.slug}`, title: i.h1, summary: i.metaDescription }));
   const workPages = works.map((w) => ({ url: `/work/${w.slug}`, title: w.company, summary: `${w.role}. ${w.tagline}` }));
   const blogPages = posts.map((p) => ({ url: `/blog/${p.slug}`, title: p.title, summary: p.excerpt }));
-  return [...staticPages, ...servicePages, ...locationPages, ...workPages, ...blogPages];
+  return [...staticPages, ...servicePages, ...locationPages, ...industryPages, ...workPages, ...blogPages];
 }
 
 const STATIC_CONTENT: Record<string, string> = {
@@ -41,7 +43,7 @@ const STATIC_CONTENT: Record<string, string> = {
   "/hire-me": "Hire Muhammad Hamd for agentic AI development, LLM integration, AI workflow automation, CRM automation, WhatsApp AI, and RAG systems. Remote, UTC+5, roughly $50 to $120 per hour with fixed-price options, available for new projects.",
   "/contact": "Reach Muhammad Hamd by email at muhammadhamdali572@gmail.com, on LinkedIn at linkedin.com/in/muhammadhamd, or by booking a call.",
   "/uses": "His stack: Python, Go, TypeScript, LangChain, LangGraph, CrewAI, AutoGen, OpenAI, Anthropic, RAG, pgvector, Pinecone, n8n, PostgreSQL, Docker, Next.js, and React.",
-  "/services": "His services: agentic AI development, LLM integration, AI workflow automation, CRM automation, WhatsApp AI automation, and RAG and vector search.",
+  "/services": "His services: agentic AI development, LLM integration, AI workflow automation, CRM automation, WhatsApp AI automation, RAG and vector search, AI chatbot development, MVP development for startups, n8n development, and full-stack AI development.",
   "/blog": "His blog covers agentic AI, LLM engineering, AI automation, hiring AI engineers, and the Pakistan AI scene.",
 };
 
@@ -77,6 +79,16 @@ export function getPageContent(path: string): string | null {
     const reasons = loc.reasons.map((r) => `${r.title}: ${r.body}`).join(" ");
     const faq = loc.faqs.map((f) => `Q: ${f.q}\nA: ${f.a}`).join("\n");
     return `# ${loc.h1}\n\n${loc.intro.join("\n\n")}\n\nWhy work with me: ${reasons}\n\nFAQ:\n${faq}`;
+  }
+
+  const ind = clean.match(/^\/ai-for\/(.+)$/);
+  if (ind) {
+    const x = industries.find((i) => i.slug === ind[1]);
+    if (x) {
+      const useCases = x.useCases.map((u) => `${u.title}: ${u.body}`).join(" ");
+      const faq = x.faqs.map((f) => `Q: ${f.q}\nA: ${f.a}`).join("\n");
+      return `# ${x.h1}\n\n${x.intro.join("\n\n")}\n\nWhere AI helps: ${useCases}\n\nWhat I'd automate first: ${x.workflow.join("; ")}\n\nFAQ:\n${faq}`;
+    }
   }
 
   const work = clean.match(/^\/work\/(.+)$/);

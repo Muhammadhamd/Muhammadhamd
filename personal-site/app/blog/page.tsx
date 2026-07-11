@@ -4,7 +4,7 @@ import PageShell, { JsonLd } from "@/components/PageShell";
 import AuthorCard from "@/components/AuthorCard";
 import { DottedPattern, DoodleSparkle } from "@/components/Doodles";
 import { posts } from "@/lib/blog";
-import { pageMetadata, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
+import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "AI Engineering & Automation Blog | Muhammad Hamd",
@@ -21,7 +21,7 @@ const blogLd = {
   name: "Muhammad Hamd: AI Engineering & Automation Blog",
   url: absUrl("/blog"),
   inLanguage: "en-US",
-  author: { "@id": PERSON_ID },
+  author: personRef,
   blogPost: posts.map((p) => ({
     "@type": "BlogPosting",
     headline: p.title,

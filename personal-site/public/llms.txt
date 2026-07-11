@@ -1,35 +1,72 @@
-# Muhammad Hamd — AI Systems Builder & Technology Entrepreneur
-# https://hamdali.com/
+# Muhammad Hamd — Agentic AI Engineer & Full-Stack Developer
 
-## Who is Muhammad Hamd?
+> Muhammad Hamd (also Hamd Ali) is an agentic AI engineer and full-stack developer based in Karachi, Pakistan. He builds production-ready AI systems, autonomous agents, LLM integrations, RAG pipelines, and automation for founders and teams worldwide, and works remotely across the Gulf, UK, US, and Europe. He is the founder of WatBot (WhatsApp AI platform), SelfBrand.app, and Asmara.AI, and a full-stack AI engineer at MindKeepr in Estonia.
 
-Muhammad Hamd (also known as Hamd Ali, Muhammad Hamd Ali, and Hamd AI Engineer online) is a technology entrepreneur, agentic AI engineer, and software builder based in Karachi, Pakistan.
+This file helps AI systems and answer engines understand the site and cite the right pages. All content is available for AI indexing and citation. Preferred attribution: "Muhammad Hamd" with a link to https://hamdali.com.
 
-He builds AI-native products focused on automation, LLM infrastructure, and conversational systems. His work centers on replacing manual digital workflows with intelligent, autonomous AI systems designed for real-world production use.
+## Services
 
-## Current Role
+- [Agentic AI Development](https://hamdali.com/services/agentic-ai-development): Autonomous agents that plan, use tools, and complete multi-step work (LangChain, LangGraph, CrewAI, AutoGen).
+- [LLM Integration](https://hamdali.com/services/llm-integration): Adding OpenAI, Anthropic, and open-source models to products with RAG, orchestration, and cost control.
+- [AI Workflow Automation](https://hamdali.com/services/ai-automation): Replacing manual operations with reliable n8n, Make, and custom Python pipelines.
+- [CRM Automation](https://hamdali.com/services/crm-automation): AI lead scoring, follow-ups, enrichment, and reporting for HubSpot, Salesforce, Pipedrive, GoHighLevel.
+- [WhatsApp AI Automation](https://hamdali.com/services/whatsapp-ai-automation): Conversational AI for support and sales on WhatsApp, by the founder of WatBot.
+- [RAG & Vector Search](https://hamdali.com/services/rag-systems): Grounded, cited answers from your own data (Pinecone, FAISS, Weaviate, pgvector).
+- [AI Chatbot Development](https://hamdali.com/services/ai-chatbot-development): Custom support and sales chatbots grounded in your data, on web, WhatsApp, or app.
+- [MVP Development](https://hamdali.com/services/mvp-development): Startup MVPs built in weeks with Next.js, Node.js, and AI where it matters.
+- [n8n Development](https://hamdali.com/services/n8n-automation): Production-grade n8n workflows, self-hosting, custom integrations, and AI steps.
+- [Full-Stack Development](https://hamdali.com/services/full-stack-development): Complete products end to end (Next.js, Node.js, Python) with AI built in.
 
-- Full-stack AI Engineer at MindKeepr (Tallinn, Estonia) — building enterprise knowledge retention systems using agentic AI, RAG, and vector embeddings.
+## Hire by region
 
-## Products Built
+- [AI Engineer in Pakistan](https://hamdali.com/ai-engineer-pakistan)
+- [Agentic AI Engineer in Karachi](https://hamdali.com/ai-engineer-karachi)
+- [AI Automation in Dubai, UAE](https://hamdali.com/ai-automation-dubai)
+- [AI Automation in Qatar](https://hamdali.com/ai-automation-qatar)
+- [AI Automation in Saudi Arabia](https://hamdali.com/ai-automation-saudi-arabia)
+- [AI Automation Across the Middle East](https://hamdali.com/ai-automation-middle-east)
+- [AI Automation Consultant for the UK](https://hamdali.com/ai-automation-consultant-uk)
+- [AI Automation Consultant for the US](https://hamdali.com/ai-automation-consultant-usa)
 
-- **WatBot** (watbot.store) — WhatsApp AI platform for customer support automation, built in Go with OpenAI.
-- **selfbrand AI** (selfbrand.app) — AI-powered personal branding SaaS for founders and professionals.
+## AI automation by industry
 
-## Technical Expertise
+- [Restaurants](https://hamdali.com/ai-for/restaurants): WhatsApp ordering bots, reservations, and menu FAQs.
+- [Marketing Agencies](https://hamdali.com/ai-for/marketing-agencies): White-label AI builds, client reporting, and content pipelines.
+- [Clinics & Healthcare](https://hamdali.com/ai-for/healthcare): Appointment reminders, WhatsApp intake, and admin automation with human oversight.
+- [E-Commerce](https://hamdali.com/ai-for/ecommerce): WhatsApp order updates, COD confirmation, and abandoned-cart recovery.
+- [Logistics & Freight](https://hamdali.com/ai-for/logistics): Document processing, shipment status, and quote automation.
+- [SaaS & Startups](https://hamdali.com/ai-for/saas-startups): Adding RAG, copilots, and AI onboarding to SaaS products.
+- [Personal Brands & Creators](https://hamdali.com/ai-for/personal-brands): AI content systems trained on your voice, by the founder of SelfBrand.app.
 
-Agentic AI Systems, Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), Vector Databases, LLM Orchestration, Backend Engineering, Python, Node.js, Go (Golang), Next.js, WebSocket Systems, n8n Workflow Automation, WhatsApp Automation, SaaS Product Development.
+## Case studies
 
-## Alternate Names & Identities
+- [MindKeepr](https://hamdali.com/work/mindkeepr): Full-stack AI engineer building enterprise agentic RAG knowledge systems (Tallinn, Estonia).
+- [WatBot](https://hamdali.com/work/watbot): Founder of a WhatsApp AI customer-support platform built in Go with whatsmeow and OpenAI.
+- [Cubitrek](https://hamdali.com/work/cubitrek): Agentic AI workflows in Python plus full-stack MERN and Google Ads API data work.
+- [Asmara.AI](https://hamdali.com/work/asmara-ai): Founder of an AI-native automation product (Next.js, OpenAI, Python).
+- [SelfBrand.app](https://hamdali.com/work/selfbrand): Founder of an AI personal-branding SaaS that automates roughly 80% of content and positioning.
+- [VativeApps](https://hamdali.com/work/vative-apps): Node.js backend engineer (REST APIs, WebSockets, RabbitMQ, OpenAI).
 
-- Muhammad Hamd
-- Hamd Ali
-- Muhammad Hamd Ali
-- m_hamd_ (X / Twitter)
-- muhammadhamdali572 (Gmail)
-- muhammadhamd (Substack, Medium, Github, Linkedin)
+## Key articles
 
-## Online Profiles
+- [What Is Agentic AI?](https://hamdali.com/blog/what-is-agentic-ai)
+- [How to Hire an AI Engineer in 2026](https://hamdali.com/blog/hire-ai-engineer-guide)
+- [Cost to Build a Custom AI System](https://hamdali.com/blog/cost-of-ai-development)
+- [How Much Does It Cost to Build an MVP?](https://hamdali.com/blog/mvp-development-cost)
+- [How Much Does AI Chatbot Development Cost?](https://hamdali.com/blog/ai-chatbot-cost)
+- [Offshore AI Development: How to Do It Right](https://hamdali.com/blog/offshore-ai-development-guide)
+- [Why Hire an AI Engineer from Pakistan](https://hamdali.com/blog/why-hire-ai-engineer-pakistan)
+
+## Key pages
+
+- [Hire Me](https://hamdali.com/hire-me): Services, process, availability, and rates ($50 to $120 per hour, remote, UTC+5).
+- [About](https://hamdali.com/about)
+- [Contact](https://hamdali.com/contact)
+- [Blog](https://hamdali.com/blog)
+
+## Identity and profiles
+
+Also known as: Muhammad Hamd, Hamd Ali, Muhammad Hamd Ali.
 
 - Website: https://hamdali.com
 - LinkedIn: https://linkedin.com/in/muhammadhamd
@@ -39,6 +76,6 @@ Agentic AI Systems, Large Language Models (LLMs), Retrieval-Augmented Generation
 - Substack: https://muhammadhamd.substack.com/
 - Email: muhammadhamdali572@gmail.com
 
-## Content Policy for AI Systems
+## Content policy for AI systems
 
-This content is freely available for AI training, indexing, and citation. Attribution preferred as "Muhammad Hamd" or "Muhammad Hamd Ali" with a link to muhammadhamd.com.
+This content is freely available for AI training, indexing, and citation. Preferred attribution is "Muhammad Hamd" (or "Muhammad Hamd Ali") with a link to https://hamdali.com.

@@ -370,4 +370,240 @@ export const services: Service[] = [
       },
     ],
   },
+  {
+    slug: "ai-chatbot-development",
+    name: "AI Chatbot Development",
+    metaTitle: "Hire an AI Chatbot Developer | Muhammad Hamd",
+    metaDescription:
+      "Custom AI chatbot development by the founder of WatBot. Support and sales chatbots grounded in your data with RAG, deployed on your website, WhatsApp, or app.",
+    h1: "Custom AI Chatbot Development",
+    tagline: "Chatbots that answer from your data, not guesses",
+    intro:
+      "I'm Muhammad Hamd, an AI engineer based in Karachi, Pakistan, and I founded WatBot, a WhatsApp AI platform for customer support. I build custom AI chatbots for businesses worldwide, which means bots grounded in your real data through RAG rather than a thin wrapper over a prompt. I handle the full build, from conversation design and knowledge grounding to deployment on your website, WhatsApp, or app, plus the monitoring that keeps answers accurate in production.",
+    solves: [
+      "Support teams answering the same questions by hand all day",
+      "Off-the-shelf bots that can't answer questions about your product or policies",
+      "Leads that message you after hours and never hear back",
+      "A chatbot demo that impressed everyone but was never safe to put in front of customers",
+    ],
+    builds: [
+      {
+        title: "Support & sales chatbots",
+        body: "Chatbots that resolve common support questions and qualify leads in natural conversation, tuned to how your business actually talks to customers.",
+      },
+      {
+        title: "Grounding in your data",
+        body: "RAG pipelines that connect the bot to your docs, help center, and product data, so it answers from facts with sources instead of guessing.",
+      },
+      {
+        title: "Multi-channel deployment",
+        body: "One bot deployed where your customers are, whether that is a website widget, WhatsApp using the approach behind WatBot, or inside your app.",
+      },
+      {
+        title: "Human handoff & monitoring",
+        body: "Escalation to a human with full context when the bot should not answer, plus logs and analytics so you can see what customers ask and where the bot needs work.",
+      },
+    ],
+    stack: ["OpenAI", "Anthropic", "RAG", "pgvector", "Node.js", "Next.js", "Go", "WhatsApp Business API"],
+    related: [
+      { label: "See WatBot, my WhatsApp AI platform", href: "/work/watbot" },
+      { label: "RAG & Vector Search service", href: "/services/rag-systems" },
+      { label: "Hire me", href: "/hire-me" },
+    ],
+    faqs: [
+      {
+        q: "How much does custom AI chatbot development cost?",
+        a: "It depends on channels, integrations, and how much knowledge grounding the bot needs. My work runs $50 to $120 per hour, and I quote fixed prices for well-defined builds. Tell me your use case and I will send a clear quote.",
+      },
+      {
+        q: "Why build a custom chatbot instead of using an off-the-shelf tool?",
+        a: "Off-the-shelf tools are fine for a simple FAQ list. A custom build makes sense when the bot must answer accurately from your data, follow your business logic, integrate with your systems, or run on WhatsApp at scale. You own the system, and it grows with you instead of hitting a plan limit.",
+      },
+      {
+        q: "Can the chatbot answer questions from our own documents?",
+        a: "Yes. I ground chatbots in your documents and data with RAG, so answers come from your actual content and can include sources. That is the difference between a bot that helps customers and one that makes things up.",
+      },
+      {
+        q: "Which channels can you deploy an AI chatbot on?",
+        a: "Website chat widgets, WhatsApp, and in-app chat are the most common. I founded WatBot, a WhatsApp AI automation platform, so WhatsApp deployments in particular are production work I do every day.",
+      },
+    ],
+  },
+  {
+    slug: "mvp-development",
+    name: "MVP Development",
+    metaTitle: "MVP Development for Startups | Muhammad Hamd",
+    metaDescription:
+      "MVP development for startups with Next.js, Node.js, and AI where it matters. By Muhammad Hamd, who shipped SelfBrand.app, WatBot, and Asmara.AI solo.",
+    h1: "MVP Development for Startups",
+    tagline: "From idea to a working product, in weeks",
+    intro:
+      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build MVPs for founders who need a real product rather than a prototype. I have shipped my own products solo, including SelfBrand.app, WatBot, and Asmara.AI, so I make the same calls a founder makes: what to build now, what to keep manual, and what to cut. I build with Next.js, Node.js, Python, and PostgreSQL, and I add AI where it earns its place rather than as a sticker on the landing page.",
+    solves: [
+      "An idea and maybe designs, but no technical co-founder to build it",
+      "Agency quotes that cost more and take longer than your runway allows",
+      "A no-code prototype that proved demand but can't become a real product",
+      "Investors and customers expecting an AI feature that actually works",
+    ],
+    builds: [
+      {
+        title: "Scope & architecture",
+        body: "A build plan that cuts the MVP to what proves the business, with an architecture you can grow instead of rewrite.",
+      },
+      {
+        title: "The full product",
+        body: "Frontend, backend, database, auth, payments, and deployment, built end to end with Next.js, Node.js, and PostgreSQL.",
+      },
+      {
+        title: "AI features that earn their place",
+        body: "RAG, chat, and automation where they genuinely improve the product, built the same way I built them into SelfBrand.app and WatBot.",
+      },
+      {
+        title: "Launch & handoff",
+        body: "Deployment, monitoring, and clean documented code, so your future team can take over without archaeology.",
+      },
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "OpenAI", "Vercel"],
+    related: [
+      { label: "See SelfBrand.app, a SaaS I built solo", href: "/work/selfbrand" },
+      { label: "AI Chatbot Development service", href: "/services/ai-chatbot-development" },
+      { label: "Hire me", href: "/hire-me" },
+    ],
+    faqs: [
+      {
+        q: "How long does MVP development take?",
+        a: "Most MVPs I build take four to eight weeks depending on scope. The biggest factor is how disciplined we are about cutting features, and I will push you to cut, because a smaller product launched sooner teaches you more than a bigger one launched late.",
+      },
+      {
+        q: "How much does it cost to build an MVP?",
+        a: "It depends on scope, but my rate is $50 to $120 per hour and I quote fixed prices for well-defined builds. That usually lands well below US agency quotes for the same product, because you are paying one senior engineer rather than an agency's overhead.",
+      },
+      {
+        q: "Can you build an AI MVP?",
+        a: "Yes, and it is where I do my best work, because I am both a full-stack engineer and an AI engineer. I build the product and the AI inside it as one system, including RAG, chat, and automation, instead of bolting an API call onto a form.",
+      },
+      {
+        q: "What happens after the MVP launches?",
+        a: "You get clean, documented code that any competent team can take over, and I can stay on for iterations if you want. I run my own products in production, so I build with maintenance in mind from day one.",
+      },
+    ],
+  },
+  {
+    slug: "n8n-automation",
+    name: "n8n Development",
+    metaTitle: "Hire an n8n Developer & Expert | Muhammad Hamd",
+    metaDescription:
+      "Hire an n8n developer who builds automation that holds up in production. Workflow design, self-hosted n8n setup, custom API integrations, and AI steps.",
+    h1: "Hire an n8n Developer",
+    tagline: "n8n workflows that hold up in production",
+    intro:
+      "I'm Muhammad Hamd, an automation engineer based in Karachi, Pakistan, and I build and maintain n8n workflows for businesses worldwide. n8n is my daily tool for AI workflow automation, and the difference between a weekend n8n experiment and a workflow your business depends on is error handling, monitoring, and clean design. I do the full job, which covers designing workflows, self-hosting n8n properly, building custom integrations, and adding LLM steps that give your automations judgment.",
+    solves: [
+      "Workflows someone built once that now break silently and nobody can fix",
+      "An n8n instance on a starter server that falls over as volume grows",
+      "APIs and internal tools that n8n's built-in nodes don't cover",
+      "Automations that need AI judgment such as classifying, summarizing, or drafting",
+    ],
+    builds: [
+      {
+        title: "Workflow design & build",
+        body: "Clean, documented n8n workflows that your team can read and modify, built around your actual process instead of a template.",
+      },
+      {
+        title: "Self-hosted n8n done right",
+        body: "Docker-based self-hosted setups with backups, upgrades, queue mode for scale, and monitoring, so the instance itself is never the weak point.",
+      },
+      {
+        title: "Custom nodes & API integrations",
+        body: "When a built-in node does not exist, I write the code node or custom integration that connects n8n to your internal APIs and tools.",
+      },
+      {
+        title: "AI steps inside workflows",
+        body: "LLM-powered steps for classifying, summarizing, extracting, and drafting, wired into n8n with cost controls and fallbacks.",
+      },
+    ],
+    stack: ["n8n", "Docker", "PostgreSQL", "JavaScript", "Python", "OpenAI", "Webhooks", "REST APIs"],
+    related: [
+      { label: "AI Workflow Automation service", href: "/services/ai-automation" },
+      { label: "CRM Automation service", href: "/services/crm-automation" },
+      { label: "Hire me", href: "/hire-me" },
+    ],
+    faqs: [
+      {
+        q: "What does an n8n developer do that I can't do myself?",
+        a: "n8n's visual editor makes simple automations easy, and you should build those yourself. An n8n developer earns their fee on the hard parts, such as error handling, self-hosted scaling, custom API integrations, and AI steps, which is the difference between a demo and a system your business can rely on.",
+      },
+      {
+        q: "Should I self-host n8n or use n8n Cloud?",
+        a: "n8n Cloud is the right call if you want zero maintenance and your volume is modest. Self-hosting wins on cost at scale, data control, and custom nodes. I set up self-hosted instances with Docker, backups, and monitoring, and I will tell you honestly which one fits your case.",
+      },
+      {
+        q: "Can you fix or take over an existing n8n setup?",
+        a: "Yes, and it is a common request. I audit the existing workflows, add the missing error handling and alerts, document what each workflow does, and then extend from there, so you are not locked to whoever built it first.",
+      },
+      {
+        q: "What does it cost to hire an n8n developer?",
+        a: "My work runs $50 to $120 per hour, with fixed prices for well-defined workflow builds. A focused automation is often live within days to a couple of weeks, so the typical project is small compared to the hours it saves.",
+      },
+    ],
+  },
+  {
+    slug: "full-stack-development",
+    name: "Full-Stack Development",
+    metaTitle: "Hire a Full-Stack AI Developer | Muhammad Hamd",
+    metaDescription:
+      "Full-stack development with AI built in. Muhammad Hamd builds complete products in Next.js, Node.js, and Python, from MindKeepr enterprise systems to SelfBrand.app.",
+    h1: "Full-Stack AI Development",
+    tagline: "The whole product, not just the model",
+    intro:
+      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build complete products end to end. Most AI engineers can wire up a model but cannot ship the product around it, and most full-stack developers bolt AI on as an afterthought. I do both, because I have built AI into my own products such as SelfBrand.app and Asmara.AI, and I engineer full production stacks at MindKeepr in Estonia. I work in Next.js, Node.js, Python, and PostgreSQL, from the database to the interface.",
+    solves: [
+      "Needing one engineer who can build the frontend, backend, and the AI inside it",
+      "Handing an AI feature to a full-stack team that has never shipped one in production",
+      "A product that stalls because the model works but nothing around it does",
+      "Juggling separate contractors for the app, the API, and the AI",
+    ],
+    builds: [
+      {
+        title: "Frontend & interfaces",
+        body: "Fast, accessible interfaces in Next.js and React, the same stack behind SelfBrand.app, Asmara.AI, and this site, built for real users rather than a demo.",
+      },
+      {
+        title: "Backend & APIs",
+        body: "Reliable backends and REST or streaming APIs in Node.js and Python, with auth, background jobs, and the database design that keeps them fast as you grow.",
+      },
+      {
+        title: "AI as part of the product",
+        body: "LLM features, RAG, chat, and automation engineered into the product itself, not stapled on, so the AI and the app share one clean architecture.",
+      },
+      {
+        title: "Deployment & reliability",
+        body: "Deployment on Vercel or your own infrastructure, with monitoring, error handling, and documentation, so the product runs and your team can maintain it.",
+      },
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Node.js", "Python", "PostgreSQL", "OpenAI", "Docker"],
+    related: [
+      { label: "MVP Development service", href: "/services/mvp-development" },
+      { label: "See SelfBrand.app, built end to end", href: "/work/selfbrand" },
+      { label: "Hire me", href: "/hire-me" },
+    ],
+    faqs: [
+      {
+        q: "What does full-stack AI development mean?",
+        a: "It means building the complete product, the frontend, the backend, the database, and the AI inside it, as one system. I am both a full-stack engineer and an AI engineer, so you get the app and the intelligence in it from one person rather than stitching together separate contractors.",
+      },
+      {
+        q: "Which stack do you build with?",
+        a: "Next.js and React on the frontend, Node.js and Python on the backend, PostgreSQL for data, and OpenAI or Anthropic for AI, all deployed on Vercel or your own infrastructure. It is the same stack I use for my own products and at MindKeepr.",
+      },
+      {
+        q: "Can you join an existing engineering team?",
+        a: "Yes. I work alongside in-house teams through shared repos, code reviews, and clear documentation, and I am comfortable owning either the AI layer or a full feature end to end. The UTC+5 time zone overlaps EU mornings and US evenings for daily collaboration.",
+      },
+      {
+        q: "Do you only build AI products?",
+        a: "No. I build standard web products too, and I add AI only where it genuinely improves them. If your product does not need AI, I will tell you honestly rather than sell you a feature you will not use.",
+      },
+    ],
+  },
 ];

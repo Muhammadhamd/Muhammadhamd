@@ -4,30 +4,29 @@ import PageShell, { JsonLd } from "@/components/PageShell";
 import AskAI from "@/components/AskAI";
 import { SectionHeader, FeatureCard, FaqList, DarkCTA } from "@/components/ui";
 import { DottedPattern, DoodleLoop, DoodleArrowCurly } from "@/components/Doodles";
-import { services } from "@/lib/services";
-import type { Location } from "@/lib/locations";
+import type { Industry } from "@/lib/industries";
 import { faqPageLd, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
-export default function LocationView({ location }: { location: Location }) {
+export default function IndustryView({ industry }: { industry: Industry }) {
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "AI Engineering & Automation",
-    name: `AI Engineer in ${location.areaName}, Muhammad Hamd`,
-    description: location.metaDescription,
+    serviceType: `AI Automation for ${industry.name}`,
+    name: `AI Automation for ${industry.name} by Muhammad Hamd`,
+    description: industry.metaDescription,
     provider: personRef,
-    areaServed: location.areaName,
-    url: absUrl(`/${location.slug}`),
+    areaServed: "Worldwide",
+    url: absUrl(`/ai-for/${industry.slug}`),
   };
 
   return (
     <PageShell>
       <JsonLd data={serviceLd} />
-      <JsonLd data={faqPageLd(location.faqs)} />
+      <JsonLd data={faqPageLd(industry.faqs)} />
       <JsonLd
         data={breadcrumbLd([
           { name: "Home", path: "/" },
-          { name: location.h1, path: `/${location.slug}` },
+          { name: industry.h1, path: `/ai-for/${industry.slug}` },
         ])}
       />
 
@@ -37,11 +36,11 @@ export default function LocationView({ location }: { location: Location }) {
         <span className="pointer-events-none absolute right-12 top-1 hidden h-3.5 w-3.5 rotate-45 bg-[#7c3bed] sm:block" />
 
         <h1 className="relative inline-block font-display text-[34px] sm:text-[48px] font-extrabold leading-[1.05] tracking-tight text-zinc-950">
-          {location.h1}
+          {industry.h1}
           <DoodleLoop className="pointer-events-none absolute -right-12 -top-5 hidden h-10 w-10 text-violet-200 lg:block" />
         </h1>
         <div className="mt-5 max-w-[62ch] space-y-4 text-[16px] leading-relaxed text-zinc-600">
-          {location.intro.map((p, i) => (
+          {industry.intro.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
         </div>
@@ -62,34 +61,61 @@ export default function LocationView({ location }: { location: Location }) {
       </section>
 
       <section className="mt-10">
-        <AskAI path={`/${location.slug}`} label={location.h1} />
+        <AskAI path={`/ai-for/${industry.slug}`} label={industry.h1} />
       </section>
 
-      {/* Why work with me */}
+      {/* Where AI helps */}
       <section className="relative mt-20">
-        <SectionHeader kicker="Why me" title="Why work with me" doodle="double" />
+        <SectionHeader title={`Where AI helps in ${industry.name.toLowerCase()}`} doodle="double" />
         <DoodleArrowCurly className="pointer-events-none absolute right-[6%] top-2 hidden h-12 w-12 -rotate-12 text-[#7c3bed] lg:block" />
         <div className="mt-7 grid gap-5 sm:grid-cols-2">
-          {location.reasons.map((r, i) => (
-            <FeatureCard key={r.title} index={i} title={r.title}>
-              {r.body}
+          {industry.useCases.map((u, i) => (
+            <FeatureCard key={u.title} index={i} title={u.title}>
+              {u.body}
             </FeatureCard>
           ))}
         </div>
       </section>
 
-      {/* Services */}
+      {/* What I'd automate first */}
       <section className="mt-20">
-        <SectionHeader kicker="Capabilities" title={`Services I offer in ${location.areaName}`} />
-        <div className="mt-7 grid gap-4 sm:grid-cols-2">
-          {services.map((s) => (
+        <SectionHeader title="What I'd automate first" />
+        <ol className="mt-7 space-y-4">
+          {industry.workflow.map((step, i) => (
+            <li key={i} className="flex items-start gap-4">
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-zinc-950 bg-violet-50 font-display text-[14px] font-black text-[#7c3bed]">
+                {i + 1}
+              </span>
+              <span className="text-[15.5px] leading-relaxed text-zinc-700">{step}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Proof + services */}
+      <section className="mt-20">
+        <SectionHeader title="How I'd build it" doodle="none" />
+        <p className="mt-4 max-w-[62ch] text-[15.5px] leading-relaxed text-zinc-600">
+          I build on the systems I have already shipped, and I combine the services below to fit your
+          exact workflow rather than selling a fixed package.
+        </p>
+        <div className="mt-6 flex flex-col gap-2.5">
+          <Link
+            href={industry.proof.href}
+            className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#7c3bed] no-underline transition-all hover:gap-3"
+          >
+            <ArrowRight size={16} /> {industry.proof.label}
+          </Link>
+        </div>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {industry.services.map((s) => (
             <Link
-              key={s.slug}
-              href={`/services/${s.slug}`}
+              key={s.href}
+              href={s.href}
               className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-zinc-100 bg-white p-4 no-underline transition-all hover:border-zinc-950 hover:shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
             >
               <span className="font-display text-[15px] font-bold text-zinc-950 transition-colors group-hover:text-[#7c3bed]">
-                {s.name}
+                {s.label}
               </span>
               <ArrowRight size={16} className="shrink-0 text-zinc-300 transition-colors group-hover:text-[#7c3bed]" />
             </Link>
@@ -97,38 +123,17 @@ export default function LocationView({ location }: { location: Location }) {
         </div>
       </section>
 
-      {/* Explore by country (regional hub pages only) */}
-      {location.relatedLocations && location.relatedLocations.length > 0 && (
-        <section className="mt-20">
-          <SectionHeader kicker="By country" title="Explore by country" doodle="none" />
-          <div className="mt-7 grid gap-4 sm:grid-cols-2">
-            {location.relatedLocations.map((r) => (
-              <Link
-                key={r.href}
-                href={r.href}
-                className="group flex items-center justify-between gap-3 rounded-2xl border-2 border-zinc-100 bg-white p-4 no-underline transition-all hover:border-zinc-950 hover:shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
-              >
-                <span className="font-display text-[15px] font-bold text-zinc-950 transition-colors group-hover:text-[#7c3bed]">
-                  {r.label}
-                </span>
-                <ArrowRight size={16} className="shrink-0 text-zinc-300 transition-colors group-hover:text-[#7c3bed]" />
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
-
       {/* FAQ */}
       <section className="mt-20">
-        <SectionHeader kicker="Questions" title="Frequently asked" doodle="double" />
-        <FaqList faqs={location.faqs} />
+        <SectionHeader title="Frequently asked" doodle="double" />
+        <FaqList faqs={industry.faqs} />
       </section>
 
       {/* CTA */}
       <section className="mt-16">
         <DarkCTA
-          title={`Need an AI engineer in ${location.areaName}?`}
-          text="Tell me what you want to build or automate, and I'll reply with whether I can help and how I'd approach it."
+          title={`Want AI automation built for ${industry.name.toLowerCase()}?`}
+          text="Tell me what you want to automate, and I'll reply with whether I can help and how I'd approach it."
           primary={{ label: "Start a project", href: "mailto:muhammadhamdali572@gmail.com" }}
           secondary={{ label: "Book a call", href: "/contact" }}
         />

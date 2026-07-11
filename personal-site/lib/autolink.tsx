@@ -19,6 +19,24 @@ const RULES: { phrase: string; href: string }[] = [
   { phrase: "Cubitrek", href: "/work/cubitrek" },
   { phrase: "Asmara.AI", href: "/work/asmara-ai" },
   { phrase: "VativeApps", href: "/work/vative-apps" },
+  { phrase: "AI chatbot development", href: "/services/ai-chatbot-development" },
+  { phrase: "full-stack development", href: "/services/full-stack-development" },
+  { phrase: "MVP development", href: "/services/mvp-development" },
+  { phrase: "AI automation in Dubai", href: "/ai-automation-dubai" },
+  { phrase: "AI automation for restaurants", href: "/ai-for/restaurants" },
+  { phrase: "WhatsApp ordering bot", href: "/ai-for/restaurants" },
+  { phrase: "AI automation for marketing agencies", href: "/ai-for/marketing-agencies" },
+  { phrase: "white-label AI", href: "/ai-for/marketing-agencies" },
+  { phrase: "WhatsApp automation for clinics", href: "/ai-for/healthcare" },
+  { phrase: "AI automation for e-commerce", href: "/ai-for/ecommerce" },
+  { phrase: "abandoned-cart", href: "/ai-for/ecommerce" },
+  { phrase: "AI automation for logistics", href: "/ai-for/logistics" },
+  { phrase: "AI features to your SaaS", href: "/ai-for/saas-startups" },
+  { phrase: "AI for SaaS", href: "/ai-for/saas-startups" },
+  { phrase: "AI for personal brands", href: "/ai-for/personal-brands" },
+  // Longer phrase must come before the bare "n8n" rule so it wins the tie at
+  // the same match index.
+  { phrase: "n8n developer", href: "/services/n8n-automation" },
   { phrase: "n8n", href: "/services/ai-automation" },
 ];
 

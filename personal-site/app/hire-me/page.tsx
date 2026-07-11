@@ -21,7 +21,7 @@ import {
   faqPageLd,
   breadcrumbLd,
   absUrl,
-  PERSON_ID,
+  personRef,
   type Faq,
 } from "@/lib/seo";
 
@@ -76,7 +76,7 @@ const serviceLd = {
   serviceType: "Agentic AI Engineering & Automation",
   name: "Agentic AI Engineering & Automation by Muhammad Hamd",
   description: "Production-ready agentic AI development, LLM integration, AI workflow automation, CRM automation, WhatsApp AI, and RAG systems.",
-  provider: { "@id": PERSON_ID },
+  provider: personRef,
   areaServed: "Worldwide",
   url: absUrl("/hire-me"),
 };

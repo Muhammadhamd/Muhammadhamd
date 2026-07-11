@@ -2,7 +2,7 @@ import Image from "next/image";
 import PageShell, { JsonLd } from "@/components/PageShell";
 import { DarkCTA } from "@/components/ui";
 import { DottedPattern, DoodleSquiggle, DoodlePlayfulStar } from "@/components/Doodles";
-import { pageMetadata, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
+import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "About Muhammad Hamd, Agentic AI Engineer from Karachi, Pakistan",
@@ -19,7 +19,7 @@ const aboutLd = {
   "@type": "AboutPage",
   url: absUrl("/about"),
   name: "About Muhammad Hamd",
-  mainEntity: { "@id": PERSON_ID },
+  mainEntity: personRef,
 };
 
 export default function AboutPage() {

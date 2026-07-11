@@ -19,7 +19,7 @@ import {
   faqPageLd,
   breadcrumbLd,
   absUrl,
-  PERSON_ID,
+  personRef,
 } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -58,7 +58,7 @@ export default async function ServicePage({
     serviceType: svc.name,
     name: `${svc.name} by Muhammad Hamd`,
     description: svc.metaDescription,
-    provider: { "@id": PERSON_ID },
+    provider: personRef,
     areaServed: "Worldwide",
     url: absUrl(`/services/${svc.slug}`),
   };

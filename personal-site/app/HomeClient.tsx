@@ -24,6 +24,7 @@ import {
 import { FaGithub, FaLinkedinIn, FaMedium, FaLinkedin } from "react-icons/fa6";
 import { works } from "@/lib/data";
 import { services } from "@/lib/services";
+import { industries } from "@/lib/industries";
 import {
   DoodleSquiggle,
   DoodleDoubleUnderline,
@@ -935,6 +936,36 @@ export default function HomeClient() {
                   AI Engineer in Karachi
                 </Link>
               </li>
+              <li>
+                <Link href="/ai-automation-dubai" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Automation in Dubai
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-automation-qatar" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Automation in Qatar
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-automation-saudi-arabia" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Automation in Saudi Arabia
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-automation-middle-east" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Automation in the Middle East
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-automation-consultant-uk" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Consultant in the UK
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-automation-consultant-usa" className="text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  AI Consultant in the US
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -956,10 +987,25 @@ export default function HomeClient() {
           <span className="text-zinc-500">Hire an AI engineer:</span>
           <Link href="/ai-engineer-pakistan" className="no-underline hover:text-[#7c3bed]">Pakistan</Link>
           <Link href="/ai-engineer-karachi" className="no-underline hover:text-[#7c3bed]">Karachi</Link>
+          <Link href="/ai-automation-dubai" className="no-underline hover:text-[#7c3bed]">Dubai</Link>
+          <Link href="/ai-automation-qatar" className="no-underline hover:text-[#7c3bed]">Qatar</Link>
+          <Link href="/ai-automation-saudi-arabia" className="no-underline hover:text-[#7c3bed]">Saudi Arabia</Link>
+          <Link href="/ai-automation-middle-east" className="no-underline hover:text-[#7c3bed]">Middle East</Link>
+          <Link href="/ai-automation-consultant-uk" className="no-underline hover:text-[#7c3bed]">UK</Link>
+          <Link href="/ai-automation-consultant-usa" className="no-underline hover:text-[#7c3bed]">US</Link>
           <Link href="/services" className="no-underline hover:text-[#7c3bed]">Services</Link>
           <Link href="/blog" className="no-underline hover:text-[#7c3bed]">Blog</Link>
           <Link href="/uses" className="no-underline hover:text-[#7c3bed]">Uses</Link>
           <Link href="/hire-me" className="no-underline hover:text-[#7c3bed]">Hire Me</Link>
+        </div>
+
+        <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[12px] font-semibold text-zinc-400">
+          <span className="text-zinc-500">AI automation for:</span>
+          {industries.map((i) => (
+            <Link key={i.slug} href={`/ai-for/${i.slug}`} className="no-underline hover:text-[#7c3bed]">
+              {i.name}
+            </Link>
+          ))}
         </div>
       </footer>
     </div>

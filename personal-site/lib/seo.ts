@@ -8,8 +8,23 @@ export const SITE_URL = "https://hamdali.com";
 export const absUrl = (path = "/") =>
   `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 
-/** Stable @id of the Person entity (defined in the homepage @graph). */
+/** Stable @id of the Person entity (defined in full in the homepage @graph). */
 export const PERSON_ID = `${SITE_URL}/#person`;
+
+/**
+ * Self-contained Person node for use on non-homepage routes. Google validates
+ * structured data per page, so referencing PERSON_ID by @id alone leaves a
+ * dangling node on subpages. Emit this instead wherever a page names the person
+ * as provider, author, publisher, or subject, so the entity resolves on-page
+ * and still merges with the full homepage Person via the shared @id.
+ */
+export const personRef = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: "Muhammad Hamd",
+  url: SITE_URL,
+  jobTitle: "Agentic AI Engineer & Full-Stack Developer",
+};
 
 /** URL of a dynamically generated 1200x630 OpenGraph card (see app/og/route.tsx). */
 export const ogImageUrl = (title: string, tag = "Muhammad Hamd") =>

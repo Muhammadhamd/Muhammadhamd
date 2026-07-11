@@ -1,7 +1,7 @@
 import PageShell, { JsonLd } from "@/components/PageShell";
 import { SectionHeader, Pill, DarkCTA } from "@/components/ui";
 import { DottedPattern, DoodlePlayfulStar } from "@/components/Doodles";
-import { pageMetadata, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
+import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Uses: My AI Engineering Stack & Tools | Muhammad Hamd",
@@ -26,7 +26,7 @@ const usesLd = {
   "@type": "WebPage",
   url: absUrl("/uses"),
   name: "What Muhammad Hamd Uses",
-  about: { "@id": PERSON_ID },
+  about: personRef,
 };
 
 export default function UsesPage() {

@@ -4,7 +4,7 @@ import PageShell, { JsonLd } from "@/components/PageShell";
 import ContactForm from "@/components/ContactForm";
 import CalendlyInline from "@/components/CalendlyInline";
 import { DottedPattern, DoodleSparkle } from "@/components/Doodles";
-import { pageMetadata, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
+import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Contact Muhammad Hamd: Book an Agentic AI Engineer",
@@ -26,7 +26,7 @@ const contactLd = {
   "@type": "ContactPage",
   url: absUrl("/contact"),
   name: "Contact Muhammad Hamd",
-  mainEntity: { "@id": PERSON_ID },
+  mainEntity: personRef,
 };
 
 const channels = [

@@ -5,8 +5,8 @@ import AuthorCard from "@/components/AuthorCard";
 import { FaqList, DarkCTA } from "@/components/ui";
 import AskAI from "@/components/AskAI";
 import { autoLink } from "@/lib/autolink";
-import { author, type Post } from "@/lib/blog";
-import { faqPageLd, breadcrumbLd, absUrl, PERSON_ID } from "@/lib/seo";
+import { type Post } from "@/lib/blog";
+import { faqPageLd, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -110,8 +110,8 @@ export default function BlogPostView({ post }: { post: Post }) {
     image: absUrl("/hamd.png"),
     mainEntityOfPage: url,
     url,
-    author: { "@id": PERSON_ID, name: author.name, url: absUrl("/about") },
-    publisher: { "@id": PERSON_ID },
+    author: personRef,
+    publisher: personRef,
   };
 
   return (
