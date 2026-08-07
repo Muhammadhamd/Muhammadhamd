@@ -4,7 +4,7 @@ export const automationPosts: Post[] = [
   {
     slug: "automate-crm-with-ai",
     title: "How to Automate Your CRM with AI: A Systems Engineer's Guide",
-    metaTitle: "How to Automate Your CRM with AI (What Actually Works in 2026) | Muhammad Hamd",
+    metaTitle: "How to Automate Your CRM with AI | Muhammad Hamd",
     metaDescription:
       "How to automate your CRM with AI, step by step. Which tasks to automate, the stack to use, a real lead follow-up example, costs, and mistakes to avoid.",
     excerpt:
@@ -51,7 +51,7 @@ export const automationPosts: Post[] = [
   {
     slug: "n8n-ai-automation-guide",
     title: "The n8n AI Automation Guide: Build Reliable AI Workflows",
-    metaTitle: "n8n AI Automation Guide: Build Reliable AI Workflows | Muhammad Hamd",
+    metaTitle: "n8n AI Automation Guide | Muhammad Hamd",
     metaDescription:
       "A practical n8n AI automation guide. How to combine n8n with an LLM, a real workflow pattern, and the error handling that keeps automations from breaking silently.",
     excerpt:
@@ -94,7 +94,7 @@ export const automationPosts: Post[] = [
   {
     slug: "whatsapp-automation-ai",
     title: "WhatsApp Business Automation with AI: What It Takes to Do It Well",
-    metaTitle: "WhatsApp Business Automation with AI: A Builder's Guide | Muhammad Hamd",
+    metaTitle: "WhatsApp Business Automation with AI | Muhammad Hamd",
     metaDescription:
       "WhatsApp business automation with AI, explained by the founder of WatBot. How conversational AI handles support and sales on WhatsApp, with human handoff and real limits.",
     excerpt:

@@ -34,6 +34,9 @@ const RULES: { phrase: string; href: string }[] = [
   { phrase: "AI features to your SaaS", href: "/ai-for/saas-startups" },
   { phrase: "AI for SaaS", href: "/ai-for/saas-startups" },
   { phrase: "AI for personal brands", href: "/ai-for/personal-brands" },
+  { phrase: "AI visibility audit", href: "/services/ai-visibility" },
+  { phrase: "AI visibility by region", href: "/blog/ai-visibility-by-region" },
+  { phrase: "whether your product is visible on AI platforms", href: "/blog/is-my-product-visible-on-ai-platforms" },
   // Longer phrase must come before the bare "n8n" rule so it wins the tie at
   // the same match index.
   { phrase: "n8n developer", href: "/services/n8n-automation" },

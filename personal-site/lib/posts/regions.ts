@@ -4,7 +4,7 @@ export const regionPosts: Post[] = [
   {
     slug: "offshore-ai-development-guide",
     title: "Offshore AI Development: How to Do It Right",
-    metaTitle: "Offshore AI Development Guide (For US & UK Startups) | Muhammad Hamd",
+    metaTitle: "Offshore AI Development Guide | Muhammad Hamd",
     metaDescription:
       "How US and UK companies hire offshore AI engineers without the usual problems. Time zones, communication, quality, and cost, from an engineer who works this way.",
     excerpt:

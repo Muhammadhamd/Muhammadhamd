@@ -55,7 +55,7 @@ export const agenticPosts: Post[] = [
   {
     slug: "agentic-ai-vs-traditional-automation",
     title: "Agentic AI vs Traditional Automation: What Actually Changes",
-    metaTitle: "Agentic AI vs Traditional Automation: The Real Difference | Muhammad Hamd",
+    metaTitle: "Agentic AI vs Traditional Automation | Muhammad Hamd",
     metaDescription:
       "Agentic AI vs traditional automation explained with real examples. When rule-based automation wins, when agents win, and how to choose the right one for your workflow.",
     excerpt:
@@ -109,7 +109,7 @@ export const agenticPosts: Post[] = [
   {
     slug: "how-to-build-ai-agents",
     title: "How to Build AI Agents with LangChain, LangGraph, CrewAI, and AutoGen",
-    metaTitle: "How to Build AI Agents (LangChain, LangGraph, CrewAI, AutoGen) | Muhammad Hamd",
+    metaTitle: "How to Build AI Agents with LangChain | Muhammad Hamd",
     metaDescription:
       "A practical guide to building AI agents. How LangChain, LangGraph, CrewAI, and AutoGen differ, when to use each, and the pattern that makes agents reliable in production.",
     excerpt:

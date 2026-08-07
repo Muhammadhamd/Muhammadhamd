@@ -5,7 +5,7 @@ import AskAI from "@/components/AskAI";
 import { SectionHeader, FeatureCard, FaqList, DarkCTA } from "@/components/ui";
 import { DottedPattern, DoodleLoop, DoodleArrowCurly } from "@/components/Doodles";
 import type { Industry } from "@/lib/industries";
-import { faqPageLd, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
+import { faqPageLd, breadcrumbLd, absUrl, ogImageUrl, personRef } from "@/lib/seo";
 
 export default function IndustryView({ industry }: { industry: Industry }) {
   const serviceLd = {
@@ -14,6 +14,7 @@ export default function IndustryView({ industry }: { industry: Industry }) {
     serviceType: `AI Automation for ${industry.name}`,
     name: `AI Automation for ${industry.name} by Muhammad Hamd`,
     description: industry.metaDescription,
+    image: ogImageUrl(industry.h1, "AI Automation"),
     provider: personRef,
     areaServed: "Worldwide",
     url: absUrl(`/ai-for/${industry.slug}`),

@@ -6,6 +6,7 @@ import { pakistanPosts } from "@/lib/posts/pakistan";
 import { fullstackPosts } from "@/lib/posts/fullstack";
 import { chatbotPosts } from "@/lib/posts/chatbots";
 import { regionPosts } from "@/lib/posts/regions";
+import { aiVisibilityPosts } from "@/lib/posts/ai-visibility";
 
 export { author } from "@/lib/blog-types";
 export type { Post, Block } from "@/lib/blog-types";
@@ -20,6 +21,7 @@ export const posts = [
   ...fullstackPosts,
   ...chatbotPosts,
   ...regionPosts,
+  ...aiVisibilityPosts,
 ].sort((a, b) => (a.date < b.date ? 1 : -1));
 
 export function getPost(slug: string) {

@@ -4,7 +4,7 @@ export const llmPosts: Post[] = [
   {
     slug: "rag-vs-fine-tuning",
     title: "RAG vs Fine-Tuning: Which One Does Your Use Case Actually Need?",
-    metaTitle: "RAG vs Fine-Tuning LLM: How to Choose (With Real Examples) | Muhammad Hamd",
+    metaTitle: "RAG vs Fine-Tuning LLMs: How to Choose | Muhammad Hamd",
     metaDescription:
       "RAG vs fine-tuning explained clearly. What each one does, what it costs, and a simple rule for choosing, from an engineer who builds production LLM systems.",
     excerpt:
@@ -49,7 +49,7 @@ export const llmPosts: Post[] = [
   {
     slug: "llm-integration-guide",
     title: "How to Integrate an LLM Into Your Product (Without It Breaking in Production)",
-    metaTitle: "How to Integrate an LLM Into Your Product: A Practical Guide | Muhammad Hamd",
+    metaTitle: "How to Integrate an LLM Into Your Product | Muhammad Hamd",
     metaDescription:
       "A practical guide to integrating an LLM into your product. Model choice, prompts, RAG grounding, structured output, evaluation, and cost control that survive production.",
     excerpt:
@@ -90,7 +90,7 @@ export const llmPosts: Post[] = [
   {
     slug: "vector-databases-explained",
     title: "Vector Databases Explained: Pinecone vs FAISS vs Weaviate vs pgvector",
-    metaTitle: "Vector Databases Explained: Pinecone, FAISS, Weaviate, pgvector | Muhammad Hamd",
+    metaTitle: "Vector Databases Explained | Muhammad Hamd",
     metaDescription:
       "Vector databases explained in plain language. What they do, how embeddings power search, and how to choose between Pinecone, FAISS, Weaviate, and pgvector.",
     excerpt:

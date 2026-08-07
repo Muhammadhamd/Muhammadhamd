@@ -48,7 +48,7 @@ const STATIC_CONTENT: Record<string, string> = {
 };
 
 const blockText = (b: Block): string =>
-  "text" in b ? b.text : "items" in b ? b.items.join("; ") : "";
+  "text" in b ? b.text : "items" in b ? b.items.join("; ") : "alt" in b ? b.alt : "";
 
 /** Return the full text content of a page by its URL path, or null. */
 export function getPageContent(path: string): string | null {

@@ -548,6 +548,65 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "ai-visibility",
+    name: "AI Visibility Audit",
+    metaTitle: "AI Visibility Audit for Products & SaaS | Muhammad Hamd",
+    metaDescription:
+      "Find out if ChatGPT, Perplexity, and Claude can see your product, then fix it. Muhammad Hamd audits structured data, rendering, and entity consistency and repairs what he finds.",
+    h1: "AI Visibility Audit",
+    tagline: "Ranking on Google is not the same as being cited by AI",
+    intro:
+      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I audit and fix why products are invisible to AI platforms even when they rank fine on Google. I ran this exact audit on my own site, hamdali.com, using AI-assisted tooling, and found real gaps, including structured data that looked correct in the code but resolved as an empty, dangling reference on every page except the homepage. I fix the same class of problem for other builders, from the schema and rendering layer up to how consistently your brand appears across the web.",
+    solves: [
+      "Your product ranks on Google, but ChatGPT, Perplexity, and Claude have never heard of it",
+      "Structured data that looks right in the code but is broken or incomplete on the actual page",
+      "Content that renders fine in a browser but is invisible to crawlers because it loads client-side",
+      "No way to tell whether GPTBot, ClaudeBot, or PerplexityBot can even reach your site",
+    ],
+    builds: [
+      {
+        title: "The AI visibility audit",
+        body: "I test your product with real prompts across ChatGPT, Perplexity, and Claude, check how much of your site is actually indexed, and inspect every page's structured data for gaps and dangling references, the same process I ran on my own site.",
+      },
+      {
+        title: "Structured data & entity fixes",
+        body: "I repair and add Organization, Product, Person, and FAQPage schema so it resolves correctly on every page, not just the homepage, and ties back to one consistent entity.",
+      },
+      {
+        title: "Server-side rendering & crawler access",
+        body: "I confirm your key content and schema render in the raw server HTML, not only after client-side JavaScript runs, and that AI crawlers are not accidentally blocked in robots.txt.",
+      },
+      {
+        title: "Entity consistency & citation groundwork",
+        body: "I align your name, description, and positioning across your site, LinkedIn, GitHub, and directories, and add an llms.txt file and quotable, self-contained FAQ content that AI models can cite directly.",
+      },
+    ],
+    stack: ["JSON-LD", "Schema.org", "Next.js SSR", "GPTBot", "PerplexityBot", "ClaudeBot", "llms.txt", "Google Search Console"],
+    related: [
+      { label: "Is Your Product Visible on AI Platforms?", href: "/blog/is-my-product-visible-on-ai-platforms" },
+      { label: "Why AI Visibility Differs by Region", href: "/blog/ai-visibility-by-region" },
+      { label: "Hire me", href: "/hire-me" },
+    ],
+    faqs: [
+      {
+        q: "What is an AI visibility audit?",
+        a: "It is a check of whether AI platforms such as ChatGPT, Perplexity, and Claude can find, read, and cite your product, covering structured data, server-side rendering, crawler access, and entity consistency. Most sites have never had this checked, only a traditional SEO audit.",
+      },
+      {
+        q: "How is this different from a normal SEO audit?",
+        a: "A traditional SEO audit checks whether Google can rank you. This checks whether AI models can find and cite you, which depends more on structured data resolving correctly per page, content being server-rendered, and your entity being consistent across the web, not just keywords and backlinks.",
+      },
+      {
+        q: "Do you just report issues, or fix them too?",
+        a: "I fix them. I found and repaired a dangling schema reference across my own site's pages, added missing structured data, and confirmed server-side rendering, so this is the same hands-on engineering work, not a slide deck of recommendations.",
+      },
+      {
+        q: "How much does an AI visibility audit cost?",
+        a: "It depends on the size of your site and how many issues surface. I scope it after a short look at what you have and send a clear quote, the same way I do for any project.",
+      },
+    ],
+  },
+  {
     slug: "full-stack-development",
     name: "Full-Stack Development",
     metaTitle: "Hire a Full-Stack AI Developer | Muhammad Hamd",

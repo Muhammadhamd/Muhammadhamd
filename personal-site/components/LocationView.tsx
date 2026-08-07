@@ -6,15 +6,19 @@ import { SectionHeader, FeatureCard, FaqList, DarkCTA } from "@/components/ui";
 import { DottedPattern, DoodleLoop, DoodleArrowCurly } from "@/components/Doodles";
 import { services } from "@/lib/services";
 import type { Location } from "@/lib/locations";
-import { faqPageLd, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
+import { faqPageLd, breadcrumbLd, absUrl, ogImageUrl, personRef } from "@/lib/seo";
 
 export default function LocationView({ location }: { location: Location }) {
+  // Matches the ogTag each location route passes to pageMetadata(), so the
+  // schema image and the page's actual OG/Twitter image are the same asset.
+  const ogTag = location.slug.startsWith("ai-engineer") ? "AI Engineer" : "AI Automation";
   const serviceLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     serviceType: "AI Engineering & Automation",
     name: `AI Engineer in ${location.areaName}, Muhammad Hamd`,
     description: location.metaDescription,
+    image: ogImageUrl(location.h1, ogTag),
     provider: personRef,
     areaServed: location.areaName,
     url: absUrl(`/${location.slug}`),

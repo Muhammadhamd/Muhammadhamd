@@ -1,12 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import PageShell, { JsonLd } from "@/components/PageShell";
 import AuthorCard from "@/components/AuthorCard";
 import { FaqList, DarkCTA } from "@/components/ui";
 import AskAI from "@/components/AskAI";
 import { autoLink } from "@/lib/autolink";
+import { diagrams } from "@/components/BlogDiagrams";
 import { type Post } from "@/lib/blog";
-import { faqPageLd, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
+import { faqPageLd, breadcrumbLd, absUrl, ogImageUrl, personRef } from "@/lib/seo";
 
 const MONTHS = [
   "January", "February", "March", "April", "May", "June",
@@ -18,10 +20,23 @@ function formatDate(iso: string) {
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 }
 
+/** Approximate word count of the article's readable prose, for schema.org wordCount. */
+function estimateWordCount(post: Post): number {
+  let words = 0;
+  for (const b of post.body) {
+    if (b.t === "p" || b.t === "h2" || b.t === "h3" || b.t === "quote") {
+      words += b.text.trim().split(/\s+/).filter(Boolean).length;
+    } else if (b.t === "ul" || b.t === "ol") {
+      for (const item of b.items) words += item.trim().split(/\s+/).filter(Boolean).length;
+    }
+  }
+  return words;
+}
+
 function Prose({ post }: { post: Post }) {
   const used = new Set<string>();
   return (
-    <div className="mt-8">
+    <div id="article-body" className="mt-8">
       {post.body.map((block, i) => {
         switch (block.t) {
           case "h2":
@@ -87,6 +102,45 @@ function Prose({ post }: { post: Post }) {
                 <code className="whitespace-pre font-mono">{block.code}</code>
               </pre>
             );
+          case "figure": {
+            const Diagram = diagrams[block.diagram];
+            return (
+              <figure
+                key={i}
+                className="mt-8 overflow-hidden rounded-3xl border-2 border-zinc-950 bg-white p-5 sm:p-7 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
+              >
+                <div role="img" aria-label={block.alt}>
+                  <Diagram />
+                </div>
+                <figcaption className="mt-4 text-center text-[13px] font-semibold text-zinc-500">
+                  {block.caption}
+                </figcaption>
+                {/* Visually hidden but present in the DOM, so text-only crawlers
+                    (including AI answer engines) get the diagram's content. */}
+                <p className="sr-only">{block.alt}</p>
+              </figure>
+            );
+          }
+          case "img":
+            return (
+              <figure
+                key={i}
+                className="mt-8 overflow-hidden rounded-3xl border-2 border-zinc-950 shadow-[4px_4px_0px_0px_rgba(24,24,27,1)]"
+              >
+                <Image
+                  src={block.src}
+                  alt={block.alt}
+                  width={1200}
+                  height={675}
+                  className="h-auto w-full"
+                />
+                {block.caption && (
+                  <figcaption className="bg-white p-4 text-center text-[13px] font-semibold text-zinc-500">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
+            );
           default:
             return null;
         }
@@ -107,11 +161,37 @@ export default function BlogPostView({ post }: { post: Post }) {
     dateModified: post.updated || post.date,
     inLanguage: "en-US",
     keywords: post.keyword,
-    image: absUrl("/hamd.png"),
+    // Same title/tag pair used for the page's actual OG and Twitter image
+    // (see generateMetadata in app/blog/[slug]/page.tsx), so the schema image
+    // and the social preview image are always the same asset.
+    image: ogImageUrl(post.title, post.cluster),
+    articleSection: post.cluster,
+    wordCount: estimateWordCount(post),
     mainEntityOfPage: url,
     url,
     author: personRef,
     publisher: personRef,
+    // Marks the intro paragraph and the FAQ block as the sections voice
+    // assistants and AI answer engines should read back verbatim if asked
+    // to summarize this page. See #article-body and #faq below.
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#article-body > p:first-of-type", "#faq"],
+    },
+    // Hub-spoke topic clustering: a spoke post points at its pillar, and a
+    // pillar points at its spokes, so the relationship is explicit in
+    // structured data, not only in the visible "Keep reading" links.
+    ...(post.pillarSlug
+      ? { isPartOf: { "@type": "BlogPosting", "@id": absUrl(`/blog/${post.pillarSlug}`) } }
+      : {}),
+    ...(post.clusterSlugs && post.clusterSlugs.length > 0
+      ? {
+          hasPart: post.clusterSlugs.map((slug) => ({
+            "@type": "BlogPosting",
+            "@id": absUrl(`/blog/${slug}`),
+          })),
+        }
+      : {}),
   };
 
   return (
@@ -152,7 +232,7 @@ export default function BlogPostView({ post }: { post: Post }) {
         <Prose post={post} />
 
         {/* FAQ */}
-        <section className="mt-12">
+        <section id="faq" className="mt-12">
           <h2 className="font-display text-[24px] font-extrabold tracking-tight text-zinc-950">
             Frequently Asked Questions
           </h2>

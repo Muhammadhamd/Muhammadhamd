@@ -4,7 +4,7 @@ export const hiringPosts: Post[] = [
   {
     slug: "hire-ai-engineer-guide",
     title: "How to Hire an AI Engineer in 2026: A Practical Guide",
-    metaTitle: "How to Hire an AI Engineer in 2026 (Skills, Red Flags, Cost) | Muhammad Hamd",
+    metaTitle: "How to Hire an AI Engineer in 2026 | Muhammad Hamd",
     metaDescription:
       "How to hire an AI engineer in 2026. The skills that matter, questions to ask, red flags to avoid, and what it costs, written by a working AI engineer.",
     excerpt:
@@ -55,7 +55,7 @@ export const hiringPosts: Post[] = [
   {
     slug: "questions-to-ask-ai-engineer",
     title: "10 Questions to Ask When Hiring an AI Engineer",
-    metaTitle: "Questions to Ask When Hiring an AI Engineer (2026) | Muhammad Hamd",
+    metaTitle: "Questions to Ask When Hiring an AI Engineer | Muhammad Hamd",
     metaDescription:
       "The technical and practical questions that separate a real AI engineer from someone who has only run a few API calls. A hiring manager's checklist from an AI engineer.",
     excerpt:

@@ -16,6 +16,7 @@ This file helps AI systems and answer engines understand the site and cite the r
 - [MVP Development](https://hamdali.com/services/mvp-development): Startup MVPs built in weeks with Next.js, Node.js, and AI where it matters.
 - [n8n Development](https://hamdali.com/services/n8n-automation): Production-grade n8n workflows, self-hosting, custom integrations, and AI steps.
 - [Full-Stack Development](https://hamdali.com/services/full-stack-development): Complete products end to end (Next.js, Node.js, Python) with AI built in.
+- [AI Visibility Audit](https://hamdali.com/services/ai-visibility): Finding and fixing why a product is invisible to ChatGPT, Perplexity, and Claude even when it ranks on Google.
 
 ## Hire by region
 
@@ -49,6 +50,8 @@ This file helps AI systems and answer engines understand the site and cite the r
 
 ## Key articles
 
+- [Is Your Product Visible on AI Platforms?](https://hamdali.com/blog/is-my-product-visible-on-ai-platforms): How to test whether ChatGPT, Perplexity, and Claude can find and cite a product, and the structured-data and rendering fixes that usually explain why they cannot.
+- [Why AI Visibility Differs by Region](https://hamdali.com/blog/ai-visibility-by-region): Why the same product is cited confidently in one market's AI answers and invisible in another, and how to fix it.
 - [What Is Agentic AI?](https://hamdali.com/blog/what-is-agentic-ai)
 - [How to Hire an AI Engineer in 2026](https://hamdali.com/blog/hire-ai-engineer-guide)
 - [Cost to Build a Custom AI System](https://hamdali.com/blog/cost-of-ai-development)

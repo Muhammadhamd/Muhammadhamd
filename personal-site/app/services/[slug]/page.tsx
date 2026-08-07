@@ -19,6 +19,7 @@ import {
   faqPageLd,
   breadcrumbLd,
   absUrl,
+  ogImageUrl,
   personRef,
 } from "@/lib/seo";
 
@@ -58,6 +59,7 @@ export default async function ServicePage({
     serviceType: svc.name,
     name: `${svc.name} by Muhammad Hamd`,
     description: svc.metaDescription,
+    image: ogImageUrl(svc.name, "AI Service"),
     provider: personRef,
     areaServed: "Worldwide",
     url: absUrl(`/services/${svc.slug}`),
