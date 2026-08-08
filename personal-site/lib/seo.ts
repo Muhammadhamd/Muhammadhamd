@@ -38,6 +38,9 @@ const cardTitle = (t: string) => t.replace(/\s*\|\s*Muhammad Hamd\s*$/i, "").tri
  * a unique OG + Twitter image, and matching OpenGraph. Use on every new route
  * so nothing inherits the homepage canonical, og:url, or social image.
  */
+/** The site author's X/Twitter handle, used for twitter:site and twitter:creator. */
+const TWITTER_HANDLE = "@m_hamd_";
+
 export function pageMetadata({
   title,
   description,
@@ -45,6 +48,8 @@ export function pageMetadata({
   type = "website",
   ogTitle,
   ogTag,
+  publishedTime,
+  modifiedTime,
 }: {
   title: string;
   description: string;
@@ -52,6 +57,10 @@ export function pageMetadata({
   type?: "website" | "article" | "profile";
   ogTitle?: string;
   ogTag?: string;
+  // Article-only: rendered as og:article:published_time / modified_time /
+  // author, which social scrapers and AI crawlers use as freshness signals.
+  publishedTime?: string;
+  modifiedTime?: string;
 }): Metadata {
   const url = absUrl(path);
   const card = ogTitle ?? cardTitle(title);
@@ -67,8 +76,16 @@ export function pageMetadata({
       siteName: "Muhammad Hamd",
       type,
       images: [{ url: img, width: 1200, height: 630, alt: card }],
+      ...(type === "article" && publishedTime
+        ? { publishedTime, modifiedTime: modifiedTime ?? publishedTime, authors: [absUrl("/about")] }
+        : {}),
     },
-    twitter: { card: "summary_large_image", images: [img] },
+    twitter: {
+      card: "summary_large_image",
+      site: TWITTER_HANDLE,
+      creator: TWITTER_HANDLE,
+      images: [img],
+    },
   };
 }
 

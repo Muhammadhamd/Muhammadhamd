@@ -23,6 +23,8 @@ export async function generateMetadata({
     type: "article",
     ogTitle: post.title,
     ogTag: post.cluster,
+    publishedTime: post.date,
+    modifiedTime: post.updated,
   });
 }
 
