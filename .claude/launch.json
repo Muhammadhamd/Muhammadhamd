@@ -7,6 +7,12 @@
       "runtimeArgs": ["run", "dev", "--prefix", "personal-site"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "hamdali-cms-dashboard",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "../hamdali-cms/dashboard"],
+      "port": 5173
     }
   ]
 }
