@@ -7,7 +7,7 @@ import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "About Muhammad Hamd, Agentic AI Engineer from Karachi, Pakistan",
   description:
-    "The story of Muhammad Hamd (Hamd Ali): how a Node.js developer became an agentic AI engineer building production LLM systems, WatBot, selfbrand AI, and Asmara.AI from Karachi, Pakistan.",
+    "The story of Muhammad Hamd (Hamd Ali): how a Node.js developer became an agentic AI engineer building production LLM systems, WatBot and selfbrand AI, from Karachi, Pakistan.",
   path: "/about",
   type: "profile",
   ogTitle: "From manual code to autonomous systems",
@@ -113,7 +113,8 @@ export default function AboutPage() {
             as a local-first binary. I founded{" "}
             <strong className="text-zinc-900">selfbrand AI</strong>, a SaaS that
             automates roughly 80% of personal-branding content for founders and
-            professionals using LLMs. And I&apos;m building{" "}
+            professionals using LLMs. I also worked as a full-stack engineer
+            building{" "}
             <strong className="text-zinc-900">Asmara.AI</strong>, an AI-native
             automation product focused on LLM orchestration for business workflows.
           </p>

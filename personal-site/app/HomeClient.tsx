@@ -36,6 +36,20 @@ import {
   DottedPattern,
 } from "@/components/Doodles";
 
+const portfolioLogos = [
+  { name: "WatBot", src: "/portfolio-line-logos/watbot-ai.avif" },
+  { name: "Cubitrek", src: "/portfolio-line-logos/Cubitrek.jfif" },
+  { name: "Valoov AI", src: "/portfolio-line-logos/valoov-ai.jfif" },
+  { name: "Mindkeepr", src: "/portfolio-line-logos/mindkeepr-logo.jfif" },
+  { name: "SwiftGo", src: "/portfolio-line-logos/swiftgologo.webp" },
+  { name: "SwiftWire", src: "/portfolio-line-logos/swiftwire.jfif" },
+  { name: "Matchify", src: "/portfolio-line-logos/matchify.png" },
+  { name: "MedicExams", src: "/portfolio-line-logos/medicexams.jfif" },
+  { name: "Kafela", src: "/portfolio-line-logos/kafela.webp" },
+  { name: "KWSB", src: "/portfolio-line-logos/kwsb.png" },
+  { name: "Yacht Master Inc", src: "/portfolio-line-logos/yacht-master0inc.jfif" },
+];
+
 const socialIcons = [
   {
     label: "Medium",
@@ -115,7 +129,8 @@ export default function HomeClient() {
           <nav className="hidden md:flex items-center gap-6 text-[13.5px] font-semibold text-zinc-600">
             <a href="#about" className="hover:text-zinc-950 transition-colors">About</a>
             <a href="#products" className="hover:text-zinc-950 transition-colors">Products</a>
-            <a href="#experience" className="hover:text-zinc-950 transition-colors">Case Studies</a>
+            <Link href="/case-studies" className="hover:text-zinc-950 transition-colors">Case Studies</Link>
+            <Link href="/experience" className="hover:text-zinc-950 transition-colors">Experience</Link>
             <a href="#focus" className="hover:text-zinc-950 transition-colors">Systems</a>
             <a href="#contact" className="hover:text-zinc-950 transition-colors">Contact</a>
           </nav>
@@ -250,7 +265,37 @@ export default function HomeClient() {
               </a>
             ))}
           </div>
-          
+
+          {/* Trusted-by / Portfolio logo marquee */}
+          <div className="mt-14 w-full">
+            <p className="text-center text-[11px] uppercase tracking-widest text-[#a8a29e] font-extrabold font-display mb-6">
+              Brands &amp; Teams I&apos;ve Worked With
+            </p>
+            <div className="logo-marquee logo-marquee-mask overflow-hidden w-full">
+              <div className="logo-marquee-track items-center">
+                {[
+                  ...portfolioLogos,
+                  ...portfolioLogos,
+                  ...portfolioLogos,
+                  ...portfolioLogos,
+                ].map((logo, i) => (
+                  <div
+                    key={`${logo.src}-${i}`}
+                    className="flex-shrink-0 flex items-center justify-center px-8 md:px-10"
+                    aria-hidden={i >= portfolioLogos.length ? true : undefined}
+                  >
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      loading="lazy"
+                      className="h-14 md:h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -696,9 +741,19 @@ export default function HomeClient() {
 
           {/* Detailed case study navigation triggers */}
           <div className="space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400 border-b border-zinc-100 pb-2 mb-4">
-              Select Case Studies & Professional Roles
-            </h3>
+            <div className="flex items-center justify-between border-b border-zinc-100 pb-2 mb-4 gap-3">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-zinc-400">
+                Professional Roles
+              </h3>
+              <div className="flex items-center gap-3 shrink-0">
+                <Link href="/experience" className="text-[11px] font-bold text-zinc-500 hover:text-[#7c3bed] no-underline transition-colors">
+                  Full experience →
+                </Link>
+                <Link href="/case-studies" className="text-[11px] font-bold text-[#7c3bed] hover:text-[#6d28d9] no-underline transition-colors">
+                  Case studies →
+                </Link>
+              </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {works.map((w) => (
@@ -870,7 +925,7 @@ export default function HomeClient() {
           <div className="md:col-span-5">
             <p className="text-[11px] uppercase tracking-widest text-[#8a8a8a] font-extrabold mb-3">Professional Blueprint</p>
             <p className="leading-relaxed">
-              Muhammad Hamd (username: <strong className="text-zinc-600 font-bold">muhammadhamd</strong>) builds agentic AI systems, workflow automation, and SaaS products. He is the founder of WatBot, selfbrand AI, and Asmara.AI, and works as a Full-stack AI Engineer at MindKeepr in Tallinn, Estonia. Focuses on vector search, conversational infrastructure, and scalable backend engineering.
+              Muhammad Hamd (username: <strong className="text-zinc-600 font-bold">muhammadhamd</strong>) builds agentic AI systems, workflow automation, and SaaS products. He is the founder of WatBot and selfbrand AI, worked as a full-stack engineer building Asmara.AI, and works as a Full-stack AI Engineer at MindKeepr in Tallinn, Estonia. Focuses on vector search, conversational infrastructure, and scalable backend engineering.
             </p>
           </div>
 

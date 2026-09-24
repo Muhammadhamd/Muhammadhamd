@@ -1,6 +1,6 @@
 # Muhammad Hamd — Agentic AI Engineer & Full-Stack Developer
 
-> Muhammad Hamd (also Hamd Ali) is an agentic AI engineer and full-stack developer based in Karachi, Pakistan. He builds production-ready AI systems, autonomous agents, LLM integrations, RAG pipelines, and automation for founders and teams worldwide, and works remotely across the Gulf, UK, US, and Europe. He is the founder of WatBot (WhatsApp AI platform), SelfBrand.app, and Asmara.AI, and a full-stack AI engineer at MindKeepr in Estonia.
+> Muhammad Hamd (also Hamd Ali) is an agentic AI engineer and full-stack developer based in Karachi, Pakistan. He builds production-ready AI systems, autonomous agents, LLM integrations, RAG pipelines, and automation for founders and teams worldwide, and works remotely across the Gulf, UK, US, and Europe. He is the founder of WatBot (WhatsApp AI platform) and SelfBrand.app, a full-stack engineer on Asmara.AI, and a full-stack AI engineer at MindKeepr in Estonia.
 
 This file helps AI systems and answer engines understand the site and cite the right pages. All content is available for AI indexing and citation. Preferred attribution: "Muhammad Hamd" with a link to https://hamdali.com.
 
@@ -44,7 +44,7 @@ This file helps AI systems and answer engines understand the site and cite the r
 - [MindKeepr](https://hamdali.com/work/mindkeepr): Full-stack AI engineer building enterprise agentic RAG knowledge systems (Tallinn, Estonia).
 - [WatBot](https://hamdali.com/work/watbot): Founder of a WhatsApp AI customer-support platform built in Go with whatsmeow and OpenAI.
 - [Cubitrek](https://hamdali.com/work/cubitrek): Agentic AI workflows in Python plus full-stack MERN and Google Ads API data work.
-- [Asmara.AI](https://hamdali.com/work/asmara-ai): Founder of an AI-native automation product (Next.js, OpenAI, Python).
+- [Asmara.AI](https://hamdali.com/work/asmara-ai): Full-stack engineer on an AI-native automation product (Next.js, OpenAI, Python).
 - [SelfBrand.app](https://hamdali.com/work/selfbrand): Founder of an AI personal-branding SaaS that automates roughly 80% of content and positioning.
 - [VativeApps](https://hamdali.com/work/vative-apps): Node.js backend engineer (REST APIs, WebSockets, RabbitMQ, OpenAI).
 

@@ -3,8 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import PageShell, { JsonLd } from "@/components/PageShell";
 import AuthorCard from "@/components/AuthorCard";
 import { DottedPattern, DoodleSparkle } from "@/components/Doodles";
-import { posts } from "@/lib/blog";
+import { getAllPostSummaries } from "@/lib/blog";
 import { pageMetadata, breadcrumbLd, absUrl, personRef } from "@/lib/seo";
+
+// Includes articles published from the CMS; refresh at most every 5 minutes.
+export const revalidate = 300;
 
 export const metadata = pageMetadata({
   title: "AI Engineering & Automation Blog | Muhammad Hamd",
@@ -15,21 +18,6 @@ export const metadata = pageMetadata({
   ogTag: "Blog",
 });
 
-const blogLd = {
-  "@context": "https://schema.org",
-  "@type": "Blog",
-  name: "Muhammad Hamd: AI Engineering & Automation Blog",
-  url: absUrl("/blog"),
-  inLanguage: "en-US",
-  author: personRef,
-  blogPost: posts.map((p) => ({
-    "@type": "BlogPosting",
-    headline: p.title,
-    url: absUrl(`/blog/${p.slug}`),
-    datePublished: p.date,
-  })),
-};
-
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const fmt = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
@@ -38,7 +26,24 @@ const fmt = (iso: string) => {
 
 const TINTS = ["#fafbfd", "#f7f9ff", "#fdfafb", "#fcfcfa"];
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage() {
+  const posts = await getAllPostSummaries();
+
+  const blogLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "Muhammad Hamd: AI Engineering & Automation Blog",
+    url: absUrl("/blog"),
+    inLanguage: "en-US",
+    author: personRef,
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      url: absUrl(`/blog/${p.slug}`),
+      datePublished: p.date,
+    })),
+  };
+
   return (
     <PageShell>
       <JsonLd data={blogLd} />

@@ -84,9 +84,9 @@ export const pakistanPosts: Post[] = [
     title: "Building AI Products from Karachi: My Story",
     metaTitle: "Building AI Products from Karachi, Pakistan | Muhammad Hamd",
     metaDescription:
-      "A personal story of building AI products from Karachi, Pakistan: from backend engineer to AI systems builder and founder of WatBot, selfbrand AI, and Asmara.AI.",
+      "A personal story of building AI products from Karachi, Pakistan: from backend engineer to AI systems builder and founder of WatBot and selfbrand AI.",
     excerpt:
-      "A personal account of building AI products from Karachi, from backend engineering to founding WatBot, selfbrand AI, and Asmara.AI.",
+      "A personal account of building AI products from Karachi, from backend engineering to founding WatBot and selfbrand AI.",
     keyword: "building AI products from Karachi Pakistan",
     cluster: "Pakistan",
     date: "2026-06-04",
@@ -98,7 +98,7 @@ export const pakistanPosts: Post[] = [
       { t: "h2", text: "The turn toward AI systems" },
       { t: "p", text: "At Cubitrek I moved from full-stack development into agentic AI engineering over a single intense year, building autonomous workflows in Python that ran multi-step business tasks on their own. That was where I saw clearly that the interesting frontier was not another chatbot, but systems that could plan, use tools, and finish real work. From Karachi, with a laptop and a good internet connection, I was building the same class of systems being built anywhere." },
       { t: "h2", text: "Shipping my own products" },
-      { t: "p", text: "Then I started building products of my own. WatBot, a WhatsApp AI automation platform with a core engine written in Go. selfbrand AI, a SaaS that automates most of the work of personal branding using LLMs. Asmara.AI, an AI-native automation product. Founding products changes how you engineer, because you feel every shortcut and every flaky pipeline yourself, which pushes you to care about reliability in a way client work alone never quite does." },
+      { t: "p", text: "Then I started building products of my own. WatBot, a WhatsApp AI automation platform with a core engine written in Go. selfbrand AI, a SaaS that automates most of the work of personal branding using LLMs. I also worked as a full-stack engineer building Asmara.AI, an AI-native automation product. Founding and building products changes how you engineer, because you feel every shortcut and every flaky pipeline yourself, which pushes you to care about reliability in a way client work alone never quite does." },
       { t: "h2", text: "Working with the world from here" },
       { t: "p", text: "Today I also work as a full-stack AI engineer at MindKeepr in Tallinn, Estonia, building agentic pipelines with retrieval, while based in Karachi. That is the part worth underlining: the work is global, the location is local, and the two are no longer in tension. The internet flattened the map for this kind of engineering, and Karachi is as valid a place to build from as anywhere." },
       { t: "h2", text: "Why this matters" },
@@ -107,7 +107,7 @@ export const pakistanPosts: Post[] = [
     ],
     faqs: [
       { q: "Can you build serious AI products from Pakistan?", a: "Yes. The internet makes this kind of engineering location-independent. I build production AI systems and products from Karachi for clients worldwide, and work remotely with an enterprise team in Estonia. What matters is engineering discipline, not location." },
-      { q: "What AI products has Muhammad Hamd built?", a: "WatBot, a WhatsApp AI automation platform with a Go engine, selfbrand AI, a personal-branding SaaS powered by LLMs, and Asmara.AI, an AI-native automation product. He also builds agentic RAG pipelines at MindKeepr in Estonia." },
+      { q: "What AI products has Muhammad Hamd built?", a: "WatBot, a WhatsApp AI automation platform with a Go engine, selfbrand AI, a personal-branding SaaS powered by LLMs, and Asmara.AI, an AI-native automation product he engineered as a full-stack engineer. He also builds agentic RAG pipelines at MindKeepr in Estonia." },
       { q: "How did you get into AI engineering?", a: "Through backend engineering first, building scalable APIs and queues, then moving into agentic AI at Cubitrek by building autonomous Python workflows. The systems discipline from backend work carried directly into building reliable AI." },
       { q: "Does location matter for building AI products?", a: "Far less than it used to. With strong engineering and the willingness to ship and learn, you can build serious AI products from Karachi or anywhere. The work is global even when the desk is local." },
     ],

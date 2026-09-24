@@ -22,7 +22,7 @@ export type ServiceMatch = { url: string; name: string; tagline: string; why: st
 export function listSitePages(): PageEntry[] {
   const staticPages: PageEntry[] = [
     { url: "/", title: "Home", summary: "Muhammad Hamd, agentic AI engineer and systems builder in Karachi, Pakistan." },
-    { url: "/about", title: "About", summary: "His story: from backend engineer to agentic AI engineer; founder of WatBot, selfbrand AI, Asmara.AI." },
+    { url: "/about", title: "About", summary: "His story: from backend engineer to agentic AI engineer; founder of WatBot and selfbrand AI, full-stack engineer on Asmara.AI." },
     { url: "/hire-me", title: "Hire Me", summary: "Services, process, availability, and rates; how to hire him." },
     { url: "/contact", title: "Contact", summary: "Email, LinkedIn, and calendar to reach Muhammad Hamd." },
     { url: "/uses", title: "Uses", summary: "His tech stack and the tools he builds with." },
@@ -38,8 +38,8 @@ export function listSitePages(): PageEntry[] {
 }
 
 const STATIC_CONTENT: Record<string, string> = {
-  "/": "Muhammad Hamd is an agentic AI engineer and systems builder in Karachi, Pakistan. He builds production AI systems, autonomous agents, and workflow automation. Founder of WatBot, selfbrand AI, and Asmara.AI. Full-stack AI engineer at MindKeepr in Estonia.",
-  "/about": "Muhammad Hamd started in backend engineering at VativeApps, moved into agentic AI at Cubitrek, founded WatBot (a WhatsApp AI platform in Go), selfbrand AI, and Asmara.AI, and now works at MindKeepr in Estonia building RAG pipelines. He believes AI should remove manual work, not add complexity, and ships systems end to end.",
+  "/": "Muhammad Hamd is an agentic AI engineer and systems builder in Karachi, Pakistan. He builds production AI systems, autonomous agents, and workflow automation. Founder of WatBot and selfbrand AI, and full-stack engineer on Asmara.AI. Full-stack AI engineer at MindKeepr in Estonia.",
+  "/about": "Muhammad Hamd started in backend engineering at VativeApps, moved into agentic AI at Cubitrek, founded WatBot (a WhatsApp AI platform in Go) and selfbrand AI, worked as a full-stack engineer building Asmara.AI, and now works at MindKeepr in Estonia building RAG pipelines. He believes AI should remove manual work, not add complexity, and ships systems end to end.",
   "/hire-me": "Hire Muhammad Hamd for agentic AI development, LLM integration, AI workflow automation, CRM automation, WhatsApp AI, and RAG systems. Remote, UTC+5, roughly $50 to $120 per hour with fixed-price options, available for new projects.",
   "/contact": "Reach Muhammad Hamd by email at muhammadhamdali572@gmail.com, on LinkedIn at linkedin.com/in/muhammadhamd, or by booking a call.",
   "/uses": "His stack: Python, Go, TypeScript, LangChain, LangGraph, CrewAI, AutoGen, OpenAI, Anthropic, RAG, pgvector, Pinecone, n8n, PostgreSQL, Docker, Next.js, and React.",

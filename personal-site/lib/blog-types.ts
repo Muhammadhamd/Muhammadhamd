@@ -53,7 +53,7 @@ export const author = {
   shortBio:
     "Agentic AI engineer in Karachi, Pakistan. I build production AI systems, autonomous agents, and automation for founders and teams worldwide.",
   longBio:
-    "Muhammad Hamd is an agentic AI engineer and systems builder based in Karachi, Pakistan. He builds production-ready AI systems for founders and teams worldwide, and is the founder of WatBot, selfbrand AI, and Asmara.AI. He also works as a full-stack AI engineer at MindKeepr in Tallinn, Estonia, where he architects agentic AI pipelines with RAG. Everything he writes comes from systems he has actually shipped.",
+    "Muhammad Hamd is an agentic AI engineer and systems builder based in Karachi, Pakistan. He builds production-ready AI systems for founders and teams worldwide, and is the founder of WatBot and selfbrand AI. He also worked as a full-stack engineer building Asmara.AI, and works as a full-stack AI engineer at MindKeepr in Tallinn, Estonia, where he architects agentic AI pipelines with RAG. Everything he writes comes from systems he has actually shipped.",
   image: "/hamd.png",
   profileUrl: "/about",
   socials: {

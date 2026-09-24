@@ -139,9 +139,9 @@ const workSeo: Record<string, { title: string; description: string }> = {
       "At Cubitrek, Muhammad Hamd built autonomous agentic AI workflows in Python and scalable MERN apps, integrated the Google Ads API, and managed Azure infrastructure.",
   },
   "asmara-ai": {
-    title: "Asmara.AI: Founder & AI Systems Builder | Muhammad Hamd",
+    title: "Asmara.AI: Full-stack Engineer & AI Builder | Muhammad Hamd",
     description:
-      "Asmara.AI is an AI-native automation product founded by Muhammad Hamd that focuses on LLM orchestration and intelligent business workflow automation.",
+      "Asmara.AI is an AI-native automation product that Muhammad Hamd worked on as a full-stack engineer, focused on LLM orchestration and intelligent business workflow automation.",
   },
   selfbrand: {
     title: "SelfBrand.app: Founder & AI Personal-Branding SaaS | Muhammad Hamd",

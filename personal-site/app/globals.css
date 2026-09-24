@@ -61,3 +61,48 @@ a {
     text-shadow: 0 0 10px rgba(6, 182, 212, 0.4);
   }
 }
+
+/* Infinite horizontal logo marquee */
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Move exactly one copy of the track (half of the duplicated content) */
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: logo-marquee 40s linear infinite;
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Fade the edges so logos appear/disappear smoothly */
+.logo-marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track {
+    animation: none;
+  }
+}

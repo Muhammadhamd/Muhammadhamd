@@ -331,7 +331,7 @@ export const industries: Industry[] = [
     tagline: "Ship the AI features your users expect",
     intro: [
       "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I add AI features to SaaS products and build AI-native ones from scratch. Investors and users now expect AI inside a product, but most teams either bolt on a raw API call or stall because nobody on the team has shipped AI in production.",
-      "I have shipped my own SaaS products, including SelfBrand.app and Asmara.AI, and I build AI into a B2B SaaS at MindKeepr in Estonia. So I build the feature and the product around it as one system, which is the difference between an AI feature that ships and one that stays a demo.",
+      "I have shipped my own SaaS products like SelfBrand.app, I have engineered AI products such as Asmara.AI, and I build AI into a B2B SaaS at MindKeepr in Estonia. So I build the feature and the product around it as one system, which is the difference between an AI feature that ships and one that stays a demo.",
     ],
     useCases: [
       {
@@ -357,7 +357,7 @@ export const industries: Industry[] = [
       "Add cost controls from day one, so the feature does not become a margin problem at scale.",
       "Instrument it, so you can see whether the AI feature actually moves the metric it was built for.",
     ],
-    proof: { label: "See Asmara.AI, my AI-native product", href: "/work/asmara-ai" },
+    proof: { label: "See Asmara.AI, an AI-native product I engineered", href: "/work/asmara-ai" },
     services: [
       { label: "Full-Stack Development", href: "/services/full-stack-development" },
       { label: "MVP Development", href: "/services/mvp-development" },
@@ -370,7 +370,7 @@ export const industries: Industry[] = [
       },
       {
         q: "Can you build an AI-native SaaS from scratch?",
-        a: "Yes, and it is where I do my best work, because I am both a full-stack engineer and an AI engineer. I have shipped my own SaaS products, SelfBrand.app and Asmara.AI, so I build the product and the AI in it as one system.",
+        a: "Yes, and it is where I do my best work, because I am both a full-stack engineer and an AI engineer. I have shipped my own SaaS product SelfBrand.app and engineered AI products such as Asmara.AI, so I build the product and the AI in it as one system.",
       },
       {
         q: "How do you keep AI feature costs under control?",

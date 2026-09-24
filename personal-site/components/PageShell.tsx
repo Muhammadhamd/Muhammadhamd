@@ -19,11 +19,11 @@ export function JsonLd({ data }: { data: unknown }) {
 }
 
 const navLinks = [
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Experience", href: "/experience" },
   { label: "Services", href: "/services" },
   { label: "Blog", href: "/blog" },
-  { label: "Hire Me", href: "/hire-me" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
 ];
 
 const socials = [
@@ -83,7 +83,7 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
               Karachi, Pakistan, available globally.
             </p>
             <p>
-              Founder of WatBot, selfbrand AI, and Asmara.AI. Full-stack AI
+              Founder of WatBot and selfbrand AI. Full-stack AI
               Engineer at MindKeepr (Tallinn, Estonia). Building production-ready
               LLM systems and workflow automation.
             </p>
@@ -112,6 +112,8 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
               <p className={colHead}>Explore</p>
               <ul className="space-y-2">
                 {[
+                  { label: "Case Studies", href: "/case-studies" },
+                  { label: "Experience", href: "/experience" },
                   { label: "Hire Me", href: "/hire-me" },
                   { label: "Services", href: "/services" },
                   { label: "About", href: "/about" },
@@ -149,8 +151,11 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
               </ul>
             </div>
             <div>
-              <p className={colHead}>Case Studies</p>
+              <p className={colHead}>Experience</p>
               <ul className="space-y-2">
+                <li>
+                  <Link href="/case-studies" className={linkCls}>All Case Studies</Link>
+                </li>
                 {works.map((w) => (
                   <li key={w.slug}>
                     <Link href={`/work/${w.slug}`} className={linkCls}>{w.company}</Link>

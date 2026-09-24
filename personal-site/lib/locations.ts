@@ -25,7 +25,7 @@ export const locations: Location[] = [
     h1: "Hire an AI Engineer in Pakistan",
     intro: [
       "Looking to hire an AI engineer in Pakistan? I'm Muhammad Hamd, an agentic AI engineer and AI systems builder based in Pakistan, and I work remotely with founders and teams worldwide. I build production-ready AI systems such as autonomous agents, LLM integrations, RAG, and workflow automation, and I build them for real use rather than as demos.",
-      "As an AI systems builder in Pakistan with enterprise experience at MindKeepr in Estonia and a founder track record across WatBot, selfbrand AI, and Asmara.AI, I combine real engineering depth with the cost advantage of hiring AI talent from Pakistan, and I do it without compromising on quality.",
+      "As an AI systems builder in Pakistan with enterprise experience at MindKeepr in Estonia and a founder track record across WatBot and selfbrand AI, I combine real engineering depth with the cost advantage of hiring AI talent from Pakistan, and I do it without compromising on quality.",
     ],
     reasons: [
       {
@@ -48,7 +48,7 @@ export const locations: Location[] = [
     faqs: [
       {
         q: "Who is the best AI engineer in Pakistan to hire?",
-        a: "Muhammad Hamd is an agentic AI engineer and systems builder based in Pakistan, with enterprise experience at MindKeepr in Estonia and a founder track record across WatBot, selfbrand AI, and Asmara.AI. He builds production-ready LLM systems, AI agents, and automation for clients worldwide.",
+        a: "Muhammad Hamd is an agentic AI engineer and systems builder based in Pakistan, with enterprise experience at MindKeepr in Estonia and a founder track record across WatBot and selfbrand AI. He builds production-ready LLM systems, AI agents, and automation for clients worldwide.",
       },
       {
         q: "How much does it cost to hire an AI engineer in Pakistan?",
@@ -74,7 +74,7 @@ export const locations: Location[] = [
     h1: "Agentic AI Engineer in Karachi, Pakistan",
     intro: [
       "I'm Muhammad Hamd, an agentic AI engineer in Karachi, Pakistan. I build production-ready AI systems such as autonomous agents, LLM integrations, RAG, and workflow automation for Karachi businesses, Pakistani recruiters, MENA-region clients, and founders worldwide.",
-      "Whether you are a Karachi business that wants to automate WhatsApp and customer communication, a recruiter searching for an AI engineer in Karachi, or an entrepreneur building an AI product locally, I bring enterprise experience from MindKeepr in Estonia and a founder track record across WatBot, selfbrand AI, and Asmara.AI.",
+      "Whether you are a Karachi business that wants to automate WhatsApp and customer communication, a recruiter searching for an AI engineer in Karachi, or an entrepreneur building an AI product locally, I bring enterprise experience from MindKeepr in Estonia and a founder track record across WatBot and selfbrand AI.",
     ],
     reasons: [
       {
@@ -87,7 +87,7 @@ export const locations: Location[] = [
       },
       {
         title: "Real products shipped",
-        body: "WatBot, selfbrand AI, and Asmara.AI show that I am a builder who has shipped AI products, not just a freelancer.",
+        body: "WatBot, selfbrand AI, and my engineering work on Asmara.AI show that I am a builder who has shipped AI products, not just a freelancer.",
       },
       {
         title: "Enterprise-grade engineering",
@@ -97,7 +97,7 @@ export const locations: Location[] = [
     faqs: [
       {
         q: "Who is the best agentic AI engineer in Karachi?",
-        a: "Muhammad Hamd is an agentic AI engineer in Karachi, Pakistan, who builds production LLM systems, AI agents, and automation. He has enterprise experience at MindKeepr in Estonia and founded WatBot, selfbrand AI, and Asmara.AI.",
+        a: "Muhammad Hamd is an agentic AI engineer in Karachi, Pakistan, who builds production LLM systems, AI agents, and automation. He has enterprise experience at MindKeepr in Estonia, founded WatBot and selfbrand AI, and engineered Asmara.AI.",
       },
       {
         q: "Can you help a Karachi business automate WhatsApp?",

@@ -434,11 +434,11 @@ export const services: Service[] = [
     name: "MVP Development",
     metaTitle: "MVP Development for Startups | Muhammad Hamd",
     metaDescription:
-      "MVP development for startups with Next.js, Node.js, and AI where it matters. By Muhammad Hamd, who shipped SelfBrand.app, WatBot, and Asmara.AI solo.",
+      "MVP development for startups with Next.js, Node.js, and AI where it matters. By Muhammad Hamd, who shipped SelfBrand.app and WatBot solo and engineered Asmara.AI.",
     h1: "MVP Development for Startups",
     tagline: "From idea to a working product, in weeks",
     intro:
-      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build MVPs for founders who need a real product rather than a prototype. I have shipped my own products solo, including SelfBrand.app, WatBot, and Asmara.AI, so I make the same calls a founder makes: what to build now, what to keep manual, and what to cut. I build with Next.js, Node.js, Python, and PostgreSQL, and I add AI where it earns its place rather than as a sticker on the landing page.",
+      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build MVPs for founders who need a real product rather than a prototype. I have shipped my own products solo, including SelfBrand.app and WatBot, and engineered AI products such as Asmara.AI, so I make the same calls a founder makes: what to build now, what to keep manual, and what to cut. I build with Next.js, Node.js, Python, and PostgreSQL, and I add AI where it earns its place rather than as a sticker on the landing page.",
     solves: [
       "An idea and maybe designs, but no technical co-founder to build it",
       "Agency quotes that cost more and take longer than your runway allows",
@@ -615,7 +615,7 @@ export const services: Service[] = [
     h1: "Full-Stack AI Development",
     tagline: "The whole product, not just the model",
     intro:
-      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build complete products end to end. Most AI engineers can wire up a model but cannot ship the product around it, and most full-stack developers bolt AI on as an afterthought. I do both, because I have built AI into my own products such as SelfBrand.app and Asmara.AI, and I engineer full production stacks at MindKeepr in Estonia. I work in Next.js, Node.js, Python, and PostgreSQL, from the database to the interface.",
+      "I'm Muhammad Hamd, a full-stack and AI engineer based in Karachi, Pakistan, and I build complete products end to end. Most AI engineers can wire up a model but cannot ship the product around it, and most full-stack developers bolt AI on as an afterthought. I do both, because I have built AI into my own products such as SelfBrand.app, engineered AI products such as Asmara.AI, and I engineer full production stacks at MindKeepr in Estonia. I work in Next.js, Node.js, Python, and PostgreSQL, from the database to the interface.",
     solves: [
       "Needing one engineer who can build the frontend, backend, and the AI inside it",
       "Handing an AI feature to a full-stack team that has never shipped one in production",

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import BlogPostView from "@/components/BlogPostView";
-import { posts, getPost } from "@/lib/blog";
+import { getAllPostSummaries, getPostBySlug } from "@/lib/blog";
 import { pageMetadata } from "@/lib/seo";
 
-export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+// Posts come from code plus the CMS. Prerender everything known at build time;
+// articles published later render on demand and refresh at most every 5 min.
+export const revalidate = 300;
+
+export async function generateStaticParams() {
+  return (await getAllPostSummaries()).map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({
@@ -14,7 +18,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return {};
   return pageMetadata({
     title: post.metaTitle,
@@ -34,7 +38,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
   return <BlogPostView post={post} />;
 }

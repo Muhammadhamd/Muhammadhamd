@@ -3,10 +3,15 @@ import { SITE_URL } from '@/lib/seo';
 import { services } from '@/lib/services';
 import { locations } from '@/lib/locations';
 import { industries } from '@/lib/industries';
-import { posts } from '@/lib/blog';
+import { getAllPostSummaries } from '@/lib/blog';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+// Cached by default; refresh at most every 5 min so CMS articles get listed.
+export const revalidate = 300;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
+  // Code posts plus articles published from the CMS.
+  const posts = await getAllPostSummaries();
 
   const workPages = [
     'mindkeepr',
@@ -20,6 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // High-intent conversion + trust pages.
   const corePages: { path: string; priority: number; changeFrequency: 'monthly' | 'yearly' }[] = [
     { path: '/hire-me', priority: 0.9, changeFrequency: 'monthly' },
+    { path: '/case-studies', priority: 0.85, changeFrequency: 'monthly' },
+    { path: '/experience', priority: 0.75, changeFrequency: 'monthly' },
     { path: '/about', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/contact', priority: 0.7, changeFrequency: 'yearly' },
     { path: '/uses', priority: 0.6, changeFrequency: 'monthly' },
