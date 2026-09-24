@@ -193,11 +193,11 @@ export const caseStudies: CaseStudy[] = [
     tagline: "Borderless crypto & cash payments.",
     summary:
       "A secure fintech app for instant crypto and local money transfers across borders. I worked as a full-stack engineer on the wallet, transfers, and payout flows.",
-    logo: "/portfolio-line-logos/swiftwire.jfif",
+    logo: "/portfolio-line-logos/swiftwire.jpg",
     link: "https://swiftwire.com",
     playStore:
       "https://play.google.com/store/apps/details?id=com.swiftWire.swiftWire",
-    stack: ["React Native", "Node.js", "Crypto Wallets", "REST APIs", "KYC/AML"],
+    stack: ["Flutter", "Dart", "Firebase", "Crypto Wallets", "KYC/AML"],
     highlights: [
       "Instant crypto + fiat transfers across borders",
       "Multi-currency wallet with bank & mobile-money payouts",
@@ -227,7 +227,7 @@ export const caseStudies: CaseStudy[] = [
     logo: "/portfolio-line-logos/swiftgologo.png",
     playStore:
       "https://play.google.com/store/apps/details?id=com.swiftgo.swiftgo",
-    stack: ["React Native", "Node.js", "GPT-4o", "Payments", "Google Maps"],
+    stack: ["Flutter", "Dart", "Firebase", "GPT-4o", "Google Maps"],
     highlights: [
       "Online marketplace with sellers, variants & cart",
       "Swift AI assistant powered by GPT-4o vision",
